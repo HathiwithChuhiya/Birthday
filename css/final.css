@@ -1,0 +1,556 @@
+/* =========================================
+   FINAL REVEAL PAGE
+========================================= */
+
+.final-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(232, 160, 181, 0.16),
+            transparent 38%
+        ),
+        var(--black);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.final-background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.final-glow {
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(232, 160, 181, 0.1);
+
+    filter: blur(130px);
+}
+
+.final-page > *:not(.final-background) {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.final-header {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 28px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.final-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+}
+
+.final-logo-script {
+    color: var(--rose-light);
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 1.7rem;
+}
+
+.final-logo-heart {
+    color: var(--rose);
+}
+
+.final-counter {
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+}
+
+.final-counter span {
+    color: var(--rose-light);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.final-hero {
+    width: min(1000px, calc(100% - 40px));
+    margin: 0 auto;
+
+    min-height: 78vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 0;
+
+    text-align: center;
+}
+
+.final-eyebrow {
+    margin-bottom: 25px;
+
+    color: var(--rose);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    letter-spacing: 0.3em;
+}
+
+.final-title {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(4rem, 12vw, 10rem);
+    font-weight: 400;
+
+    line-height: 0.85;
+
+    letter-spacing: -0.05em;
+}
+
+.final-title span {
+    display: block;
+
+    color: var(--rose-light);
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 0.9em;
+}
+
+.final-heart {
+    margin-top: 45px;
+
+    color: var(--rose-light);
+
+    font-size: 3rem;
+
+    animation: finalHeartFloat 3s ease-in-out infinite;
+}
+
+@keyframes finalHeartFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.final-message {
+    width: min(750px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 40px 0 100px;
+
+    text-align: center;
+}
+
+.final-message-label {
+    margin-bottom: 25px;
+
+    color: var(--rose);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 0.25em;
+}
+
+.final-message h2 {
+    margin: 0 0 25px;
+
+    color: var(--cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+.final-message p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   BIG NUMBER
+========================================= */
+
+.final-number-section {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 30px 0 100px;
+
+    text-align: center;
+}
+
+.final-number {
+    display: block;
+
+    color: var(--rose-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(7rem, 25vw, 16rem);
+    font-weight: 400;
+
+    line-height: 0.8;
+
+    opacity: 0.14;
+}
+
+.final-number-label {
+    display: block;
+
+    margin-top: 10px;
+
+    color: var(--rose);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    letter-spacing: 0.3em;
+}
+
+
+/* =========================================
+   FINAL CARD
+========================================= */
+
+.final-card-section {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding-bottom: 100px;
+}
+
+.final-card {
+    padding: 65px 55px;
+
+    border: 1px solid rgba(232, 160, 181, 0.22);
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(232, 160, 181, 0.08),
+            rgba(33, 24, 29, 0.9)
+        );
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.3);
+}
+
+.final-card-heart {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: var(--rose);
+
+    font-size: 2rem;
+}
+
+.final-card h2 {
+    margin: 0 0 20px;
+
+    color: var(--cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+}
+
+.final-card p {
+    max-width: 600px;
+    margin: 0 auto;
+
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.final-signature {
+    margin-top: 45px;
+}
+
+.final-signature-text {
+    color: var(--text-muted);
+
+    font-size: 0.8rem;
+}
+
+.final-signature-name {
+    margin-top: 8px;
+
+    color: var(--rose-light);
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 2.5rem;
+}
+
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.final-closing {
+    width: min(750px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 20px 0 100px;
+
+    text-align: center;
+}
+
+.final-closing-heart {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--rose);
+
+    font-size: 2rem;
+}
+
+.final-closing p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.final-navigation {
+    width: min(1000px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 30px 0 70px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.final-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+
+    transition: color var(--transition-fast);
+}
+
+.final-back-link:hover {
+    color: var(--rose-light);
+}
+
+.final-back-arrow {
+    color: var(--rose);
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .final-hero {
+        min-height: 70vh;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .final-header {
+        width: min(100% - 28px, 1200px);
+
+        padding: 22px 0;
+    }
+
+    .final-counter {
+        font-size: 0.62rem;
+    }
+
+    .final-hero {
+        width: min(100% - 28px, 1000px);
+
+        min-height: 70vh;
+
+        padding: 70px 0;
+    }
+
+    .final-title {
+        font-size: clamp(3.5rem, 18vw, 6.5rem);
+
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+    .final-heart {
+        margin-top: 35px;
+    }
+
+    .final-message {
+        width: min(100% - 28px, 750px);
+
+        padding-bottom: 75px;
+    }
+
+    .final-message p {
+        font-size: 0.9rem;
+    }
+
+    .final-number-section {
+        width: min(100% - 28px, 900px);
+
+        padding-bottom: 75px;
+    }
+
+    .final-card-section {
+        width: min(100% - 28px, 900px);
+
+        padding-bottom: 75px;
+    }
+
+    .final-card {
+        padding: 50px 25px;
+    }
+
+    .final-card p {
+        font-size: 0.9rem;
+    }
+
+    .final-closing {
+        width: min(100% - 28px, 750px);
+
+        padding-bottom: 70px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .final-title {
+        font-size: 3.3rem;
+    }
+
+    .final-card {
+        padding: 45px 20px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .final-heart {
+        animation: none;
+    }
+
+}

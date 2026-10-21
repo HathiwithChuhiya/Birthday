@@ -1,0 +1,343 @@
+/* ========================================
+   OUR STORY — GLOBAL STYLES
+   13 Years • 27 Chapters
+======================================== */
+
+
+/* ========================================
+   DESIGN TOKENS
+======================================== */
+
+:root {
+
+    /* ---------- COLORS ---------- */
+
+    --black: #0d0a0c;
+    --black-soft: #171014;
+    --black-card: #21181d;
+
+    --rose: #e8a0b5;
+    --rose-light: #f3c5d3;
+    --rose-dark: #a96078;
+
+    --cream: #fff7ee;
+    --cream-dark: #e8ddd4;
+
+    --gold: #d8b27c;
+
+    --text: #fff7f8;
+    --text-muted: #b9aeb2;
+    --text-dark: #33282c;
+
+    --border: rgba(255, 255, 255, 0.14);
+
+
+    /* ---------- TYPOGRAPHY ---------- */
+
+    --font-display:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    --font-body:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --font-script:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+
+    /* ---------- LAYOUT ---------- */
+
+    --container: 1200px;
+
+    --radius-small: 8px;
+    --radius-medium: 16px;
+    --radius-large: 28px;
+    --radius-pill: 999px;
+
+
+    /* ---------- MOTION ---------- */
+
+    --ease: cubic-bezier(.22, 1, .36, 1);
+
+    --transition-fast: 200ms var(--ease);
+    --transition: 400ms var(--ease);
+    --transition-slow: 800ms var(--ease);
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--black);
+    color: var(--text);
+
+    font-family: var(--font-body);
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--rose);
+    color: var(--black);
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.container {
+    width: min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* ========================================
+   STORY BUTTON
+======================================== */
+
+.story-button {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 48px;
+
+    padding: 13px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: var(--radius-pill);
+
+    background: var(--rose);
+
+    color: var(--black);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.story-button:hover {
+
+    transform: translateY(-3px);
+
+    background: var(--rose-light);
+
+    box-shadow:
+        0 12px 35px rgba(232, 160, 181, 0.2);
+}
+
+.story-button:active {
+    transform: scale(0.97);
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@keyframes glow {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+======================================== */
+
+/* Windows Desktop */
+
+@media (min-width: 1200px) {
+
+    .container {
+        width: min(
+            calc(100% - 80px),
+            var(--container)
+        );
+    }
+}
+
+
+/* Windows Laptop */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .container {
+        width: min(
+            calc(100% - 60px),
+            var(--container)
+        );
+    }
+}
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .container {
+        width: min(
+            calc(100% - 48px),
+            var(--container)
+        );
+    }
+}
+
+
+/* POCO F6 / realme Narzo 30 / Mobile */
+
+@media (max-width: 767px) {
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .story-button {
+        min-height: 50px;
+        padding-inline: 22px;
+    }
+}
+
+
+/* Small Phones */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .story-button {
+        width: 100%;
+    }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}

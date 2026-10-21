@@ -1,0 +1,421 @@
+/* =========================================
+   MEMORIES PAGE
+========================================= */
+
+.memories-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(232, 160, 181, 0.12),
+            transparent 35%
+        ),
+        var(--black);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.memories-background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.memories-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(232, 160, 181, 0.08);
+    filter: blur(100px);
+}
+
+.memories-page > *:not(.memories-background) {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.memories-header {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.memories-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text);
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+}
+
+.memories-logo-script {
+    color: var(--rose-light);
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 1.7rem;
+}
+
+.memories-logo-heart {
+    color: var(--rose);
+    font-size: 1.2rem;
+}
+
+.memories-counter {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+}
+
+.memories-counter span {
+    color: var(--rose-light);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.memories-hero {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 100px 0 70px;
+    text-align: center;
+}
+
+.memories-eyebrow {
+    margin-bottom: 20px;
+    color: var(--rose);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+}
+
+.memories-title {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.memories-title span {
+    display: block;
+    color: var(--rose-light);
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 0.95em;
+    font-weight: 400;
+}
+
+.memories-intro {
+    max-width: 600px;
+    margin: 35px auto 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MEMORY INTRO CARD
+========================================= */
+
+.memories-intro-card {
+    width: min(800px, calc(100% - 40px));
+    margin: 0 auto 90px;
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: rgba(33, 24, 29, 0.65);
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+
+.memories-intro-heart {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--rose);
+    font-size: 1.5rem;
+}
+
+.memories-intro-card p {
+    margin: 0;
+    color: var(--cream-dark);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MEMORY GRID
+========================================= */
+
+.memories-grid-section {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.memories-section-label {
+    margin-bottom: 35px;
+    text-align: center;
+    color: var(--rose);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+}
+
+.memories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================================
+   MEMORY CARD
+========================================= */
+
+.memory-item {
+    position: relative;
+    min-height: 320px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--black-card);
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.memory-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(232, 160, 181, 0.35);
+}
+
+.memory-item-photo {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(232, 160, 181, 0.06),
+            rgba(13, 10, 12, 0.95)
+        );
+}
+
+.memory-item-photo span {
+    color: var(--rose-dark);
+    font-size: 2rem;
+}
+
+.memory-item-content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    background: linear-gradient(
+        transparent,
+        rgba(13, 10, 12, 0.95)
+    );
+}
+
+.memory-item-number {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--rose);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+}
+
+.memory-item h2 {
+    margin: 0 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+}
+
+.memory-item p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   END SECTION
+========================================= */
+
+.memories-end {
+    width: min(700px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 40px 0 100px;
+    text-align: center;
+}
+
+.memories-end-heart {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--rose);
+    font-size: 1.8rem;
+}
+
+.memories-end p {
+    margin: 0;
+    color: var(--text-muted);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.memories-navigation {
+    width: min(1000px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 30px 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memories-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    transition: color var(--transition-fast);
+}
+
+.memories-back-link:hover {
+    color: var(--rose-light);
+}
+
+.memories-back-arrow {
+    color: var(--rose);
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .memories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .memories-header {
+        width: min(100% - 28px, 1200px);
+        padding: 22px 0;
+    }
+
+    .memories-counter {
+        font-size: 0.62rem;
+    }
+
+    .memories-hero {
+        width: min(100% - 28px, 900px);
+        padding: 75px 0 50px;
+    }
+
+    .memories-title {
+        font-size: clamp(3.5rem, 17vw, 6rem);
+    }
+
+    .memories-intro {
+        margin-top: 28px;
+        font-size: 0.9rem;
+    }
+
+    .memories-intro-card {
+        width: min(100% - 28px, 800px);
+        margin-bottom: 65px;
+        padding: 28px 22px;
+    }
+
+    .memories-intro-card p {
+        font-size: 0.95rem;
+    }
+
+    .memories-grid-section {
+        width: min(100% - 28px, 1200px);
+        padding-bottom: 70px;
+    }
+
+    .memories-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .memory-item {
+        min-height: 300px;
+    }
+
+    .memories-end {
+        width: min(100% - 28px, 700px);
+        padding-bottom: 70px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .memories-title {
+        font-size: 3.4rem;
+    }
+
+    .memory-item {
+        min-height: 280px;
+    }
+
+}

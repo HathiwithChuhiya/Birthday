@@ -1,0 +1,469 @@
+/* =========================================
+   LETTER PAGE
+========================================= */
+
+.letter-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(232, 160, 181, 0.12),
+            transparent 35%
+        ),
+        var(--black);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.letter-background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.letter-glow {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(232, 160, 181, 0.08);
+    filter: blur(110px);
+}
+
+.letter-page > *:not(.letter-background) {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.letter-header {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 28px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.letter-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+}
+
+.letter-logo-script {
+    color: var(--rose-light);
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 1.7rem;
+}
+
+.letter-logo-heart {
+    color: var(--rose);
+    font-size: 1.2rem;
+}
+
+.letter-counter {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+}
+
+.letter-counter span {
+    color: var(--rose-light);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.letter-hero {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 100px 0 70px;
+
+    text-align: center;
+}
+
+.letter-eyebrow {
+    margin-bottom: 20px;
+
+    color: var(--rose);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+}
+
+.letter-title {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 400;
+
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.letter-title span {
+    display: block;
+
+    color: var(--rose-light);
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 0.95em;
+    font-weight: 400;
+}
+
+.letter-intro {
+    max-width: 620px;
+
+    margin: 35px auto 0;
+
+    color: var(--text-muted);
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   LETTER PAPER
+========================================= */
+
+.letter-section {
+    width: min(850px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding-bottom: 100px;
+}
+
+.letter-paper {
+    position: relative;
+
+    padding: 70px 75px;
+
+    border: 1px solid rgba(232, 160, 181, 0.2);
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 247, 238, 0.98),
+            rgba(245, 229, 218, 0.96)
+        );
+
+    color: var(--text-dark);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden;
+}
+
+.letter-paper::before {
+    content: "";
+
+    position: absolute;
+    inset: 18px;
+
+    border: 1px solid rgba(169, 96, 120, 0.18);
+
+    pointer-events: none;
+}
+
+.letter-paper-heart {
+    position: relative;
+
+    display: block;
+
+    margin-bottom: 35px;
+
+    color: var(--rose-dark);
+
+    font-size: 1.7rem;
+}
+
+.letter-greeting {
+    position: relative;
+
+    margin: 0 0 35px;
+
+    color: var(--rose-dark);
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+}
+
+.letter-content {
+    position: relative;
+}
+
+.letter-placeholder {
+    margin: 0 0 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    line-height: 2;
+
+    color: var(--text-dark);
+}
+
+.letter-placeholder:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.letter-divider {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin: 45px 0;
+}
+
+.letter-divider-line {
+    flex: 1;
+    height: 1px;
+
+    background: rgba(169, 96, 120, 0.2);
+}
+
+.letter-divider-heart {
+    color: var(--rose-dark);
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   SIGNATURE
+========================================= */
+
+.letter-signature {
+    position: relative;
+
+    margin-top: 45px;
+
+    text-align: right;
+}
+
+.letter-signature p {
+    margin: 0 0 8px;
+
+    color: var(--text-dark);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.9rem;
+}
+
+.letter-signature-name {
+    color: var(--rose-dark);
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+
+/* =========================================
+   OUTRO
+========================================= */
+
+.letter-outro {
+    width: min(700px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 20px 0 80px;
+
+    text-align: center;
+}
+
+.letter-outro-heart {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--rose);
+
+    font-size: 1.8rem;
+}
+
+.letter-outro p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.letter-navigation {
+    width: min(1000px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 30px 0 60px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.letter-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+
+    transition: color var(--transition-fast);
+}
+
+.letter-back-link:hover {
+    color: var(--rose-light);
+}
+
+.letter-back-arrow {
+    color: var(--rose);
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .letter-paper {
+        padding: 60px 55px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .letter-header {
+        width: min(100% - 28px, 1200px);
+        padding: 22px 0;
+    }
+
+    .letter-counter {
+        font-size: 0.62rem;
+    }
+
+    .letter-hero {
+        width: min(100% - 28px, 900px);
+        padding: 75px 0 50px;
+    }
+
+    .letter-title {
+        font-size: clamp(3.5rem, 17vw, 6rem);
+    }
+
+    .letter-intro {
+        margin-top: 28px;
+        font-size: 0.9rem;
+    }
+
+    .letter-section {
+        width: min(100% - 28px, 850px);
+        padding-bottom: 65px;
+    }
+
+    .letter-paper {
+        padding: 50px 30px;
+    }
+
+    .letter-paper::before {
+        inset: 12px;
+    }
+
+    .letter-greeting {
+        margin-bottom: 28px;
+    }
+
+    .letter-placeholder {
+        font-size: 0.95rem;
+        line-height: 1.9;
+    }
+
+    .letter-divider {
+        margin: 35px 0;
+    }
+
+    .letter-signature {
+        margin-top: 35px;
+    }
+
+    .letter-outro {
+        width: min(100% - 28px, 700px);
+        padding-bottom: 60px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .letter-title {
+        font-size: 3.4rem;
+    }
+
+    .letter-paper {
+        padding: 45px 24px;
+    }
+
+    .letter-placeholder {
+        font-size: 0.9rem;
+    }
+
+}

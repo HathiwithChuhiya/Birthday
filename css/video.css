@@ -1,0 +1,563 @@
+/* =========================================
+   VIDEO PAGE
+========================================= */
+
+.video-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(232, 160, 181, 0.12),
+            transparent 35%
+        ),
+        var(--black);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.video-background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.video-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(232, 160, 181, 0.08);
+    filter: blur(120px);
+}
+
+.video-page > *:not(.video-background) {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.video-header {
+    width: min(1200px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 28px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.video-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+}
+
+.video-logo-script {
+    color: var(--rose-light);
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 1.7rem;
+}
+
+.video-logo-heart {
+    color: var(--rose);
+}
+
+.video-counter {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+}
+
+.video-counter span {
+    color: var(--rose-light);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.video-hero {
+    width: min(900px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 100px 0 65px;
+
+    text-align: center;
+}
+
+.video-eyebrow {
+    margin-bottom: 20px;
+
+    color: var(--rose);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+}
+
+.video-title {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 400;
+
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.video-title span {
+    display: block;
+
+    color: var(--rose-light);
+
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: 0.9em;
+}
+
+.video-intro {
+    max-width: 620px;
+    margin: 35px auto 0;
+
+    color: var(--text-muted);
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   VIDEO PLAYER
+========================================= */
+
+.video-section {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding-bottom: 90px;
+}
+
+.video-player {
+    position: relative;
+
+    aspect-ratio: 16 / 9;
+
+    border: 1px solid rgba(232, 160, 181, 0.2);
+    border-radius: var(--radius-lg);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(232, 160, 181, 0.08),
+            rgba(33, 24, 29, 0.95)
+        );
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.video-player::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(232, 160, 181, 0.12),
+            transparent 45%
+        );
+}
+
+.video-placeholder {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.video-play-button {
+    width: 82px;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(232, 160, 181, 0.55);
+    border-radius: 50%;
+
+    background: rgba(232, 160, 181, 0.08);
+
+    color: var(--rose-light);
+
+    font-size: 1.7rem;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition-normal),
+        background var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.video-play-button:hover {
+    transform: scale(1.08);
+
+    background: rgba(232, 160, 181, 0.16);
+    border-color: var(--rose-light);
+}
+
+.video-play-icon {
+    margin-left: 5px;
+}
+
+.video-placeholder-label {
+    margin: 0 0 8px;
+
+    color: var(--cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+}
+
+.video-placeholder-text {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================
+   VIDEO INFO
+========================================= */
+
+.video-info {
+    padding: 28px 10px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.video-info-title {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.video-info-subtitle {
+    margin: 7px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.82rem;
+}
+
+.video-duration {
+    color: var(--rose);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   MOMENTS
+========================================= */
+
+.video-moments {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding-bottom: 100px;
+}
+
+.video-section-label {
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    color: var(--rose);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+}
+
+.video-moment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.video-moment {
+    min-height: 180px;
+
+    padding: 25px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    background: rgba(33, 24, 29, 0.7);
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+.video-moment:hover {
+    transform: translateY(-5px);
+    border-color: rgba(232, 160, 181, 0.35);
+}
+
+.video-moment-number {
+    color: var(--rose-light);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+}
+
+.video-moment h2 {
+    margin: 20px 0 10px;
+
+    color: var(--cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+}
+
+.video-moment p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FINAL MESSAGE
+========================================= */
+
+.video-final {
+    width: min(750px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 20px 0 80px;
+
+    text-align: center;
+}
+
+.video-final-heart {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--rose);
+
+    font-size: 2rem;
+}
+
+.video-final h2 {
+    margin: 0 0 18px;
+
+    color: var(--cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 400;
+}
+
+.video-final p {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.video-navigation {
+    width: min(1000px, calc(100% - 40px));
+    margin: 0 auto;
+
+    padding: 30px 0 60px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.video-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+
+    transition: color var(--transition-fast);
+}
+
+.video-back-link:hover {
+    color: var(--rose-light);
+}
+
+.video-back-arrow {
+    color: var(--rose);
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .video-moment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .video-header {
+        width: min(100% - 28px, 1200px);
+        padding: 22px 0;
+    }
+
+    .video-counter {
+        font-size: 0.62rem;
+    }
+
+    .video-hero {
+        width: min(100% - 28px, 900px);
+        padding: 75px 0 50px;
+    }
+
+    .video-title {
+        font-size: clamp(3.5rem, 17vw, 6rem);
+    }
+
+    .video-intro {
+        margin-top: 28px;
+        font-size: 0.9rem;
+    }
+
+    .video-section {
+        width: min(100% - 28px, 1100px);
+        padding-bottom: 70px;
+    }
+
+    .video-player {
+        aspect-ratio: 16 / 10;
+    }
+
+    .video-play-button {
+        width: 68px;
+        height: 68px;
+        font-size: 1.4rem;
+    }
+
+    .video-placeholder-label {
+        font-size: 1.1rem;
+    }
+
+    .video-info {
+        display: block;
+        padding-top: 22px;
+    }
+
+    .video-duration {
+        display: block;
+        margin-top: 12px;
+    }
+
+    .video-moments {
+        width: min(100% - 28px, 1100px);
+        padding-bottom: 70px;
+    }
+
+    .video-moment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-moment {
+        min-height: 160px;
+    }
+
+    .video-final {
+        width: min(100% - 28px, 750px);
+        padding-bottom: 60px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .video-title {
+        font-size: 3.4rem;
+    }
+
+}
