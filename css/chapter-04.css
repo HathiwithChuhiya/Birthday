@@ -1,0 +1,2193 @@
+/* =========================================================
+   CHAPTER 04
+   THE LOVE HYPOTHESIS
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.chapter04-page {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(216,178,124,0.08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(232,160,181,0.05),
+            transparent 35%
+        ),
+        #0d0a0c;
+}
+
+
+.chapter04-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255,190,110,0.035),
+            transparent 35%
+        );
+}
+
+
+/* =========================================================
+   BOOK
+========================================================= */
+
+.chapter04-book {
+
+    position: relative;
+    z-index: 2;
+
+    width:
+        min(
+            1380px,
+            calc(100% - 60px)
+        );
+
+    margin:
+        45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        16px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT PAGE
+========================================================= */
+
+.chapter04-left {
+
+    min-height:
+        840px;
+
+    padding:
+        12px;
+
+    background:
+        #090a10;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.55);
+}
+
+
+.chapter04-cover {
+
+    position:
+        relative;
+
+    min-height:
+        816px;
+
+    overflow:
+        hidden;
+
+    padding:
+        35px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #080d17 0%,
+            #10121b 42%,
+            #24191a 100%
+        );
+
+    border:
+        1px solid
+        rgba(216,178,124,0.65);
+
+    box-shadow:
+        inset 0 0 80px
+        rgba(0,0,0,0.55);
+}
+
+
+.chapter04-cover::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        10px;
+
+    border:
+        1px solid
+        rgba(216,178,124,0.22);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.cover04-top {
+
+    position:
+        relative;
+
+    z-index:
+        20;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    color:
+        #e8c47d;
+
+    font-size:
+        0.72rem;
+
+    letter-spacing:
+        0.2em;
+}
+
+
+.cover04-top span:nth-child(2),
+.cover04-top span:nth-child(4) {
+
+    color:
+        #f0a2b7;
+
+    font-size:
+        1rem;
+}
+
+
+.cover04-star {
+
+    color:
+        #e8c47d !important;
+
+    font-size:
+        0.95rem;
+}
+
+
+/* =========================================================
+   SIDE WORDS
+========================================================= */
+
+.cover04-side {
+
+    position:
+        absolute;
+
+    z-index:
+        15;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+
+    color:
+        #eee2cc;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size:
+        0.76rem;
+
+    line-height:
+        1.3;
+
+    letter-spacing:
+        0.04em;
+}
+
+
+.cover04-side.left {
+
+    top:
+        52px;
+
+    left:
+        28px;
+
+    width:
+        175px;
+
+    transform:
+        rotate(-2deg);
+}
+
+
+.cover04-side span:nth-child(2),
+.cover04-side span:nth-child(4),
+.cover04-side span:nth-child(6) {
+
+    color:
+        #f09eae;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.cover04-title {
+
+    position:
+        relative;
+
+    z-index:
+        15;
+
+    margin:
+        38px 150px 0;
+
+    text-align:
+        center;
+}
+
+
+.cover04-title h1 {
+
+    margin:
+        0;
+
+    color:
+        #fff3dc;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            2.5rem,
+            4.4vw,
+            4.8rem
+        );
+
+    line-height:
+        0.95;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        -0.04em;
+}
+
+
+.cover04-title h1 span {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    font-weight:
+        700;
+}
+
+
+.cover04-subtitle {
+
+    margin-top:
+        17px;
+
+    color:
+        #e8b45e;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        clamp(
+            1.55rem,
+            2.8vw,
+            2.7rem
+        );
+
+    line-height:
+        1;
+
+    transform:
+        rotate(-3deg);
+}
+
+
+/* =========================================================
+   FORMULA
+========================================================= */
+
+.love-formula {
+
+    position:
+        absolute;
+
+    z-index:
+        15;
+
+    top:
+        265px;
+
+    right:
+        28px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        #e6bd70;
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size:
+        0.62rem;
+
+    letter-spacing:
+        0.08em;
+}
+
+
+.love-formula strong {
+
+    color:
+        #ef9eb0;
+
+    font-size:
+        0.85rem;
+}
+
+
+/* =========================================================
+   LOVE SCENE
+========================================================= */
+
+.love-scene {
+
+    position:
+        absolute;
+
+    left:
+        35px;
+
+    right:
+        35px;
+
+    bottom:
+        35px;
+
+    height:
+        47%;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #6d422e 0%,
+            #4d3025 48%,
+            #1e1718 100%
+        );
+
+    border:
+        1px solid
+        rgba(216,178,124,0.35);
+
+    box-shadow:
+        inset 0 0 80px
+        rgba(0,0,0,0.55);
+}
+
+
+/* =========================================================
+   LIGHT
+========================================================= */
+
+.scene04-light {
+
+    position:
+        absolute;
+
+    width:
+        420px;
+
+    height:
+        420px;
+
+    right:
+        -60px;
+
+    top:
+        -150px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,214,145,0.3),
+            transparent 68%
+        );
+
+    filter:
+        blur(10px);
+}
+
+
+/* =========================================================
+   WINDOW
+========================================================= */
+
+.scene04-window {
+
+    position:
+        absolute;
+
+    right:
+        8%;
+
+    top:
+        8%;
+
+    width:
+        27%;
+
+    height:
+        62%;
+
+    border:
+        8px solid
+        #302229;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f9ca7b,
+            #c66e45
+        );
+
+    box-shadow:
+        0 0 50px
+        rgba(255,184,94,0.35);
+}
+
+
+.scene04-window span:first-child {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        0;
+
+    width:
+        6px;
+
+    height:
+        100%;
+
+    background:
+        rgba(55,39,40,0.7);
+}
+
+
+.scene04-window span:last-child {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        50%;
+
+    width:
+        100%;
+
+    height:
+        6px;
+
+    background:
+        rgba(55,39,40,0.7);
+}
+
+
+/* =========================================================
+   BOARD
+========================================================= */
+
+.scene04-board {
+
+    position:
+        absolute;
+
+    top:
+        8%;
+
+    left:
+        8%;
+
+    width:
+        40%;
+
+    height:
+        37%;
+
+    padding:
+        15px;
+
+    background:
+        #18201c;
+
+    border:
+        5px solid
+        #3c2b25;
+
+    color:
+        rgba(239,225,194,0.8);
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    box-shadow:
+        inset 0 0 25px
+        rgba(0,0,0,0.5);
+}
+
+
+.scene04-board small {
+
+    display:
+        block;
+
+    margin-bottom:
+        12px;
+
+    color:
+        #e6bd70;
+
+    font-size:
+        0.55rem;
+
+    letter-spacing:
+        0.12em;
+}
+
+
+.scene04-board div {
+
+    margin-top:
+        7px;
+
+    font-size:
+        0.6rem;
+}
+
+
+.scene04-board span {
+
+    color:
+        #f09eb0;
+}
+
+
+/* =========================================================
+   DESKS
+========================================================= */
+
+.scene04-desk {
+
+    position:
+        absolute;
+
+    height:
+        25px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #9b6948,
+            #4b2d24
+        );
+
+    border:
+        1px solid
+        rgba(255,215,160,0.15);
+
+    transform:
+        skewX(-12deg);
+
+    box-shadow:
+        0 15px 20px
+        rgba(0,0,0,0.35);
+}
+
+
+.desk-one {
+
+    left:
+        3%;
+
+    bottom:
+        23%;
+
+    width:
+        42%;
+}
+
+
+.desk-two {
+
+    left:
+        30%;
+
+    bottom:
+        13%;
+
+    width:
+        52%;
+}
+
+
+.desk-three {
+
+    right:
+        -5%;
+
+    bottom:
+        5%;
+
+    width:
+        55%;
+}
+
+
+/* =========================================================
+   PEOPLE
+========================================================= */
+
+.scene04-person {
+
+    position:
+        absolute;
+
+    bottom:
+        14%;
+
+    width:
+        105px;
+
+    height:
+        180px;
+}
+
+
+.person-boy {
+
+    left:
+        25%;
+}
+
+
+.person-girl {
+
+    left:
+        52%;
+
+    transform:
+        scaleX(-1);
+}
+
+
+.person04-head {
+
+    position:
+        absolute;
+
+    left:
+        25px;
+
+    top:
+        0;
+
+    width:
+        52px;
+
+    height:
+        58px;
+
+    border-radius:
+        48% 48% 45% 45%;
+
+    background:
+        #6b4335;
+
+    box-shadow:
+        inset 8px 3px 0
+        rgba(35,24,24,0.7);
+}
+
+
+.person04-body {
+
+    position:
+        absolute;
+
+    left:
+        12px;
+
+    top:
+        52px;
+
+    width:
+        80px;
+
+    height:
+        115px;
+
+    border-radius:
+        45px 45px 10px 10px;
+
+    background:
+        #f0e7d9;
+}
+
+
+.person04-arm {
+
+    position:
+        absolute;
+
+    top:
+        85px;
+
+    left:
+        0;
+
+    width:
+        82px;
+
+    height:
+        20px;
+
+    border-radius:
+        20px;
+
+    background:
+        #e9d7c2;
+
+    transform:
+        rotate(-18deg);
+}
+
+
+/* =========================================================
+   GLANCE
+========================================================= */
+
+.scene04-glance {
+
+    position:
+        absolute;
+
+    left:
+        45%;
+
+    top:
+        43%;
+
+    color:
+        #f2c36e;
+
+    font-size:
+        1.2rem;
+
+    transform:
+        rotate(-8deg);
+
+    opacity:
+        0.9;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.scene04-letter {
+
+    position:
+        absolute;
+
+    right:
+        6%;
+
+    bottom:
+        4%;
+
+    width:
+        105px;
+
+    padding:
+        13px 10px;
+
+    background:
+        #ead5aa;
+
+    color:
+        #49352d;
+
+    font-family:
+        "Brush Script MT",
+        cursive;
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.15;
+
+    text-align:
+        center;
+
+    transform:
+        rotate(5deg);
+
+    box-shadow:
+        0 8px 15px
+        rgba(0,0,0,0.35);
+}
+
+
+.scene04-letter strong {
+
+    display:
+        block;
+
+    font-size:
+        1.15rem;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.scene04-note {
+
+    position:
+        absolute;
+
+    left:
+        7%;
+
+    bottom:
+        5%;
+
+    padding:
+        10px 15px;
+
+    background:
+        #d9b96e;
+
+    color:
+        #40312a;
+
+    font-family:
+        "Brush Script MT",
+        cursive;
+
+    font-size:
+        1rem;
+
+    transform:
+        rotate(-7deg);
+
+    box-shadow:
+        0 7px 14px
+        rgba(0,0,0,0.3);
+}
+
+
+.scene04-note span {
+
+    color:
+        #a83e59;
+}
+
+
+/* =========================================================
+   BOOK STACK
+========================================================= */
+
+.scene04-books {
+
+    position:
+        absolute;
+
+    left:
+        5%;
+
+    bottom:
+        1%;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+    transform:
+        rotate(-4deg);
+}
+
+
+.scene04-books span {
+
+    display:
+        block;
+
+    padding:
+        4px 12px;
+
+    color:
+        #44332b;
+
+    background:
+        #c5a37b;
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size:
+        0.55rem;
+
+    box-shadow:
+        0 2px 3px
+        rgba(0,0,0,0.3);
+}
+
+
+.scene04-books span:nth-child(2) {
+    margin-left: 8px;
+}
+
+.scene04-books span:nth-child(3) {
+    margin-left: 2px;
+}
+
+.scene04-books span:nth-child(4) {
+    margin-left: 12px;
+}
+
+.scene04-books span:nth-child(5) {
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+.scene04-heart {
+
+    position:
+        absolute;
+
+    color:
+        #f09caf;
+
+    font-size:
+        1.3rem;
+}
+
+
+.heart-a {
+
+    top:
+        18%;
+
+    left:
+        62%;
+}
+
+
+.heart-b {
+
+    top:
+        30%;
+
+    right:
+        15%;
+
+    font-size:
+        0.9rem;
+}
+
+
+/* =========================================================
+   THOUGHT
+========================================================= */
+
+.cover04-thought {
+
+    position:
+        absolute;
+
+    z-index:
+        18;
+
+    right:
+        25px;
+
+    top:
+        125px;
+
+    width:
+        105px;
+
+    color:
+        #eee0c9;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.35;
+
+    text-align:
+        center;
+
+    transform:
+        rotate(5deg);
+}
+
+
+/* =========================================================
+   BOTTLE
+========================================================= */
+
+.cover04-bottle {
+
+    position:
+        absolute;
+
+    z-index:
+        18;
+
+    right:
+        70px;
+
+    top:
+        48px;
+
+    width:
+        52px;
+
+    height:
+        75px;
+}
+
+
+.bottle-neck {
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        20px;
+
+    width:
+        12px;
+
+    height:
+        25px;
+
+    border:
+        2px solid
+        #e5d3b5;
+
+    border-bottom:
+        none;
+}
+
+
+.bottle-body {
+
+    position:
+        absolute;
+
+    bottom:
+        0;
+
+    left:
+        5px;
+
+    width:
+        42px;
+
+    height:
+        50px;
+
+    border:
+        2px solid
+        #e5d3b5;
+
+    border-radius:
+        8px 8px 15px 15px;
+
+    color:
+        #ef8fa5;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        1.3rem;
+}
+
+
+/* =========================================================
+   SPARKS
+========================================================= */
+
+.cover04-spark {
+
+    position:
+        absolute;
+
+    color:
+        #e8c47d;
+
+    z-index:
+        20;
+}
+
+
+.spark-one {
+
+    left:
+        48%;
+
+    top:
+        32px;
+
+    font-size:
+        1.3rem;
+}
+
+
+.spark-two {
+
+    right:
+        13%;
+
+    top:
+        215px;
+
+    font-size:
+        1rem;
+}
+
+
+/* =========================================================
+   RIGHT PAPER
+========================================================= */
+
+.chapter04-right {
+
+    min-height:
+        840px;
+
+    padding:
+        12px;
+
+    background:
+        #2b1d18;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.55);
+}
+
+
+.letter04-paper {
+
+    position:
+        relative;
+
+    min-height:
+        816px;
+
+    overflow:
+        hidden;
+
+    padding:
+        38px 185px 55px 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5e4c3,
+            #ead0a8 55%,
+            #e6c99e
+        );
+
+    color:
+        #392c27;
+
+    box-shadow:
+        inset 0 0 80px
+        rgba(100,62,31,0.12);
+
+    border:
+        1px solid
+        rgba(108,70,36,0.25);
+}
+
+
+.letter04-paper::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        12px;
+
+    border:
+        1px solid
+        rgba(116,76,39,0.18);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.letter04-envelope {
+
+    position:
+        absolute;
+
+    top:
+        45px;
+
+    right:
+        48px;
+
+    width:
+        82px;
+
+    height:
+        55px;
+
+    border:
+        2px solid
+        rgba(92,58,45,0.7);
+
+    transform:
+        rotate(-5deg);
+}
+
+
+.letter04-envelope::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        5px;
+
+    right:
+        5px;
+
+    top:
+        0;
+
+    height:
+        38px;
+
+    border-left:
+        1px solid
+        rgba(92,58,45,0.5);
+
+    border-bottom:
+        1px solid
+        rgba(92,58,45,0.5);
+
+    transform:
+        rotate(-28deg);
+}
+
+
+.envelope-heart {
+
+    position:
+        absolute;
+
+    z-index:
+        2;
+
+    left:
+        34px;
+
+    top:
+        17px;
+
+    color:
+        #d95d75;
+
+    font-size:
+        1.1rem;
+}
+
+
+/* =========================================================
+   LETTER CONTENT
+========================================================= */
+
+.letter04-content {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size:
+        clamp(
+            0.85rem,
+            1.15vw,
+            1.05rem
+        );
+
+    line-height:
+        1.8;
+}
+
+
+.letter04-content p {
+
+    margin:
+        0 0 19px;
+
+    color:
+        #332823;
+}
+
+
+.letter04-content i {
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        1.1em;
+}
+
+
+.letter04-content strong {
+
+    color:
+        #33251f;
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================================
+   MIDDLE POWER LINE
+========================================================= */
+
+.chapter04-power {
+
+    margin:
+        24px 0;
+
+    padding:
+        18px 12px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid
+        rgba(105,66,42,0.3);
+
+    border-bottom:
+        1px solid
+        rgba(105,66,42,0.3);
+
+    transform:
+        rotate(-1deg);
+}
+
+
+.chapter04-power span {
+
+    display:
+        block;
+
+    color:
+        #80644a;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        1.2rem;
+}
+
+
+.chapter04-power strong {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        #a74c62;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        1.15rem;
+}
+
+
+/* =========================================================
+   FORMULA STACK
+========================================================= */
+
+.paper-formula {
+
+    width:
+        135px;
+
+    margin:
+        18px auto 25px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    transform:
+        rotate(-4deg);
+}
+
+
+.paper-formula span,
+.paper-formula strong {
+
+    width:
+        100%;
+
+    padding:
+        4px 8px;
+
+    text-align:
+        center;
+
+    background:
+        rgba(255,247,222,0.58);
+
+    border:
+        1px solid
+        rgba(92,58,37,0.25);
+
+    font-family:
+        "Trebuchet MS",
+        sans-serif;
+
+    font-size:
+        0.58rem;
+
+    letter-spacing:
+        0.08em;
+}
+
+
+.paper-formula span:nth-child(2) {
+    transform: rotate(1deg);
+}
+
+.paper-formula span:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+.paper-formula span:nth-child(4) {
+    transform: rotate(1deg);
+}
+
+
+.paper-formula strong {
+
+    color:
+        #a74c62;
+
+    font-family:
+        "Brush Script MT",
+        cursive;
+
+    font-size:
+        0.9rem;
+
+    letter-spacing:
+        0;
+}
+
+
+/* =========================================================
+   ENDING POWER
+========================================================= */
+
+.chapter04-ending-power {
+
+    margin:
+        28px 0 25px;
+
+    padding:
+        20px 12px;
+
+    text-align:
+        center;
+
+    color:
+        #725642;
+
+    border-top:
+        1px solid
+        rgba(105,66,42,0.25);
+
+    border-bottom:
+        1px solid
+        rgba(105,66,42,0.25);
+}
+
+
+.chapter04-ending-power span {
+
+    display:
+        block;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        1.05rem;
+}
+
+
+.chapter04-ending-power strong {
+
+    display:
+        block;
+
+    margin:
+        5px 0;
+
+    color:
+        #a54d62;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        1.2rem;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.chapter04-ending {
+
+    margin-top:
+        25px;
+
+    text-align:
+        center;
+
+    color:
+        #72503d;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        1.15rem;
+
+    line-height:
+        1.25;
+
+    transform:
+        rotate(-2deg);
+}
+
+
+.chapter04-ending strong {
+
+    display:
+        block;
+
+    color:
+        #a94760;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        1.55rem;
+
+    letter-spacing:
+        0.04em;
+}
+
+
+.chapter04-ending span {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        #a94760;
+
+    font-size:
+        1rem;
+}
+
+
+/* =========================================================
+   PAPER NOTES
+========================================================= */
+
+.paper04-note {
+
+    position:
+        absolute;
+
+    z-index:
+        8;
+
+    width:
+        125px;
+
+    padding:
+        10px 8px;
+
+    background:
+        #f0dcae;
+
+    color:
+        #594033;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.15;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 8px 18px
+        rgba(64,38,24,0.25);
+}
+
+
+.note-one {
+
+    top:
+        145px;
+
+    right:
+        20px;
+
+    transform:
+        rotate(5deg);
+}
+
+
+.note-two {
+
+    top:
+        300px;
+
+    right:
+        18px;
+
+    transform:
+        rotate(-4deg);
+}
+
+
+.note-three {
+
+    top:
+        460px;
+
+    right:
+        20px;
+
+    transform:
+        rotate(4deg);
+}
+
+
+.note-four {
+
+    bottom:
+        85px;
+
+    right:
+        22px;
+
+    transform:
+        rotate(-6deg);
+}
+
+
+/* =========================================================
+   PAPER HEARTS
+========================================================= */
+
+.paper04-heart {
+
+    position:
+        absolute;
+
+    z-index:
+        7;
+
+    color:
+        #d85c72;
+
+    font-size:
+        1.7rem;
+}
+
+
+.paper-heart-one {
+
+    top:
+        245px;
+
+    right:
+        145px;
+}
+
+
+.paper-heart-two {
+
+    top:
+        520px;
+
+    right:
+        150px;
+
+    font-size:
+        1.1rem;
+
+    color:
+        #795143;
+}
+
+
+.paper-heart-three {
+
+    bottom:
+        150px;
+
+    left:
+        48%;
+
+    font-size:
+        1.4rem;
+}
+
+
+.paper04-star {
+
+    position:
+        absolute;
+
+    right:
+        155px;
+
+    bottom:
+        35px;
+
+    color:
+        #ad8052;
+
+    font-size:
+        1.3rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .chapter04-title {
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+
+    .cover04-side.left {
+        width: 145px;
+        font-size: 0.68rem;
+    }
+
+    .cover04-thought {
+        right: 18px;
+        width: 90px;
+        font-size: 0.78rem;
+    }
+
+    .letter04-paper {
+        padding-right: 155px;
+    }
+
+    .paper04-note {
+        width: 105px;
+        font-size: 0.72rem;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .chapter04-book {
+
+        width:
+            calc(100% - 30px);
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            20px;
+    }
+
+    .chapter04-left,
+    .chapter04-right {
+
+        min-height:
+            auto;
+    }
+
+    .chapter04-cover,
+    .letter04-paper {
+
+        min-height:
+            760px;
+    }
+
+    .chapter04-side {
+        display:
+            none;
+    }
+
+    .cover04-side.left {
+        display:
+            none;
+    }
+
+    .cover04-title {
+
+        margin-left:
+            20px;
+
+        margin-right:
+            20px;
+    }
+
+    .letter04-paper {
+
+        padding:
+            38px 35px 50px;
+    }
+
+    .paper04-note {
+
+        display:
+            none;
+    }
+
+    .letter04-envelope {
+
+        right:
+            30px;
+    }
+
+    .chapter04-power strong,
+    .chapter04-ending-power strong {
+
+        font-size:
+            1rem;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .chapter04-book {
+
+        margin-top:
+            25px;
+
+        width:
+            calc(100% - 20px);
+    }
+
+    .chapter04-cover {
+
+        padding:
+            25px 18px;
+    }
+
+    .cover04-top {
+
+        font-size:
+            0.58rem;
+
+        gap:
+            8px;
+    }
+
+    .cover04-title {
+
+        margin-top:
+            35px;
+    }
+
+    .cover04-title h1 {
+
+        font-size:
+            2.25rem;
+    }
+
+    .cover04-subtitle {
+
+        font-size:
+            1.4rem;
+    }
+
+    .love-formula {
+
+        display:
+            none;
+    }
+
+    .cover04-thought {
+
+        display:
+            none;
+    }
+
+    .love-scene {
+
+        left:
+            18px;
+
+        right:
+            18px;
+
+        bottom:
+            18px;
+    }
+
+    .scene04-board {
+
+        width:
+            48%;
+
+        padding:
+            8px;
+    }
+
+    .scene04-person {
+
+        transform:
+            scale(0.75);
+
+        transform-origin:
+            bottom center;
+    }
+
+    .person-boy {
+        left: 17%;
+    }
+
+    .person-girl {
+        left: 48%;
+    }
+
+    .scene04-letter {
+        transform:
+            scale(0.75)
+            rotate(5deg);
+
+        transform-origin:
+            bottom right;
+    }
+
+    .scene04-books {
+        transform:
+            scale(0.8)
+            rotate(-4deg);
+
+        transform-origin:
+            bottom left;
+    }
+
+    .letter04-paper {
+
+        padding:
+            30px 22px 45px;
+    }
+
+    .letter04-content {
+
+        font-size:
+            0.83rem;
+
+        line-height:
+            1.75;
+    }
+
+    .paper-formula {
+
+        width:
+            120px;
+    }
+
+    .chapter04-ending strong {
+
+        font-size:
+            1.25rem;
+    }
+}
