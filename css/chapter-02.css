@@ -1,0 +1,1503 @@
+/* =========================================================
+   CHAPTER 02
+   THE HATING GAME
+   CINEMATIC BOOK SPREAD
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.chapter02-page {
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(232,160,181,0.06),
+            transparent 50%
+        ),
+        #0d0a0c;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.chapter02-bg {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(216,178,124,0.05),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(232,160,181,0.04),
+            transparent 30%
+        );
+}
+
+
+
+/* =========================================================
+   OPEN BOOK
+========================================================= */
+
+.chapter02-book {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            1350px,
+            calc(100% - 60px)
+        );
+
+    margin:
+        45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 16px;
+
+    align-items: stretch;
+}
+
+
+
+/* =========================================================
+   LEFT PAGE
+========================================================= */
+
+.chapter02-left {
+
+    min-height: 820px;
+
+    padding: 12px;
+
+    background:
+        #090a12;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.5);
+}
+
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.chapter02-cover {
+
+    position: relative;
+
+    min-height: 796px;
+
+    overflow: hidden;
+
+    padding:
+        35px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #0b0c15 0%,
+            #0d0d15 100%
+        );
+
+    border:
+        1px solid
+        rgba(216,178,124,0.55);
+
+    box-shadow:
+        inset 0 0 50px
+        rgba(0,0,0,0.35);
+}
+
+
+/* inner border */
+
+.chapter02-cover::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px solid
+        rgba(216,178,124,0.18);
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   COVER TOP
+========================================================= */
+
+.cover-top {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color:
+        #e8c47d;
+
+    font-size:
+        0.7rem;
+
+    letter-spacing:
+        0.22em;
+
+    font-weight:
+        500;
+}
+
+
+.cover-top span {
+
+    color:
+        #ee9eb3;
+}
+
+
+.cover-top span:nth-child(3) {
+
+    color:
+        #e8c47d;
+}
+
+
+.cover-star {
+
+    font-size:
+        0.9rem;
+
+    color:
+        #e8c47d !important;
+}
+
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.cover-title {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top:
+        60px;
+
+    text-align:
+        center;
+}
+
+
+.cover-title h1 {
+
+    margin:
+        0;
+
+    color:
+        #fff4df;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            3rem,
+            5vw,
+            5.2rem
+        );
+
+    line-height:
+        0.9;
+
+    font-weight:
+        400;
+
+    letter-spacing:
+        -0.045em;
+}
+
+
+.cover-title h1 span {
+
+    display:
+        block;
+
+    margin-top:
+        8px;
+
+    font-weight:
+        700;
+}
+
+
+.cover-subtitle {
+
+    margin-top:
+        22px;
+
+    color:
+        #ed9caf;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        clamp(
+            2rem,
+            3.8vw,
+            3.7rem
+        );
+
+    line-height:
+        1;
+
+    transform:
+        rotate(-3deg);
+}
+
+
+
+/* =========================================================
+   CINEMATIC CLASSROOM SCENE
+========================================================= */
+
+.chapter02-scene {
+
+    position: absolute;
+
+    left:
+        35px;
+
+    right:
+        35px;
+
+    bottom:
+        35px;
+
+    height:
+        48%;
+
+    overflow:
+        hidden;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #75472f 0%,
+            #563321 45%,
+            #24191a 100%
+        );
+
+    border:
+        1px solid
+        rgba(216,178,124,0.35);
+
+    box-shadow:
+
+        inset 0 0 80px
+        rgba(0,0,0,0.55),
+
+        0 20px 35px
+        rgba(0,0,0,0.35);
+}
+
+
+
+/* =========================================================
+   WARM WALL LIGHT
+========================================================= */
+
+.scene-wall-light {
+
+    position: absolute;
+
+    width:
+        420px;
+
+    height:
+        420px;
+
+    right:
+        5%;
+
+    top:
+        -30px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,211,139,0.28),
+            transparent 68%
+        );
+
+    filter:
+        blur(15px);
+}
+
+
+
+/* =========================================================
+   WINDOW
+========================================================= */
+
+.scene-window {
+
+    position: absolute;
+
+    right:
+        8%;
+
+    top:
+        9%;
+
+    width:
+        30%;
+
+    height:
+        66%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffd78d,
+            #ef9858
+        );
+
+    border:
+        10px solid
+        #302229;
+
+    box-shadow:
+
+        0 0 55px
+        rgba(255,184,94,0.38);
+}
+
+
+.window-cross {
+
+    position: absolute;
+
+    z-index:
+        2;
+
+    background:
+        rgba(68,44,40,0.65);
+}
+
+
+.window-cross.vertical {
+
+    width:
+        7px;
+
+    height:
+        100%;
+
+    left:
+        50%;
+}
+
+
+.window-cross.horizontal {
+
+    width:
+        100%;
+
+    height:
+        7px;
+
+    top:
+        50%;
+}
+
+
+.window-glow {
+
+    position: absolute;
+
+    inset:
+        0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,240,185,0.2),
+            transparent 60%
+        );
+}
+
+
+
+/* =========================================================
+   BLACKBOARD
+========================================================= */
+
+.chalkboard {
+
+    position: absolute;
+
+    left:
+        8%;
+
+    top:
+        10%;
+
+    width:
+        32%;
+
+    height:
+        43%;
+
+    padding:
+        18px;
+
+    background:
+        #17221f;
+
+    border:
+        7px solid
+        #52382b;
+
+    box-shadow:
+
+        0 12px 25px
+        rgba(0,0,0,0.4);
+
+    color:
+        #e6d7b9;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    text-align:
+        center;
+}
+
+
+.chalk-title {
+
+    font-size:
+        0.7rem;
+
+    letter-spacing:
+        0.12em;
+
+    margin-bottom:
+        15px;
+}
+
+
+.chalk-line {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    color:
+        #e6a1b1;
+
+    font-size:
+        0.65rem;
+
+    margin-bottom:
+        18px;
+}
+
+
+.chalk-small {
+
+    font-size:
+        0.57rem;
+
+    line-height:
+        1.8;
+
+    opacity:
+        0.75;
+}
+
+
+
+/* =========================================================
+   SCHOOL DESKS
+========================================================= */
+
+.school-desk {
+
+    position: absolute;
+
+    left:
+        10%;
+
+    width:
+        80%;
+
+    height:
+        16%;
+
+    border-radius:
+        5px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #75472f,
+            #3c241e
+        );
+
+    box-shadow:
+
+        0 15px 25px
+        rgba(0,0,0,0.4);
+}
+
+
+.school-desk::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        8%;
+
+    right:
+        8%;
+
+    bottom:
+        -45px;
+
+    height:
+        45px;
+
+    border-left:
+        6px solid
+        #2b1b1b;
+
+    border-right:
+        6px solid
+        #2b1b1b;
+}
+
+
+.desk-back {
+
+    bottom:
+        56%;
+
+    transform:
+        scale(.72);
+
+    opacity:
+        .55;
+}
+
+
+.desk-middle {
+
+    bottom:
+        34%;
+
+    transform:
+        scale(.88);
+
+    opacity:
+        .8;
+}
+
+
+.desk-front {
+
+    bottom:
+        7%;
+}
+
+
+
+/* =========================================================
+   BOOKS
+========================================================= */
+
+.school-book {
+
+    position: absolute;
+
+    z-index:
+        10;
+
+    bottom:
+        16%;
+
+    width:
+        115px;
+
+    height:
+        24px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        #8b5b43;
+
+    color:
+        #f2dec0;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        0.55rem;
+
+    box-shadow:
+        0 5px 10px
+        rgba(0,0,0,0.3);
+}
+
+
+.book-left {
+
+    left:
+        18%;
+
+    transform:
+        rotate(-5deg);
+}
+
+
+.book-right {
+
+    left:
+        32%;
+
+    bottom:
+        20%;
+
+    transform:
+        rotate(4deg);
+
+    background:
+        #a26a7a;
+}
+
+
+
+/* =========================================================
+   STUDENT SILHOUETTES
+========================================================= */
+
+.student-shadow {
+
+    position: absolute;
+
+    z-index:
+        8;
+
+    bottom:
+        18%;
+
+    width:
+        70px;
+
+    height:
+        125px;
+
+    border-radius:
+        35px 35px 8px 8px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #181319,
+            #312125
+        );
+
+    opacity:
+        .95;
+}
+
+
+.student-shadow::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    top:
+        -35px;
+
+    left:
+        11px;
+
+    border-radius:
+        50%;
+
+    background:
+        #1b161c;
+}
+
+
+.shadow-one {
+
+    left:
+        42%;
+
+    transform:
+        rotate(-2deg);
+}
+
+
+.shadow-two {
+
+    left:
+        51%;
+
+    transform:
+        rotate(2deg);
+}
+
+
+
+/* =========================================================
+   SMALL NOTE
+========================================================= */
+
+.scene-note {
+
+    position: absolute;
+
+    z-index:
+        20;
+
+    left:
+        25px;
+
+    bottom:
+        25px;
+
+    color:
+        #f4dfc5;
+
+    font-family:
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        0.72rem;
+
+    line-height:
+        1.6;
+
+    transform:
+        rotate(-4deg);
+}
+
+
+.scene-note strong {
+
+    color:
+        #ee9db1;
+}
+
+
+.scene-heart {
+
+    position: absolute;
+
+    right:
+        30px;
+
+    bottom:
+        25px;
+
+    color:
+        #ee9db1;
+
+    font-size:
+        1.8rem;
+}
+
+
+
+/* =========================================================
+   COVER DECORATIONS
+========================================================= */
+
+.cover-flower {
+
+    position: absolute;
+
+    z-index:
+        20;
+
+    top:
+        105px;
+
+    right:
+        25px;
+
+    color:
+        #e99fb0;
+
+    font-size:
+        1.5rem;
+}
+
+
+.cover-spark {
+
+    position: absolute;
+
+    z-index:
+        20;
+
+    color:
+        #e7c27a;
+}
+
+
+.spark-one {
+
+    top:
+        75px;
+
+    left:
+        40px;
+}
+
+
+.spark-two {
+
+    bottom:
+        100px;
+
+    right:
+        28px;
+}
+
+
+
+/* =========================================================
+   RIGHT PAPER
+========================================================= */
+
+.chapter02-right {
+
+    min-height:
+        820px;
+
+    padding:
+        12px;
+
+    background:
+        #171014;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.5);
+}
+
+
+.letter-paper {
+
+    position:
+        relative;
+
+    min-height:
+        796px;
+
+    overflow:
+        hidden;
+
+    padding:
+        55px 65px 45px;
+
+    background:
+
+        linear-gradient(
+            110deg,
+            #f5e3c2,
+            #fff1d5 50%,
+            #ecd7b2
+        );
+
+    color:
+        #35282a;
+
+    box-shadow:
+
+        inset 0 0 60px
+        rgba(108,72,43,0.13);
+}
+
+
+.letter-paper::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        10px;
+
+    border:
+        1px dashed
+        rgba(111,76,47,0.22);
+
+    pointer-events:
+        none;
+}
+
+
+
+/* =========================================================
+   LETTER CONTENT
+========================================================= */
+
+.letter-content {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    max-width:
+        650px;
+
+    margin:
+        auto;
+
+    font-family:
+
+        "Segoe Print",
+        "Noto Sans Devanagari",
+        "Nirmala UI",
+        cursive;
+
+    font-size:
+        clamp(
+            0.82rem,
+            1.2vw,
+            1rem
+        );
+
+    line-height:
+        1.7;
+}
+
+
+.letter-content p {
+
+    margin:
+        0 0 20px;
+}
+
+
+.letter-content i {
+
+    font-family:
+        "Segoe Script",
+        cursive;
+}
+
+
+
+/* =========================================================
+   CHEMISTRY BOX
+========================================================= */
+
+.chemistry-box {
+
+    margin:
+        25px 0;
+
+    padding:
+        10px 18px;
+
+    border-left:
+        4px solid
+        #eb91a8;
+
+    line-height:
+        1.7;
+}
+
+
+.chemistry-box strong {
+
+    display:
+        inline-block;
+
+    margin-top:
+        4px;
+
+    padding:
+        2px 8px;
+
+    color:
+        #c94f70;
+
+    background:
+        rgba(236,143,165,0.25);
+
+    border-radius:
+        4px;
+}
+
+
+
+/* =========================================================
+   PINK NOTE
+========================================================= */
+
+.pink-note {
+
+    position:
+        absolute;
+
+    z-index:
+        8;
+
+    right:
+        30px;
+
+    bottom:
+        130px;
+
+    width:
+        145px;
+
+    padding:
+        15px;
+
+    background:
+        #efa8b7;
+
+    color:
+        #513139;
+
+    font-family:
+        "Segoe Print",
+        "Noto Sans Devanagari",
+        cursive;
+
+    font-size:
+        0.7rem;
+
+    line-height:
+        1.6;
+
+    transform:
+        rotate(-5deg);
+
+    box-shadow:
+        0 12px 20px
+        rgba(90,50,55,0.15);
+}
+
+
+.pink-note strong {
+
+    color:
+        #752a40;
+}
+
+
+
+/* =========================================================
+   PAPER DECORATIONS
+========================================================= */
+
+.letter-top-heart {
+
+    position:
+        absolute;
+
+    top:
+        25px;
+
+    right:
+        45px;
+
+    color:
+        #e35f80;
+
+    font-size:
+        2rem;
+}
+
+
+.letter-flower {
+
+    position:
+        absolute;
+
+    right:
+        25px;
+
+    top:
+        120px;
+
+    color:
+        #d77f91;
+
+    font-size:
+        1.5rem;
+}
+
+
+.letter-star {
+
+    position:
+        absolute;
+
+    left:
+        25px;
+
+    top:
+        45%;
+
+    color:
+        #c8894f;
+
+    font-size:
+        1.2rem;
+}
+
+
+
+/* =========================================================
+   LETTER ENDING
+========================================================= */
+
+.letter-ending {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        25px;
+
+    width:
+        80%;
+
+    transform:
+        translateX(-50%)
+        rotate(-1deg);
+
+    text-align:
+        center;
+
+    color:
+        #d83e62;
+
+    font-family:
+        "Segoe Script",
+        "Noto Sans Devanagari",
+        cursive;
+
+    font-size:
+        0.9rem;
+
+    line-height:
+        1.45;
+}
+
+
+.letter-ending strong {
+
+    font-size:
+        1.05rem;
+}
+
+
+.letter-ending span {
+
+    font-size:
+        0.85rem;
+
+    text-decoration:
+        underline;
+
+    text-underline-offset:
+        6px;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .chapter02-book {
+
+        width:
+            calc(100% - 25px);
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            25px;
+    }
+
+
+    .chapter02-left,
+    .chapter02-right {
+
+        min-height:
+            760px;
+    }
+
+
+    .chapter02-cover,
+    .letter-paper {
+
+        min-height:
+            735px;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .chapter02-book {
+
+        width:
+            calc(100% - 14px);
+
+        margin-top:
+            25px;
+    }
+
+
+    .chapter02-left,
+    .chapter02-right {
+
+        min-height:
+            680px;
+
+        padding:
+            7px;
+    }
+
+
+    .chapter02-cover,
+    .letter-paper {
+
+        min-height:
+            655px;
+    }
+
+
+    .chapter02-cover {
+
+        padding:
+            25px 18px;
+    }
+
+
+    .cover-title {
+
+        margin-top:
+            45px;
+    }
+
+
+    .cover-title h1 {
+
+        font-size:
+            2.5rem;
+    }
+
+
+    .cover-subtitle {
+
+        font-size:
+            1.9rem;
+    }
+
+
+    .chapter02-scene {
+
+        left:
+            18px;
+
+        right:
+            18px;
+
+        bottom:
+            20px;
+
+        height:
+            42%;
+    }
+
+
+    .chalkboard {
+
+        width:
+            36%;
+
+        padding:
+            10px;
+    }
+
+
+    .chalk-title {
+
+        font-size:
+            0.48rem;
+    }
+
+
+    .chalk-small {
+
+        font-size:
+            0.45rem;
+    }
+
+
+    .school-book {
+
+        width:
+            75px;
+
+        font-size:
+            0.42rem;
+    }
+
+
+    .student-shadow {
+
+        transform:
+            scale(.75);
+    }
+
+
+    .letter-paper {
+
+        padding:
+            40px 28px 35px;
+    }
+
+
+    .letter-content {
+
+        font-size:
+            0.72rem;
+
+        line-height:
+            1.6;
+    }
+
+
+    .pink-note {
+
+        right:
+            12px;
+
+        bottom:
+            105px;
+
+        width:
+            115px;
+
+        font-size:
+            0.6rem;
+    }
+
+
+    .letter-ending {
+
+        font-size:
+            0.7rem;
+    }
+
+}

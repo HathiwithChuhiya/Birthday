@@ -1,0 +1,2782 @@
+/* =========================================================
+   CHAPTER 01 — PREMIUM STORYBOOK
+   BETTER THAN THE MOVIES
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+.book-page {
+    --ink: #2d211c;
+    --paper: #f3e2c3;
+    --paper-light: #f8ecd5;
+    --paper-dark: #d8bd91;
+
+    --night: #080c17;
+    --night-mid: #111b2d;
+    --night-light: #243551;
+
+    --gold: #d7a064;
+    --gold-light: #f1c58a;
+    --rose: #d58a7b;
+    --rose-light: #efb2a1;
+
+    position: relative;
+    min-height: 100svh;
+
+    padding:
+        24px
+        24px
+        70px;
+
+    overflow-x: hidden;
+
+    color: #f7eadb;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 25%,
+            rgba(155, 87, 63, 0.18),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 20% 80%,
+            rgba(71, 49, 42, 0.22),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #05070d 0%,
+            #0b0b10 50%,
+            #090709 100%
+        );
+}
+
+
+/* =========================================================
+   CINEMATIC BACKGROUND
+========================================================= */
+
+.book-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+.book-background::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            transparent 25%,
+            rgba(0,0,0,0.58) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+.book-background::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.16;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.025) 0px,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.book-stars {
+    position: absolute;
+    inset: -100px;
+
+    opacity: 0.42;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,236,193,0.9) 0 1px,
+            transparent 1.6px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.55) 0 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        130px 130px,
+        210px 210px;
+
+    background-position:
+        20px 30px,
+        70px 110px;
+
+    animation:
+        starsMove 28s linear infinite;
+}
+
+
+@keyframes starsMove {
+
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50px, -90px, 0);
+    }
+}
+
+
+/* =========================================================
+   AMBIENT GLOW
+========================================================= */
+
+.book-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: 0.6;
+}
+
+
+.book-glow-one {
+    width: 650px;
+    height: 650px;
+
+    top: 5%;
+    left: -15%;
+
+    background:
+        rgba(105, 52, 43, 0.17);
+}
+
+
+.book-glow-two {
+    width: 600px;
+    height: 600px;
+
+    right: -15%;
+    bottom: 0;
+
+    background:
+        rgba(168, 102, 66, 0.12);
+}
+
+
+/* =========================================================
+   DECORATIVE BRANCHES
+========================================================= */
+
+.branch {
+    position: absolute;
+
+    width: 330px;
+    height: 230px;
+
+    opacity: 0.23;
+
+    border-top:
+        1px solid
+        rgba(211,157,104,0.7);
+}
+
+
+.branch::before,
+.branch::after {
+    content: "";
+
+    position: absolute;
+
+    width: 45px;
+    height: 18px;
+
+    border-radius: 100% 0;
+
+    border-top:
+        1px solid
+        rgba(220,164,110,0.6);
+
+    border-left:
+        1px solid
+        rgba(220,164,110,0.4);
+}
+
+
+.branch::before {
+    left: 55px;
+    top: -15px;
+
+    transform: rotate(-25deg);
+}
+
+
+.branch::after {
+    right: 45px;
+    top: -28px;
+
+    transform: rotate(30deg);
+}
+
+
+.branch-left {
+    left: -120px;
+    top: 40px;
+
+    transform: rotate(27deg);
+}
+
+
+.branch-right {
+    right: -120px;
+    bottom: 60px;
+
+    transform: rotate(-27deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.book-header {
+    position: relative;
+    z-index: 50;
+
+    width:
+        min(
+            calc(100% - 30px),
+            1420px
+        );
+
+    margin:
+        0 auto 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding:
+        5px
+        8px
+        24px;
+}
+
+
+.book-logo {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+    color: #f4e4d1;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 1.15rem;
+
+    letter-spacing: 0.02em;
+}
+
+
+.book-logo-script {
+    color: var(--rose-light);
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size: 1.6rem;
+}
+
+
+.book-heart {
+    position: absolute;
+
+    top: -10px;
+    right: -17px;
+
+    color: var(--rose);
+
+    font-size: 0.85rem;
+}
+
+
+.book-counter {
+    color:
+        rgba(246,226,205,0.42);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.24em;
+
+    text-transform: uppercase;
+}
+
+
+.book-counter strong {
+    color: var(--gold-light);
+
+    font-weight: 500;
+
+    margin-inline: 6px;
+}
+
+
+/* =========================================================
+   OPEN BOOK
+========================================================= */
+
+.open-book {
+    position: relative;
+    z-index: 5;
+
+    width:
+        min(
+            1420px,
+            100%
+        );
+
+    margin-inline: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        28px
+        minmax(0, 1fr);
+
+    align-items: stretch;
+
+    perspective: 1800px;
+
+    filter:
+        drop-shadow(
+            0 45px 65px
+            rgba(0,0,0,0.65)
+        );
+}
+
+
+/* =========================================================
+   BOOK SHEETS
+========================================================= */
+
+.book-sheet {
+    position: relative;
+
+    min-height: 930px;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+.book-sheet-left {
+    border-radius:
+        12px
+        3px
+        3px
+        12px;
+
+    background:
+        radial-gradient(
+            circle at 50% 70%,
+            rgba(193,101,66,0.28),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #0c1322 0%,
+            #111a2c 45%,
+            #080e19 100%
+        );
+
+    box-shadow:
+        inset
+        -18px 0 35px
+        rgba(0,0,0,0.34),
+
+        inset
+        0 0 60px
+        rgba(0,0,0,0.22);
+}
+
+
+.book-sheet-right {
+    border-radius:
+        3px
+        12px
+        12px
+        3px;
+
+    background:
+        radial-gradient(
+            circle at 45% 35%,
+            rgba(255,255,255,0.38),
+            transparent 30%
+        ),
+        linear-gradient(
+            105deg,
+            #dfc49c 0%,
+            #f3e3c5 25%,
+            #f7e9ce 55%,
+            #e5cba5 100%
+        );
+
+    color: var(--ink);
+
+    box-shadow:
+        inset
+        18px 0 35px
+        rgba(87,53,27,0.13),
+
+        inset
+        0 0 45px
+        rgba(117,73,35,0.10);
+}
+
+
+/* =========================================================
+   PAGE EDGE
+========================================================= */
+
+.book-sheet-left::after,
+.book-sheet-right::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.4;
+}
+
+
+.book-sheet-left::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.03),
+            transparent 5%,
+            transparent 95%,
+            rgba(0,0,0,0.3)
+        );
+}
+
+
+.book-sheet-right::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(82,51,26,0.14),
+            transparent 5%,
+            transparent 95%,
+            rgba(94,59,30,0.1)
+        );
+}
+
+
+/* =========================================================
+   PAGE FRAME
+========================================================= */
+
+.sheet-border {
+    position: relative;
+
+    height: calc(100% - 42px);
+
+    margin: 21px;
+
+    border:
+        1px solid
+        rgba(218,155,91,0.76);
+
+    overflow: hidden;
+}
+
+
+.sheet-border::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border:
+        1px solid
+        rgba(222,161,96,0.24);
+
+    pointer-events: none;
+}
+
+
+.sheet-border::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border:
+        1px solid
+        rgba(222,161,96,0.08);
+
+    pointer-events: none;
+}
+
+
+.sheet-border-right {
+    border-color:
+        rgba(123,76,40,0.27);
+}
+
+
+.sheet-border-right::before {
+    border-color:
+        rgba(123,76,40,0.13);
+}
+
+
+.sheet-border-right::after {
+    border-color:
+        rgba(123,76,40,0.06);
+}
+
+
+/* =========================================================
+   BOOK SPINE
+========================================================= */
+
+.book-spine {
+    position: relative;
+
+    z-index: 30;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.65),
+            rgba(255,255,255,0.06) 35%,
+            rgba(0,0,0,0.42) 50%,
+            rgba(255,255,255,0.04) 65%,
+            rgba(0,0,0,0.72)
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(0,0,0,0.75);
+}
+
+
+.book-spine::before {
+    content: "";
+
+    position: absolute;
+
+    top: 3%;
+    bottom: 3%;
+    left: 50%;
+
+    width: 1px;
+
+    background:
+        rgba(224,166,104,0.12);
+}
+
+
+/* =========================================================
+   LEFT COVER HEADING
+========================================================= */
+
+.cover-heading {
+    position: relative;
+
+    z-index: 15;
+
+    padding-top: 108px;
+
+    text-align: center;
+}
+
+
+.cover-chapter {
+    margin: 0;
+
+    color:
+        #e7c9a6;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            0.95rem,
+            1.6vw,
+            1.3rem
+        );
+
+    letter-spacing: 0.28em;
+
+    text-shadow:
+        0 2px 10px
+        rgba(0,0,0,0.7);
+}
+
+
+.cover-divider {
+    width: 190px;
+
+    margin:
+        19px auto 26px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+
+.cover-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(226,164,98,0.9)
+        );
+}
+
+
+.cover-divider span:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(226,164,98,0.9),
+            transparent
+        );
+}
+
+
+.cover-divider b {
+    color:
+        var(--gold-light);
+
+    font-size: 0.72rem;
+
+    text-shadow:
+        0 0 12px
+        rgba(236,176,106,0.55);
+}
+
+
+.cover-title-small {
+    margin: 0;
+
+    color:
+        #ead2b5;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            1.8rem,
+            3.7vw,
+            3.8rem
+        );
+
+    line-height: 1;
+
+    letter-spacing: 0.04em;
+
+    text-shadow:
+        0 3px 14px
+        rgba(0,0,0,0.55);
+}
+
+
+.cover-heading h1 {
+    margin:
+        5px 0 0;
+
+    color:
+        #e8a46b;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+    font-size:
+        clamp(
+            4rem,
+            7vw,
+            7.2rem
+        );
+
+    font-weight: 400;
+
+    line-height: 0.88;
+
+    text-shadow:
+        0 4px 20px
+        rgba(0,0,0,0.45),
+
+        0 0 20px
+        rgba(229,151,95,0.12);
+}
+
+
+.cover-heart {
+    display: block;
+
+    margin-top: 23px;
+
+    color:
+        #d9947d;
+
+    font-size: 2rem;
+
+    text-shadow:
+        0 0 16px
+        rgba(213,138,123,0.4);
+}
+
+
+/* =========================================================
+   MOON
+========================================================= */
+
+.cover-moon {
+    position: absolute;
+
+    top: 74px;
+    right: 48px;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            #fff1bd,
+            #efc96d 70%
+        );
+
+    box-shadow:
+        0 0 12px
+        rgba(255,220,142,0.35),
+
+        0 0 35px
+        rgba(239,190,91,0.15);
+
+    z-index: 12;
+}
+
+
+.cover-moon div {
+    position: absolute;
+
+    width: 47px;
+    height: 47px;
+
+    top: -8px;
+    left: 13px;
+
+    border-radius: 50%;
+
+    background:
+        #111827;
+}
+
+
+/* =========================================================
+   COVER SCENE
+========================================================= */
+
+.cover-scene {
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+
+    bottom: 118px;
+
+    height: 395px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(221,155,91,0.28);
+
+    background:
+        linear-gradient(
+            180deg,
+            #070d19 0%,
+            #101b31 38%,
+            #233553 61%,
+            #9a5c4b 83%,
+            #20191c 100%
+        );
+
+    box-shadow:
+        inset
+        0 0 45px
+        rgba(0,0,0,0.5),
+
+        0 12px 25px
+        rgba(0,0,0,0.25);
+}
+
+
+.cover-scene::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(0,0,0,0.5)
+        );
+
+    pointer-events: none;
+
+    z-index: 30;
+}
+
+
+.scene-sky {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 76%,
+            rgba(237,142,91,0.58),
+            transparent 34%
+        );
+}
+
+
+.scene-sky::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 70% 28%,
+            rgba(255,220,160,0.15),
+            transparent 18%
+        );
+}
+
+
+/* =========================================================
+   SCENE STARS
+========================================================= */
+
+.scene-stars {
+    position: absolute;
+    inset: 15px;
+
+    color:
+        rgba(255,224,168,0.92);
+
+    font-size: 1rem;
+
+    z-index: 5;
+}
+
+
+.scene-stars span {
+    position: absolute;
+
+    animation:
+        starPulse 3s ease-in-out infinite;
+}
+
+
+.scene-stars span:nth-child(1) {
+    left: 10%;
+    top: 18%;
+}
+
+.scene-stars span:nth-child(2) {
+    left: 28%;
+    top: 12%;
+
+    animation-delay: .8s;
+}
+
+.scene-stars span:nth-child(3) {
+    left: 44%;
+    top: 25%;
+
+    animation-delay: 1.4s;
+}
+
+.scene-stars span:nth-child(4) {
+    right: 30%;
+    top: 12%;
+
+    animation-delay: .5s;
+}
+
+.scene-stars span:nth-child(5) {
+    right: 15%;
+    top: 25%;
+
+    animation-delay: 1.7s;
+}
+
+.scene-stars span:nth-child(6) {
+    right: 38%;
+    top: 38%;
+
+    animation-delay: 1s;
+}
+
+.scene-stars span:nth-child(7) {
+    left: 18%;
+    top: 38%;
+
+    animation-delay: 2s;
+}
+
+
+@keyframes starPulse {
+
+    0%,
+    100% {
+        opacity: .45;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   CITY
+========================================================= */
+
+.scene-city {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 69px;
+
+    height: 95px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    gap: 3px;
+
+    opacity: .78;
+
+    z-index: 8;
+}
+
+
+.scene-city i {
+    position: relative;
+
+    display: block;
+
+    width: 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1c202b,
+            #10121b
+        );
+
+    box-shadow:
+        inset
+        0 5px 0
+        rgba(238,171,105,0.1);
+}
+
+
+.scene-city i::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px 6px;
+
+    background:
+        repeating-linear-gradient(
+            180deg,
+            rgba(231,181,112,0.22) 0 3px,
+            transparent 3px 11px
+        );
+}
+
+
+.scene-city i:nth-child(1) {
+    height: 42px;
+}
+
+.scene-city i:nth-child(2) {
+    height: 72px;
+}
+
+.scene-city i:nth-child(3) {
+    height: 54px;
+}
+
+.scene-city i:nth-child(4) {
+    width: 35px;
+    height: 100px;
+}
+
+.scene-city i:nth-child(5) {
+    height: 63px;
+}
+
+.scene-city i:nth-child(6) {
+    height: 81px;
+}
+
+.scene-city i:nth-child(7) {
+    height: 47px;
+}
+
+
+/* =========================================================
+   WINDOW
+========================================================= */
+
+.scene-window {
+    position: absolute;
+
+    left: 50%;
+    bottom: 38px;
+
+    width: 1px;
+    height: 210px;
+
+    background:
+        rgba(255,213,147,0.07);
+
+    z-index: 7;
+}
+
+
+/* =========================================================
+   CHARACTERS
+========================================================= */
+
+.character {
+    position: absolute;
+
+    bottom: 18px;
+
+    z-index: 25;
+
+    filter:
+        drop-shadow(
+            0 8px 8px
+            rgba(0,0,0,0.35)
+        );
+}
+
+
+/* =========================================================
+   BOY
+========================================================= */
+
+.character-boy {
+    left: 14%;
+
+    width: 150px;
+    height: 230px;
+}
+
+
+.boy-head {
+    position: absolute;
+
+    left: 40px;
+    top: 15px;
+
+    width: 62px;
+    height: 70px;
+
+    border-radius:
+        48% 48% 45% 45%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #c98461,
+            #9d5c48
+        );
+
+    transform:
+        rotate(-7deg);
+}
+
+
+.boy-head::after {
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 3px;
+
+    right: 8px;
+    top: 35px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(40,22,22,0.55);
+}
+
+
+.boy-hair {
+    position: absolute;
+
+    left: -5px;
+    top: -8px;
+
+    width: 72px;
+    height: 36px;
+
+    border-radius:
+        55% 45% 20% 30%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2c1b1d,
+            #110f14
+        );
+
+    transform:
+        rotate(-8deg);
+}
+
+
+.boy-neck {
+    position: absolute;
+
+    left: 57px;
+    top: 78px;
+
+    width: 25px;
+    height: 30px;
+
+    background:
+        #9d5d49;
+}
+
+
+.boy-body {
+    position: absolute;
+
+    left: 25px;
+    top: 98px;
+
+    width: 105px;
+    height: 130px;
+
+    border-radius:
+        25px 25px 4px 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d9d2c9,
+            #f1ebe2,
+            #cfc7bd
+        );
+}
+
+
+.boy-shirt {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 48%,
+            rgba(125,116,108,0.45) 49%,
+            rgba(125,116,108,0.45) 52%,
+            transparent 53%
+        );
+}
+
+
+.boy-tie {
+    position: absolute;
+
+    top: 0;
+    left: 47px;
+
+    width: 12px;
+    height: 90px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #12151f,
+            #303444,
+            #10121a
+        );
+
+    clip-path:
+        polygon(
+            30% 0,
+            70% 0,
+            100% 70%,
+            50% 100%,
+            0 70%
+        );
+}
+
+
+.boy-arm {
+    position: absolute;
+
+    left: 5px;
+    top: 95px;
+
+    width: 70px;
+    height: 32px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eee8df,
+            #cfc8be
+        );
+
+    transform:
+        rotate(-12deg);
+
+    transform-origin:
+        right center;
+}
+
+
+/* =========================================================
+   GIRL
+========================================================= */
+
+.character-girl {
+    right: 13%;
+
+    width: 155px;
+    height: 235px;
+}
+
+
+.girl-head {
+    position: absolute;
+
+    right: 35px;
+    top: 12px;
+
+    width: 62px;
+    height: 70px;
+
+    border-radius: 48%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d08763,
+            #ad644e
+        );
+}
+
+
+.girl-hair {
+    position: absolute;
+
+    right: -10px;
+    top: -7px;
+
+    width: 80px;
+    height: 100px;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #302025,
+            #171116
+        );
+
+    z-index: -1;
+}
+
+
+.girl-neck {
+    position: absolute;
+
+    right: 53px;
+    top: 76px;
+
+    width: 25px;
+    height: 30px;
+
+    background:
+        #ad684f;
+}
+
+
+.girl-body {
+    position: absolute;
+
+    right: 15px;
+    top: 98px;
+
+    width: 115px;
+    height: 132px;
+
+    border-radius:
+        25px 25px 4px 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d9d2c9,
+            #f1ebe2,
+            #cfc7bd
+        );
+}
+
+
+.girl-tie {
+    position: absolute;
+
+    top: 0;
+    left: 51px;
+
+    width: 12px;
+    height: 90px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #16151d,
+            #30303b,
+            #121118
+        );
+
+    clip-path:
+        polygon(
+            30% 0,
+            70% 0,
+            100% 70%,
+            50% 100%,
+            0 70%
+        );
+}
+
+
+.girl-arm {
+    position: absolute;
+
+    right: 65px;
+    top: 88px;
+
+    width: 75px;
+    height: 30px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eee8df,
+            #cfc8be
+        );
+
+    transform:
+        rotate(12deg);
+}
+
+
+/* =========================================================
+   SCHOOL DESKS
+========================================================= */
+
+.school-desk {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 170px;
+    height: 28px;
+
+    border-radius:
+        8px 8px 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8a5a3d,
+            #55382d 50%,
+            #30211e
+        );
+
+    box-shadow:
+        inset 0 2px 0
+        rgba(244,177,104,0.18),
+
+        0 -4px 10px
+        rgba(0,0,0,0.15);
+
+    z-index: 30;
+}
+
+
+.school-desk::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+
+    top: 28px;
+
+    height: 100px;
+
+    border-left:
+        8px solid
+        #33231f;
+
+    border-right:
+        8px solid
+        #33231f;
+}
+
+
+.desk-boy {
+    left: 4%;
+}
+
+
+.desk-girl {
+    right: 4%;
+}
+
+
+/* =========================================================
+   COVER QUOTE
+========================================================= */
+
+.cover-bottom {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 31px;
+
+    z-index: 35;
+
+    text-align: center;
+}
+
+
+.cover-bottom p {
+    margin: 0;
+
+    color:
+        #e5d3bc;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            0.82rem,
+            1.3vw,
+            1.05rem
+        );
+
+    line-height: 1.55;
+
+    text-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.6);
+}
+
+
+.cover-bottom p + p {
+    color:
+        #efc99d;
+}
+
+
+.bottom-divider {
+    width: 155px;
+
+    margin:
+        13px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.bottom-divider span {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(224,158,94,0.7)
+        );
+}
+
+
+.bottom-divider span:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(224,158,94,0.7),
+            transparent
+        );
+}
+
+
+.bottom-divider b {
+    color:
+        var(--gold-light);
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   COVER STARS
+========================================================= */
+
+.decor-star {
+    position: absolute;
+
+    z-index: 40;
+
+    color:
+        rgba(233,173,104,0.9);
+
+    text-shadow:
+        0 0 12px
+        rgba(233,173,104,0.35);
+
+    font-size: 1.25rem;
+}
+
+
+.star-one {
+    left: 30px;
+    top: 150px;
+}
+
+
+.star-two {
+    right: 80px;
+    top: 220px;
+}
+
+
+.star-three {
+    left: 55px;
+    bottom: 300px;
+}
+
+
+.star-four {
+    right: 30px;
+    bottom: 230px;
+}
+
+
+/* =========================================================
+   PAPER TEXTURE
+========================================================= */
+
+.paper-texture {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.55;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 20%,
+            rgba(110,70,38,0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 80% 80%,
+            rgba(110,70,38,0.08),
+            transparent 35%
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            rgba(110,70,38,0.018) 0px,
+            rgba(110,70,38,0.018) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+}
+
+
+/* =========================================================
+   PAPER DECORATIONS
+========================================================= */
+
+.paper-star {
+    position: absolute;
+
+    z-index: 3;
+
+    color:
+        rgba(125,79,43,0.52);
+
+    font-size: 1rem;
+}
+
+
+.paper-star-one {
+    top: 25px;
+    right: 40px;
+}
+
+
+.paper-star-two {
+    top: 190px;
+    left: 30px;
+}
+
+
+.paper-star-three {
+    right: 35px;
+    top: 470px;
+}
+
+
+.paper-star-four {
+    left: 30px;
+    bottom: 80px;
+}
+
+
+/* =========================================================
+   MOVIE CLAPPER
+========================================================= */
+
+.movie-clapper {
+    position: absolute;
+
+    top: 68px;
+    right: 43px;
+
+    width: 100px;
+
+    transform:
+        rotate(-8deg);
+
+    z-index: 20;
+
+    filter:
+        drop-shadow(
+            0 5px 5px
+            rgba(68,42,24,0.2)
+        );
+}
+
+
+.clapper-top {
+    padding: 7px 6px;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #332923 0 13px,
+            #c4a37d 13px 17px
+        );
+
+    color:
+        #f1dfc4;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.12em;
+
+    border:
+        2px solid
+        #2b211d;
+
+    transform:
+        skewY(-10deg);
+}
+
+
+.clapper-body {
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #40312a,
+            #211a18
+        );
+
+    border:
+        2px solid
+        #2b211d;
+}
+
+
+.clapper-body span {
+    color:
+        #dca18e;
+
+    font-size: 1.8rem;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter-content {
+    position: relative;
+
+    z-index: 10;
+
+    padding:
+        45px
+        110px
+        25px
+        55px;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size:
+        clamp(
+            0.78rem,
+            1.02vw,
+            0.98rem
+        );
+
+    line-height: 1.55;
+
+    color:
+        #30251f;
+
+    text-shadow:
+        0 0 0 transparent;
+}
+
+
+.letter-content p {
+    margin:
+        0 0 16px;
+}
+
+
+.letter-content .little-note {
+    color:
+        #75413d;
+
+    font-size:
+        0.9rem;
+}
+
+
+.little-note span {
+    color:
+        #d25c65;
+
+    font-size:
+        1.3rem;
+}
+
+
+.highlight-line {
+    margin-top: 5px;
+
+    text-align: center;
+
+    color:
+        #9e5142;
+
+    font-size:
+        1.12rem;
+
+    font-weight: 600;
+}
+
+
+.final-story-line {
+    text-align: center;
+
+    color:
+        #843e3d;
+
+    font-size:
+        1rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   REAL STORY STAMP
+========================================================= */
+
+.real-story-stamp {
+    position: absolute;
+
+    top: 355px;
+    right: 24px;
+
+    z-index: 20;
+
+    width: 92px;
+
+    padding:
+        12px 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 2px;
+
+    border:
+        2px dashed
+        rgba(137,81,45,0.48);
+
+    background:
+        rgba(213,178,136,0.4);
+
+    color:
+        #71442e;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        0.61rem;
+
+    letter-spacing:
+        0.1em;
+
+    transform:
+        rotate(8deg);
+
+    box-shadow:
+        0 4px 8px
+        rgba(84,51,29,0.1);
+}
+
+
+.real-story-stamp b {
+    margin-top: 4px;
+
+    color:
+        #9d554b;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   POPCORN
+========================================================= */
+
+.popcorn {
+    position: absolute;
+
+    right: 30px;
+    bottom: 125px;
+
+    z-index: 20;
+
+    width: 90px;
+
+    transform:
+        rotate(2deg);
+
+    filter:
+        drop-shadow(
+            0 6px 5px
+            rgba(74,46,27,0.15)
+        );
+}
+
+
+.popcorn-top {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1px;
+
+    color:
+        #fff4d8;
+
+    font-size:
+        1.3rem;
+
+    letter-spacing:
+        -5px;
+}
+
+
+.popcorn-box {
+    min-height: 110px;
+
+    padding:
+        20px
+        8px
+        10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #c87854 0 13px,
+            #f1d1a9 13px 25px
+        );
+
+    border:
+        2px solid
+        rgba(99,57,37,0.3);
+
+    color:
+        #4b3025;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        0.7rem;
+
+    line-height:
+        1.2;
+
+    box-shadow:
+        inset
+        0 0 10px
+        rgba(255,255,255,0.18),
+
+        0 7px 10px
+        rgba(75,47,30,0.15);
+}
+
+
+.popcorn-box b {
+    font-size:
+        1.2rem;
+}
+
+
+/* =========================================================
+   PERSONAL ENDING
+========================================================= */
+
+.personal-ending {
+    position: absolute;
+
+    left: 55px;
+    right: 110px;
+    bottom: 24px;
+
+    z-index: 30;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    text-align: left;
+}
+
+
+.personal-ending p {
+    margin: 0;
+
+    color:
+        #8a3d52;
+
+    font-size:
+        clamp(
+            0.92rem,
+            1.25vw,
+            1.15rem
+        );
+
+    transform:
+        rotate(-1deg);
+}
+
+
+.personal-ending strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        #79334a;
+
+    font-size:
+        clamp(
+            0.86rem,
+            1.12vw,
+            1.05rem
+        );
+}
+
+
+.personal-ending .birthday-line {
+    margin-top: 8px;
+
+    color:
+        #bd4a46;
+
+    font-size:
+        clamp(
+            0.88rem,
+            1.16vw,
+            1.08rem
+        );
+
+    text-decoration:
+        underline;
+
+    text-decoration-thickness:
+        1px;
+
+    text-underline-offset:
+        5px;
+
+    transform:
+        rotate(-2deg);
+}
+
+
+.ending-heart {
+    position: absolute;
+
+    right: 20px;
+    bottom: -5px;
+
+    color:
+        #b94452;
+
+    font-size:
+        2rem;
+}
+
+
+/* =========================================================
+   HAND DRAWN LINE
+========================================================= */
+
+.hand-line {
+    position: absolute;
+
+    right: 35px;
+    bottom: 17px;
+
+    color:
+        #6e3a38;
+
+    font-family:
+        cursive;
+
+    font-size:
+        1.35rem;
+
+    transform:
+        rotate(-3deg);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.book-navigation {
+    position: relative;
+    z-index: 50;
+
+    width:
+        min(
+            1200px,
+            calc(100% - 40px)
+        );
+
+    margin:
+        35px auto 0;
+
+    padding:
+        25px 0 15px;
+
+    border-top:
+        1px solid
+        rgba(231,183,133,0.14);
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.book-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color:
+        rgba(247,234,219,0.62);
+
+    font-size:
+        0.75rem;
+
+    transition:
+        color 250ms ease,
+        transform 250ms ease;
+}
+
+
+.book-nav:hover {
+    color:
+        #f0c2ad;
+}
+
+
+.book-nav.next {
+    justify-content:
+        flex-end;
+
+    text-align:
+        right;
+}
+
+
+.book-nav small {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color:
+        #c98c63;
+
+    font-size:
+        0.48rem;
+
+    letter-spacing:
+        0.2em;
+}
+
+
+.nav-arrow {
+    color:
+        #d99770;
+
+    font-size:
+        1.2rem;
+}
+
+
+.book-nav.previous:hover {
+    transform:
+        translateX(-5px);
+}
+
+
+.book-nav.next:hover {
+    transform:
+        translateX(5px);
+}
+
+
+.book-progress {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color:
+        rgba(247,234,219,0.4);
+
+    font-size:
+        0.62rem;
+
+    letter-spacing:
+        0.2em;
+}
+
+
+.book-progress span:first-child {
+    color:
+        #e2a47b;
+
+    font-size:
+        0.8rem;
+}
+
+
+.book-progress i {
+    width:
+        38px;
+
+    height:
+        1px;
+
+    background:
+        rgba(226,164,123,0.4);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .open-book {
+        grid-template-columns:
+            1fr;
+    }
+
+    .book-spine {
+        display: none;
+    }
+
+    .book-sheet {
+        min-height:
+            850px;
+    }
+
+    .book-sheet-left {
+        border-radius:
+            12px
+            12px
+            3px
+            3px;
+    }
+
+    .book-sheet-right {
+        border-radius:
+            3px
+            3px
+            12px
+            12px;
+    }
+
+    .letter-content {
+        padding-right:
+            140px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .book-page {
+        padding:
+            14px
+            9px
+            42px;
+    }
+
+
+    .book-header {
+        padding:
+            5px
+            4px
+            18px;
+    }
+
+
+    .book-logo {
+        font-size:
+            1rem;
+    }
+
+
+    .book-logo-script {
+        font-size:
+            1.4rem;
+    }
+
+
+    .book-counter {
+        font-size:
+            0.47rem;
+
+        letter-spacing:
+            0.14em;
+    }
+
+
+    .book-sheet {
+        min-height:
+            auto;
+    }
+
+
+    .sheet-border {
+        min-height:
+            790px;
+
+        margin:
+            12px;
+    }
+
+
+    .cover-heading {
+        padding-top:
+            76px;
+    }
+
+
+    .cover-chapter {
+        font-size:
+            0.85rem;
+    }
+
+
+    .cover-title-small {
+        font-size:
+            1.75rem;
+    }
+
+
+    .cover-heading h1 {
+        font-size:
+            4.2rem;
+    }
+
+
+    .cover-moon {
+        top:
+            54px;
+
+        right:
+            27px;
+
+        width:
+            36px;
+
+        height:
+            36px;
+    }
+
+
+    .cover-moon div {
+        width:
+            34px;
+
+        height:
+            34px;
+
+        left:
+            9px;
+
+        top:
+            -5px;
+    }
+
+
+    .cover-scene {
+        left:
+            5%;
+
+        right:
+            5%;
+
+        bottom:
+            120px;
+
+        height:
+            310px;
+    }
+
+
+    .character-boy {
+        left:
+            7%;
+
+        transform:
+            scale(.72);
+
+        transform-origin:
+            bottom left;
+    }
+
+
+    .character-girl {
+        right:
+            4%;
+
+        transform:
+            scale(.72);
+
+        transform-origin:
+            bottom right;
+    }
+
+
+    .school-desk {
+        transform:
+            scale(.7);
+
+        transform-origin:
+            bottom center;
+    }
+
+
+    .cover-bottom {
+        bottom:
+            29px;
+    }
+
+
+    .cover-bottom p {
+        font-size:
+            .77rem;
+    }
+
+
+    .book-sheet-right .sheet-border {
+        min-height:
+            1070px;
+    }
+
+
+    .letter-content {
+        padding:
+            45px
+            25px
+            205px
+            25px;
+
+        font-size:
+            .8rem;
+
+        line-height:
+            1.55;
+    }
+
+
+    .movie-clapper {
+        top:
+            27px;
+
+        right:
+            24px;
+
+        width:
+            75px;
+
+        transform:
+            rotate(-7deg)
+            scale(.8);
+    }
+
+
+    .real-story-stamp {
+        top:
+            260px;
+
+        right:
+            17px;
+
+        transform:
+            rotate(7deg)
+            scale(.78);
+
+        transform-origin:
+            top right;
+    }
+
+
+    .popcorn {
+        right:
+            23px;
+
+        bottom:
+            185px;
+
+        transform:
+            scale(.73)
+            rotate(2deg);
+
+        transform-origin:
+            bottom right;
+    }
+
+
+    .personal-ending {
+        left:
+            24px;
+
+        right:
+            24px;
+
+        bottom:
+            24px;
+    }
+
+
+    .personal-ending p {
+        font-size:
+            .84rem;
+    }
+
+
+    .personal-ending strong {
+        font-size:
+            .76rem;
+    }
+
+
+    .personal-ending .birthday-line {
+        font-size:
+            .79rem;
+    }
+
+
+    .ending-heart {
+        right:
+            4px;
+    }
+
+
+    .book-navigation {
+        width:
+            calc(100% - 18px);
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap:
+            15px;
+    }
+
+
+    .book-progress {
+        display:
+            none;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .cover-heading h1 {
+        font-size:
+            3.55rem;
+    }
+
+
+    .cover-title-small {
+        font-size:
+            1.48rem;
+    }
+
+
+    .cover-scene {
+        height:
+            275px;
+    }
+
+
+    .sheet-border {
+        min-height:
+            735px;
+    }
+
+
+    .book-sheet-right .sheet-border {
+        min-height:
+            1120px;
+    }
+
+
+    .letter-content {
+        padding:
+            40px
+            19px
+            215px
+            19px;
+
+        font-size:
+            .76rem;
+    }
+
+
+    .real-story-stamp {
+        top:
+            275px;
+    }
+
+
+    .popcorn {
+        bottom:
+            192px;
+    }
+
+
+    .personal-ending p {
+        font-size:
+            .8rem;
+    }
+
+
+    .personal-ending strong {
+        font-size:
+            .73rem;
+    }
+
+
+    .personal-ending .birthday-line {
+        font-size:
+            .76rem;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .book-stars,
+    .scene-stars span {
+        animation:
+            none;
+    }
+}
