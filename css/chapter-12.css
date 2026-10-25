@@ -1,0 +1,2122 @@
+/* =========================================================
+   CHAPTER 12 — KRISHNAYAN
+   ========================================================= */
+
+.chapter-page.chapter12-page {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    min-height: 100svh;
+    height: auto !important;
+    background: #080604;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.chapter12-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            circle at 25% 25%,
+            rgba(133, 72, 29, .24),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 78% 70%,
+            rgba(55, 69, 94, .22),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #050403,
+            #17100b 45%,
+            #080604
+        );
+}
+
+
+/* =========================================================
+   OPEN BOOK
+   ========================================================= */
+
+.chapter12-book {
+    position: relative;
+    z-index: 2;
+
+    width: min(1350px, calc(100% - 40px));
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   LEFT COVER
+   ========================================================= */
+
+.chapter12-cover {
+    position: relative;
+
+    min-height: 930px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505,
+            #111824 46%,
+            #120c08
+        );
+
+    border: 1px solid rgba(212, 150, 64, .65);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.65),
+        inset 0 0 70px rgba(0,0,0,.65);
+}
+
+
+/* =========================================================
+   SPINE
+   ========================================================= */
+
+.cover12-spine {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 112px;
+
+    z-index: 30;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 42px 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #020202,
+            #12151a 45%,
+            #030303
+        );
+
+    border-right: 2px solid rgba(200, 139, 54, .7);
+
+    box-shadow:
+        inset -10px 0 25px rgba(0,0,0,.55);
+}
+
+.cover12-spine::before,
+.cover12-spine::after {
+    content: "";
+
+    position: absolute;
+
+    left: 14px;
+    right: 14px;
+
+    height: 1px;
+
+    background: #b77a2d;
+}
+
+.cover12-spine::before {
+    top: 30px;
+}
+
+.cover12-spine::after {
+    bottom: 30px;
+}
+
+.spine12-ornament {
+    color: #d99b45;
+
+    font-size: 23px;
+}
+
+.spine12-peacock {
+    font-size: 24px;
+}
+
+.spine12-title {
+    color: #d69b4a;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    letter-spacing: 1px;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+}
+
+.spine12-symbol,
+.spine12-krishna {
+    color: #d39a49;
+
+    font-size: 23px;
+}
+
+
+/* =========================================================
+   MAIN COVER
+   ========================================================= */
+
+.cover12-main {
+    position: relative;
+
+    min-height: 930px;
+
+    margin-left: 112px;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.cover12-top {
+    position: relative;
+    z-index: 20;
+
+    padding-top: 28px;
+
+    color: #e2bd7b;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    letter-spacing: 6px;
+}
+
+.cover12-heart {
+    position: relative;
+    z-index: 20;
+
+    margin-top: 5px;
+
+    color: #e5aa54;
+
+    font-size: 20px;
+}
+
+.cover12-title {
+    position: relative;
+    z-index: 20;
+
+    margin-top: 5px;
+
+    color: #efcf98;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    text-shadow:
+        0 4px 14px rgba(0,0,0,.9);
+}
+
+.cover12-title strong {
+    display: block;
+
+    font-size: clamp(46px, 5vw, 70px);
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+.title12-peacock {
+    display: block;
+
+    font-size: 28px;
+
+    margin-bottom: -3px;
+}
+
+.cover12-title-line {
+    position: relative;
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 70%;
+
+    margin: 5px auto 0;
+
+    color: #d99b4a;
+}
+
+.cover12-title-line span {
+    flex: 1;
+
+    height: 1px;
+
+    background: #d99b4a;
+}
+
+
+/* =========================================================
+   SCENE
+   ========================================================= */
+
+.krishna12-scene {
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+
+    top: 142px;
+    bottom: 0;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #071321 0%,
+            #15243a 35%,
+            #55372d 58%,
+            #b56d35 74%,
+            #170f0b 100%
+        );
+
+    border-left: 1px solid rgba(209, 151, 64, .35);
+    border-right: 1px solid rgba(209, 151, 64, .35);
+}
+
+
+/* =========================================================
+   STARS
+   ========================================================= */
+
+.sky12-stars span {
+    position: absolute;
+
+    z-index: 5;
+
+    color: #e8ca93;
+
+    text-shadow:
+        0 0 9px rgba(255, 210, 124, .7);
+}
+
+.sky12-stars span:nth-child(1) {
+    left: 12%;
+    top: 8%;
+}
+
+.sky12-stars span:nth-child(2) {
+    left: 26%;
+    top: 16%;
+}
+
+.sky12-stars span:nth-child(3) {
+    left: 43%;
+    top: 7%;
+}
+
+.sky12-stars span:nth-child(4) {
+    right: 18%;
+    top: 11%;
+}
+
+.sky12-stars span:nth-child(5) {
+    right: 35%;
+    top: 22%;
+}
+
+.sky12-stars span:nth-child(6) {
+    right: 9%;
+    top: 27%;
+}
+
+.sky12-stars span:nth-child(7) {
+    left: 54%;
+    top: 29%;
+}
+
+.sky12-stars span:nth-child(8) {
+    left: 8%;
+    top: 31%;
+}
+
+
+/* =========================================================
+   MOON
+   ========================================================= */
+
+.moon12 {
+    position: absolute;
+
+    z-index: 6;
+
+    right: 19%;
+
+    top: 18%;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #f1d7a3;
+
+    box-shadow:
+        0 0 30px rgba(246, 208, 143, .55);
+}
+
+.moon12::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+    top: -4px;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #172338;
+}
+
+
+/* =========================================================
+   ARCH
+   ========================================================= */
+
+.temple12-arch {
+    position: absolute;
+
+    z-index: 8;
+
+    left: 20px;
+    top: 0;
+
+    width: 115px;
+    height: 250px;
+
+    border:
+        14px solid #493225;
+
+    border-bottom: none;
+
+    border-radius: 80px 80px 0 0;
+
+    box-shadow:
+        inset 0 0 20px rgba(0,0,0,.55);
+}
+
+.arch12-inner {
+    position: absolute;
+
+    inset: 15px;
+
+    border:
+        2px solid rgba(211, 155, 76, .6);
+
+    border-bottom: none;
+
+    border-radius: 65px 65px 0 0;
+}
+
+.arch12-pillar {
+    position: absolute;
+
+    bottom: -350px;
+
+    width: 18px;
+    height: 350px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #30231d,
+            #73513a,
+            #2b201b
+        );
+}
+
+.arch12-pillar.left {
+    left: -14px;
+}
+
+.arch12-pillar.right {
+    right: -14px;
+}
+
+
+/* =========================================================
+   CITY
+   ========================================================= */
+
+.ghat12-city {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 265px;
+
+    height: 150px;
+
+    z-index: 7;
+}
+
+.temple12 {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 80px;
+
+    background:
+        linear-gradient(
+            to top,
+            #6b4028,
+            #b8783b
+        );
+
+    box-shadow:
+        0 0 20px rgba(226, 143, 63, .25);
+}
+
+.temple12::before {
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+
+    top: -45px;
+
+    height: 55px;
+
+    background: #9b5d32;
+
+    clip-path: polygon(
+        50% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.temple12::after {
+    content: "";
+
+    position: absolute;
+
+    left: 32px;
+
+    top: -55px;
+
+    width: 15px;
+    height: 18px;
+
+    background: #d19a54;
+}
+
+.t1 {
+    left: 20%;
+    height: 110px;
+}
+
+.t2 {
+    left: 37%;
+    height: 135px;
+    width: 70px;
+}
+
+.t3 {
+    left: 53%;
+    height: 100px;
+    width: 72px;
+}
+
+.t4 {
+    left: 67%;
+    height: 145px;
+    width: 65px;
+}
+
+.t5 {
+    right: 7%;
+    height: 85px;
+    width: 65px;
+}
+
+
+/* =========================================================
+   WATER
+   ========================================================= */
+
+.ghat12-water {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 170px;
+
+    height: 100px;
+
+    z-index: 10;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(21, 47, 65, .8),
+            #101c26
+        );
+}
+
+.ghat12-water span {
+    position: absolute;
+
+    height: 1px;
+
+    background: rgba(219, 162, 87, .55);
+}
+
+.ghat12-water span:nth-child(1) {
+    width: 30%;
+    left: 10%;
+    top: 25px;
+}
+
+.ghat12-water span:nth-child(2) {
+    width: 40%;
+    left: 43%;
+    top: 45px;
+}
+
+.ghat12-water span:nth-child(3) {
+    width: 25%;
+    left: 22%;
+    top: 70px;
+}
+
+.ghat12-water span:nth-child(4) {
+    width: 30%;
+    right: 5%;
+    top: 18px;
+}
+
+.ghat12-water span:nth-child(5) {
+    width: 22%;
+    right: 18%;
+    top: 78px;
+}
+
+.water12-reflection {
+    position: absolute;
+
+    z-index: 11;
+
+    left: 45%;
+    bottom: 170px;
+
+    width: 100px;
+    height: 90px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(231, 169, 86, .5),
+            transparent 65%
+        );
+
+    filter: blur(5px);
+}
+
+
+/* =========================================================
+   DIYAS
+   ========================================================= */
+
+.diya12 {
+    position: absolute;
+
+    z-index: 20;
+
+    font-size: 20px;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(255, 170, 67, .7)
+        );
+}
+
+.d1 {
+    left: 17%;
+    bottom: 205px;
+}
+
+.d2 {
+    left: 72%;
+    bottom: 220px;
+}
+
+.d3 {
+    left: 46%;
+    bottom: 175px;
+}
+
+.d4 {
+    right: 8%;
+    bottom: 185px;
+}
+
+
+/* =========================================================
+   KRISHNA FIGURE
+   ========================================================= */
+
+.krishna12-figure {
+    position: absolute;
+
+    z-index: 16;
+
+    left: 11%;
+
+    bottom: 215px;
+
+    width: 80px;
+    height: 190px;
+
+    opacity: .9;
+}
+
+.krishna12-head {
+    position: absolute;
+
+    left: 25px;
+    top: 25px;
+
+    width: 34px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #090909;
+}
+
+.krishna12-head span {
+    position: absolute;
+
+    right: -7px;
+    top: 20px;
+
+    width: 30px;
+    height: 3px;
+
+    background: #090909;
+
+    transform: rotate(-7deg);
+}
+
+.krishna12-hair {
+    position: absolute;
+
+    left: 16px;
+    top: 12px;
+
+    width: 50px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #050505;
+}
+
+.krishna12-body {
+    position: absolute;
+
+    left: 18px;
+    top: 58px;
+
+    width: 48px;
+    height: 110px;
+
+    border-radius: 25px 25px 8px 8px;
+
+    background: #070707;
+}
+
+.krishna12-flute {
+    position: absolute;
+
+    left: -15px;
+    top: 75px;
+
+    width: 95px;
+    height: 4px;
+
+    background: #090909;
+
+    transform: rotate(-12deg);
+}
+
+.krishna12-peacock-feather {
+    position: absolute;
+
+    left: 42px;
+    top: -3px;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   COUPLE
+   ========================================================= */
+
+.ghat12-couple {
+    position: absolute;
+
+    z-index: 25;
+
+    left: 38%;
+
+    bottom: 185px;
+
+    width: 155px;
+    height: 190px;
+}
+
+.couple12-boy,
+.couple12-girl {
+    position: absolute;
+
+    bottom: 0;
+}
+
+.couple12-boy {
+    left: 8px;
+}
+
+.couple12-girl {
+    left: 75px;
+}
+
+.c12-head {
+    width: 35px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background: #080808;
+}
+
+.c12-hair {
+    position: absolute;
+
+    left: -5px;
+    top: -7px;
+
+    width: 44px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #030303;
+}
+
+.c12-body {
+    width: 62px;
+    height: 105px;
+
+    margin-left: -13px;
+
+    border-radius: 28px 28px 10px 10px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #060606,
+            #171717
+        );
+}
+
+.couple12-girl .c12-hair {
+    left: -15px;
+
+    width: 65px;
+    height: 72px;
+
+    border-radius: 50%;
+}
+
+.couple12-girl .c12-body {
+    width: 52px;
+
+    margin-left: -8px;
+}
+
+.c12-arm {
+    position: absolute;
+
+    top: 61px;
+    left: 37px;
+
+    width: 55px;
+    height: 11px;
+
+    border-radius: 20px;
+
+    background: #080808;
+
+    transform: rotate(15deg);
+}
+
+.couple12-hands {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 70px;
+    top: 92px;
+
+    color: #d49b51;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.cover12-table {
+    position: absolute;
+
+    z-index: 30;
+
+    left: -5%;
+    right: -5%;
+
+    bottom: 0;
+
+    height: 210px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #20140e,
+            #090706
+        );
+
+    border-top:
+        1px solid rgba(207, 145, 61, .6);
+
+    box-shadow:
+        0 -20px 35px rgba(0,0,0,.5);
+}
+
+
+/* BOOK STACK */
+
+.book12-stack {
+    position: absolute;
+
+    left: 18%;
+
+    bottom: 75px;
+
+    width: 190px;
+}
+
+.book12-book {
+    padding: 14px 10px;
+
+    color: #dca65b;
+
+    background:
+        linear-gradient(
+            to right,
+            #24140f,
+            #5b301e,
+            #21130d
+        );
+
+    border:
+        1px solid #8a5b30;
+
+    box-shadow:
+        0 7px 12px rgba(0,0,0,.5);
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+.book12-book.small {
+    width: 150px;
+
+    height: 15px;
+
+    padding: 0;
+
+    margin-top: 4px;
+
+    background: #382015;
+}
+
+
+/* OPEN BOOK */
+
+.open12-book {
+    position: absolute;
+
+    left: 45%;
+
+    bottom: 22px;
+
+    width: 210px;
+    height: 105px;
+
+    display: flex;
+
+    transform:
+        perspective(300px)
+        rotateX(15deg)
+        rotate(-3deg);
+
+    box-shadow:
+        0 10px 15px rgba(0,0,0,.5);
+}
+
+.open12-page {
+    flex: 1;
+
+    background:
+        linear-gradient(
+            120deg,
+            #d9c397,
+            #9e8154
+        );
+
+    border: 1px solid #76522f;
+
+    color: #614427;
+
+    font-size: 22px;
+
+    padding-top: 35px;
+}
+
+.open12-page.left-page {
+    transform: skewY(4deg);
+}
+
+.open12-page.right-page {
+    transform: skewY(-4deg);
+}
+
+
+/* FLUTE */
+
+.flute12 {
+    position: absolute;
+
+    z-index: 35;
+
+    right: 16%;
+
+    bottom: 18px;
+
+    color: #bd8140;
+
+    font-size: 20px;
+
+    transform: rotate(-7deg);
+}
+
+
+/* LAMP */
+
+.lamp12 {
+    position: absolute;
+
+    right: 10%;
+
+    bottom: 62px;
+
+    font-size: 43px;
+
+    filter:
+        drop-shadow(
+            0 0 12px rgba(255, 170, 64, .65)
+        );
+}
+
+
+/* FEATHERS */
+
+.feather12 {
+    position: absolute;
+
+    z-index: 35;
+
+    font-size: 33px;
+}
+
+.feather-one {
+    left: 7%;
+    bottom: 22px;
+
+    transform: rotate(-20deg);
+}
+
+.feather-two {
+    right: 4%;
+    bottom: 8px;
+
+    transform: rotate(15deg);
+}
+
+
+/* =========================================================
+   POLAROIDS
+   ========================================================= */
+
+.polaroid12 {
+    position: absolute;
+
+    z-index: 40;
+
+    width: 105px;
+
+    padding: 7px 7px 15px;
+
+    background: #e6d5ae;
+
+    color: #684827;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 8px;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.45);
+
+    text-align: center;
+}
+
+.photo12 {
+    height: 82px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #26364b,
+            #8c4e2e
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+}
+
+.polaroid-a {
+    left: 4px;
+    bottom: 245px;
+
+    transform: rotate(-8deg);
+}
+
+.polaroid-b {
+    left: 9px;
+    bottom: 55px;
+
+    transform: rotate(6deg);
+}
+
+.polaroid-c {
+    right: 3px;
+    bottom: 95px;
+
+    transform: rotate(-7deg);
+}
+
+
+/* FLOWERS */
+
+.flowers12 {
+    position: absolute;
+
+    z-index: 45;
+
+    color: #ead7b0;
+
+    font-size: 25px;
+
+    letter-spacing: -5px;
+}
+
+.flowers-left {
+    left: -5px;
+    bottom: 180px;
+
+    transform: rotate(-12deg);
+}
+
+.flowers-right {
+    right: 5px;
+    bottom: 190px;
+
+    transform: rotate(9deg);
+}
+
+
+/* =========================================================
+   COVER FOOTER
+   ========================================================= */
+
+.cover12-footer {
+    position: absolute;
+
+    z-index: 50;
+
+    left: 120px;
+    right: 15px;
+
+    bottom: 9px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 16px;
+
+    color: #c68d42;
+
+    font-family: Georgia, serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.cover12-footer b {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RIGHT PAPER
+   ========================================================= */
+
+.chapter12-paper {
+    position: relative;
+
+    min-height: 930px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(107, 75, 39, .07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(107, 75, 39, .08),
+            transparent 32%
+        ),
+        #f0dfb8;
+
+    border:
+        1px solid rgba(112, 77, 40, .55);
+
+    border-radius:
+        9px 7px 10px 8px;
+
+    box-shadow:
+        0 30px 65px rgba(0,0,0,.55),
+        inset 0 0 45px rgba(94, 60, 28, .12);
+}
+
+
+/* PAPER BORDER */
+
+.paper12-border {
+    position: absolute;
+
+    inset: 14px;
+
+    border:
+        1px solid rgba(105, 70, 34, .25);
+
+    pointer-events: none;
+}
+
+
+/* PEACOCK */
+
+.paper12-peacock {
+    position: absolute;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 5;
+
+    font-size: 65px;
+
+    opacity: .55;
+
+    transform: rotate(-18deg);
+}
+
+
+/* =========================================================
+   KRISHNA DRAWING
+   ========================================================= */
+
+.krishna12-drawing {
+    position: absolute;
+
+    z-index: 4;
+
+    right: 22px;
+    top: 15px;
+
+    width: 260px;
+    height: 350px;
+
+    color: #735333;
+
+    opacity: .65;
+}
+
+.drawing12-head {
+    position: absolute;
+
+    right: 65px;
+    top: 15px;
+
+    width: 95px;
+    height: 105px;
+}
+
+.drawing12-face {
+    position: absolute;
+
+    right: 50px;
+    top: 55px;
+
+    width: 105px;
+    height: 155px;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    border-left:
+        2px solid rgba(101, 70, 39, .55);
+
+    transform:
+        rotate(12deg);
+}
+
+.drawing12-hair {
+    position: absolute;
+
+    top: 0;
+    left: 5px;
+
+    width: 100px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid rgba(101, 70, 39, .55);
+}
+
+.drawing12-feather {
+    position: absolute;
+
+    top: -25px;
+    left: 55px;
+
+    font-size: 44px;
+
+    transform: rotate(-12deg);
+}
+
+.drawing12-body {
+    position: absolute;
+
+    right: 22px;
+    top: 195px;
+
+    width: 180px;
+    height: 130px;
+
+    border-radius:
+        50% 50% 0 0;
+
+    border-top:
+        2px solid rgba(101, 70, 39, .45);
+}
+
+.drawing12-flute {
+    position: absolute;
+
+    right: 5px;
+    top: 145px;
+
+    width: 205px;
+
+    font-size: 22px;
+
+    transform: rotate(-13deg);
+}
+
+.drawing12-hand {
+    position: absolute;
+
+    right: 80px;
+    top: 160px;
+
+    width: 50px;
+    height: 70px;
+
+    border-left:
+        2px solid rgba(101, 70, 39, .5);
+
+    border-radius: 50%;
+
+    transform: rotate(25deg);
+}
+
+
+/* =========================================================
+   GHAT DRAWING
+   ========================================================= */
+
+.paper12-ghat {
+    position: absolute;
+
+    z-index: 3;
+
+    right: 35px;
+    bottom: 270px;
+
+    width: 300px;
+    height: 250px;
+
+    opacity: .6;
+}
+
+.paper12-temple {
+    position: absolute;
+
+    bottom: 65px;
+
+    width: 75px;
+    height: 100px;
+
+    border:
+        2px solid rgba(105, 72, 38, .55);
+
+    border-bottom: none;
+}
+
+.paper12-temple::before {
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+
+    top: -40px;
+
+    height: 50px;
+
+    border:
+        2px solid rgba(105, 72, 38, .55);
+
+    border-bottom: none;
+
+    clip-path: polygon(
+        50% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.ptemple-one {
+    left: 15px;
+}
+
+.ptemple-two {
+    left: 105px;
+    height: 140px;
+}
+
+.ptemple-three {
+    right: 20px;
+    height: 85px;
+}
+
+.paper12-water {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 25px;
+
+    height: 65px;
+}
+
+.paper12-water span {
+    display: block;
+
+    width: 70%;
+
+    height: 1px;
+
+    margin:
+        10px auto;
+
+    border-top:
+        1px dashed rgba(105, 72, 38, .5);
+}
+
+
+/* DIYA */
+
+.paper12-diya {
+    position: absolute;
+
+    right: 60px;
+    bottom: 230px;
+
+    z-index: 7;
+
+    font-size: 36px;
+
+    opacity: .65;
+}
+
+
+/* =========================================================
+   LETTER
+   ========================================================= */
+
+.letter12-content {
+    position: relative;
+
+    z-index: 12;
+
+    width: min(70%, 570px);
+
+    margin-left: 42px;
+
+    padding:
+        28px
+        0
+        55px;
+
+    color: #2d2219;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 13.5px;
+
+    line-height: 1.37;
+}
+
+.letter12-content p {
+    margin: 0 0 10px;
+}
+
+.letter12-content strong {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SOFT
+   ========================================================= */
+
+.krishna12-soft {
+    margin: 15px 0;
+
+    padding: 12px 14px;
+
+    border-left:
+        2px solid rgba(105, 72, 38, .6);
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+}
+
+.krishna12-soft span,
+.krishna12-soft strong {
+    display: block;
+}
+
+.krishna12-soft strong {
+    margin-top: 4px;
+
+    color: #654523;
+}
+
+
+/* =========================================================
+   POWER ONE
+   ========================================================= */
+
+.power12-one,
+.power12-main,
+.power12-final {
+    margin: 17px 0;
+
+    padding: 14px;
+
+    text-align: center;
+
+    border-top:
+        1px solid rgba(107, 72, 35, .45);
+
+    border-bottom:
+        1px solid rgba(107, 72, 35, .45);
+
+    font-family: Georgia, serif;
+
+    background:
+        rgba(111, 76, 38, .045);
+}
+
+.power12-one span,
+.power12-main span,
+.power12-final span {
+    display: block;
+
+    font-size: 11px;
+}
+
+.power12-one strong,
+.power12-main strong,
+.power12-final strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #684523;
+
+    font-size: 17px;
+}
+
+.power12-main {
+    padding: 18px;
+}
+
+.power12-main strong {
+    font-size: 20px;
+}
+
+.power12-main small,
+.power12-final small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 10px;
+}
+
+.power12-final {
+    padding: 17px;
+}
+
+.power12-final strong {
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   WORDS
+   ========================================================= */
+
+.krishna12-words {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin: 15px 0;
+}
+
+.krishna12-words span {
+    padding:
+        4px 9px;
+
+    border-bottom:
+        1px solid rgba(106, 72, 37, .4);
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+
+    color: #704c2b;
+}
+
+
+/* =========================================================
+   LITTLE NOTE
+   ========================================================= */
+
+.letter12-note {
+    margin: 17px auto;
+
+    padding: 13px;
+
+    max-width: 400px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    background:
+        rgba(108, 72, 35, .055);
+
+    border:
+        1px dashed rgba(108, 72, 35, .4);
+}
+
+.letter12-note span,
+.letter12-note strong {
+    display: block;
+}
+
+.letter12-note strong {
+    margin: 3px 0;
+
+    color: #684523;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   ENDING
+   ========================================================= */
+
+.letter12-ending {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.letter12-ending strong {
+    color: #71422b;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   PAPER PHOTOS
+   ========================================================= */
+
+.paper12-photo {
+    position: absolute;
+
+    z-index: 15;
+
+    width: 100px;
+
+    padding: 6px;
+
+    background: #e5d3ab;
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,.2);
+}
+
+.paper12-photo div {
+    height: 80px;
+
+    background:
+        linear-gradient(
+            140deg,
+            #1c2b3c,
+            #9b5935
+        );
+}
+
+.photo-right-one {
+    right: -5px;
+    top: 230px;
+
+    transform: rotate(-7deg);
+}
+
+.photo-right-two {
+    right: -8px;
+    bottom: 85px;
+
+    transform: rotate(6deg);
+}
+
+
+/* FLOWERS */
+
+.paper12-flower {
+    position: absolute;
+
+    z-index: 20;
+
+    color: #8a6745;
+
+    font-size: 27px;
+
+    opacity: .7;
+}
+
+.flower12-one {
+    left: 10px;
+    top: 220px;
+}
+
+.flower12-two {
+    left: 15px;
+    bottom: 100px;
+}
+
+.paper12-feather {
+    position: absolute;
+
+    right: 5px;
+    bottom: 10px;
+
+    z-index: 20;
+
+    font-size: 65px;
+
+    opacity: .4;
+
+    transform: rotate(18deg);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.chapter12-page .chapter-navigation {
+    position: relative;
+
+    z-index: 30;
+
+    width: min(calc(100% - 40px), 1000px);
+
+    margin-inline: auto;
+
+    padding: 35px 0 60px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .chapter12-book {
+        width: min(1000px, calc(100% - 28px));
+    }
+
+    .cover12-spine {
+        width: 90px;
+    }
+
+    .cover12-main {
+        margin-left: 90px;
+    }
+
+    .letter12-content {
+        width: 68%;
+
+        font-size: 12.5px;
+    }
+
+    .krishna12-drawing {
+        transform: scale(.8);
+
+        transform-origin: top right;
+    }
+
+    .paper12-ghat {
+        transform: scale(.8);
+
+        transform-origin: bottom right;
+    }
+}
+
+
+@media (max-width: 950px) {
+
+    .chapter12-book {
+        grid-template-columns: 1fr;
+
+        width: min(760px, calc(100% - 28px));
+    }
+
+    .chapter12-cover {
+        min-height: 800px;
+    }
+
+    .cover12-main {
+        min-height: 800px;
+    }
+
+    .chapter12-paper {
+        min-height: 900px;
+    }
+
+    .letter12-content {
+        width: 72%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .chapter12-book {
+        width: calc(100% - 18px);
+
+        margin-top: 25px;
+    }
+
+    .cover12-spine {
+        width: 68px;
+
+        padding:
+            35px 6px;
+    }
+
+    .cover12-main {
+        margin-left: 68px;
+
+        min-height: 690px;
+    }
+
+    .chapter12-cover {
+        min-height: 690px;
+    }
+
+    .cover12-top {
+        padding-top: 21px;
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .cover12-title strong {
+        font-size: 34px;
+    }
+
+    .title12-peacock {
+        font-size: 21px;
+    }
+
+    .krishna12-scene {
+        top: 115px;
+
+        left: 8px;
+        right: 8px;
+    }
+
+    .cover12-table {
+        height: 150px;
+    }
+
+    .book12-stack {
+        left: 12%;
+
+        bottom: 55px;
+
+        width: 120px;
+    }
+
+    .book12-book {
+        font-size: 8px;
+
+        padding: 9px 5px;
+    }
+
+    .open12-book {
+        left: 40%;
+
+        width: 145px;
+        height: 75px;
+    }
+
+    .lamp12 {
+        right: 7%;
+
+        bottom: 43px;
+
+        font-size: 30px;
+    }
+
+    .flute12 {
+        right: 10%;
+
+        font-size: 13px;
+    }
+
+    .polaroid12 {
+        width: 62px;
+    }
+
+    .photo12 {
+        height: 50px;
+    }
+
+    .polaroid-c {
+        display: none;
+    }
+
+    .letter12-content {
+        width: 73%;
+
+        margin-left: 30px;
+
+        padding-top: 28px;
+
+        font-size: 10.5px;
+    }
+
+    .krishna12-drawing {
+        right: -40px;
+        top: 0;
+
+        transform: scale(.62);
+
+        transform-origin: top right;
+
+        opacity: .38;
+    }
+
+    .paper12-ghat {
+        right: -65px;
+
+        transform: scale(.6);
+
+        transform-origin: bottom right;
+
+        opacity: .35;
+    }
+
+    .paper12-photo {
+        display: none;
+    }
+
+    .paper12-peacock {
+        opacity: .25;
+    }
+
+    .power12-main strong {
+        font-size: 15px;
+    }
+
+    .power12-final strong {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .cover12-title strong {
+        font-size: 29px;
+    }
+
+    .cover12-top {
+        font-size: 9px;
+    }
+
+    .letter12-content {
+        width: 70%;
+
+        margin-left: 27px;
+
+        font-size: 9.5px;
+    }
+
+    .krishna12-figure {
+        transform: scale(.75);
+
+        transform-origin: bottom left;
+    }
+
+    .power12-final strong {
+        font-size: 14px;
+    }
+}
