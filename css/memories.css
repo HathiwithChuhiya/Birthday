@@ -162,7 +162,7 @@
         moonFloat 18s ease-in-out infinite alternate;
 }
 
-
+/*
 .memories-moon::after {
     content: "";
 
@@ -177,7 +177,7 @@
     border-radius: 50%;
 
     background: #100911;
-}
+}*/
 
 
 @keyframes moonFloat {
