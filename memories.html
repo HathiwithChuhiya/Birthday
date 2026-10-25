@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -15,398 +14,558 @@
         content="Memories | Our Story"
     >
 
-    <title>
-        Memories | Our Story
-    </title>
+    <title>Memories | Our Story</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/memories.css">
     <link rel="stylesheet" href="css/locking.css">
-
 </head>
 
 
 <body>
 
-    <main class="memories-page">
+<main class="memories-page">
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="memories-background" aria-hidden="true">
+
+        <div class="memories-stars"></div>
+
+        <div class="memories-moon"></div>
+
+        <div class="memories-cloud cloud-one"></div>
+        <div class="memories-cloud cloud-two"></div>
+        <div class="memories-cloud cloud-three"></div>
+
+        <div class="memories-glow"></div>
+
+    </div>
 
 
-        <!-- ========================================
-             BACKGROUND
-        ========================================= -->
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="memories-header">
+
+        <a
+            href="index.html"
+            class="memories-logo"
+        >
+            <span>Our</span>
+
+            <span class="memories-logo-script">
+                Story
+            </span>
+
+            <span class="memories-logo-heart">
+                ♡
+            </span>
+        </a>
+
+
+        <div class="memories-counter">
+            MEMORIES <span>♡</span>
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="memories-hero">
+
+        <p class="memories-eyebrow">
+            LITTLE PIECES OF US
+        </p>
+
+
+        <h1 class="memories-title">
+
+            Our
+
+            <span>
+                Memories
+            </span>
+
+        </h1>
+
+
+        <p class="memories-intro">
+            Some moments become memories.
+            Some memories become our favourite stories.
+        </p>
+
+
+        <div class="memories-scroll">
+            <span>SCROLL TO REMEMBER</span>
+            <i></i>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="memories-intro-card">
+
+        <span class="memories-intro-heart">
+            ♡
+        </span>
+
+        <p>
+            Thirty little photographs.
+            Hundreds of tiny moments.
+            And one story that is still being written.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALLERY
+    ====================================================== -->
+
+    <section class="memories-grid-section">
+
+        <p class="memories-section-label">
+            THE COLLECTION
+        </p>
+
 
         <div
-            class="memories-background"
-            aria-hidden="true"
+            class="memories-grid"
+            id="memoriesGrid"
+        >
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         POWER LINE
+    ====================================================== -->
+
+    <section class="memories-power">
+
+        <p>
+            Every photograph captured a moment.
+            <br>
+            But none of them captured how it felt.
+        </p>
+
+        <span>
+            AND THAT'S WHAT MAKES THEM OURS
+        </span>
+
+    </section>
+
+
+    <!-- =====================================================
+         END
+    ====================================================== -->
+
+    <section class="memories-end">
+
+        <span class="memories-end-heart">
+            ♡
+        </span>
+
+        <h2>
+            And somehow,
+            <br>
+            I still want more memories with you.
+        </h2>
+
+        <p>
+            Because the best part of our story
+            is that it isn't finished yet.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav
+        class="memories-navigation"
+        aria-label="Memories navigation"
+    >
+
+        <a
+            href="chapters/chapter-13.html"
+            class="memories-back-link"
+        >
+            <span class="memories-back-arrow">←</span>
+            CHAPTER 13
+        </a>
+
+
+        <a
+            href="reasons.html"
+            class="memories-next-link"
         >
 
-            <div class="memories-glow"></div>
+            <span>
+
+                <small>
+                    CONTINUE TO
+                </small>
+
+                27 Reasons
+
+            </span>
+
+            <span class="memories-next-arrow">
+                →
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         LIGHTBOX
+    ====================================================== -->
+
+    <div
+        class="memories-lightbox"
+        id="memoriesLightbox"
+        aria-hidden="true"
+    >
+
+        <button
+            class="memories-lightbox-close"
+            id="lightboxClose"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <button
+            class="memories-lightbox-prev"
+            id="lightboxPrev"
+            aria-label="Previous photo"
+        >
+            ←
+        </button>
+
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="Memory"
+        >
+
+
+        <button
+            class="memories-lightbox-next"
+            id="lightboxNext"
+            aria-label="Next photo"
+        >
+            →
+        </button>
+
+    </div>
+
+
+</main>
+
+
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/locking1.js"></script>
+
+
+<script>
+
+/* =========================================================
+   CREATE 30 PHOTOS
+========================================================= */
+
+const memoriesGrid =
+    document.getElementById("memoriesGrid");
+
+
+const photoCount = 30;
+
+
+for (let i = 1; i <= photoCount; i++) {
+
+    const article =
+        document.createElement("article");
+
+    article.className = "memory-item";
+
+
+    article.innerHTML = `
+
+        <div class="memory-photo">
+
+            <img
+                src="assets/memories/photo-${i}.jpg"
+                alt="Memory ${i}"
+                loading="${i <= 3 ? "eager" : "lazy"}"
+            >
 
         </div>
 
 
-        <!-- ========================================
-             HEADER
-        ========================================= -->
+        <div class="memory-meta">
 
-        <header class="memories-header">
-
-            <a
-                href="index.html"
-                class="memories-logo"
-                aria-label="Back to Our Story"
-            >
-
-                <span>Our</span>
-
-                <span class="memories-logo-script">
-                    Story
-                </span>
-
-                <span class="memories-logo-heart">
-                    ♡
-                </span>
-
-            </a>
-
-
-            <div class="memories-counter">
-
-                MEMORIES
-                <span>♡</span>
-
-            </div>
-
-        </header>
-
-
-        <!-- ========================================
-             HERO
-        ========================================= -->
-
-        <section class="memories-hero">
-
-            <p class="memories-eyebrow">
-                LITTLE PIECES OF US
-            </p>
-
-
-            <h1 class="memories-title">
-
-                Our
-
-                <span>
-                    Memories
-                </span>
-
-            </h1>
-
-
-            <p class="memories-intro">
-
-                [A short introduction about
-                the memories collected here.]
-
-            </p>
-
-        </section>
-
-
-        <!-- ========================================
-             INTRO CARD
-        ========================================= -->
-
-        <section class="memories-intro-card">
-
-            <span class="memories-intro-heart">
-                ♡
+            <span class="memory-number">
+                ${String(i).padStart(2, "0")}
             </span>
 
-
-            <p>
-
-                [Some memories become stories.
-                Some become photographs.
-                And some simply stay in
-                our hearts.]
-
-            </p>
-
-        </section>
-
-
-        <!-- ========================================
-             MEMORY GRID
-        ========================================= -->
-
-        <section class="memories-grid-section">
-
-            <p class="memories-section-label">
-                THE COLLECTION
-            </p>
-
-
-            <div class="memories-grid">
-
-
-                <!-- MEMORY 01 -->
-
-                <article class="memory-item">
-
-                    <div class="memory-item-photo">
-
-                        <span>♡</span>
-
-                    </div>
-
-
-                    <div class="memory-item-content">
-
-                        <span class="memory-item-number">
-                            MEMORY 01
-                        </span>
-
-                        <h2>
-                            [Memory Title]
-                        </h2>
-
-                        <p>
-                            [Short memory description.]
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- MEMORY 02 -->
-
-                <article class="memory-item">
-
-                    <div class="memory-item-photo">
-
-                        <span>♡</span>
-
-                    </div>
-
-
-                    <div class="memory-item-content">
-
-                        <span class="memory-item-number">
-                            MEMORY 02
-                        </span>
-
-                        <h2>
-                            [Memory Title]
-                        </h2>
-
-                        <p>
-                            [Short memory description.]
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- MEMORY 03 -->
-
-                <article class="memory-item">
-
-                    <div class="memory-item-photo">
-
-                        <span>♡</span>
-
-                    </div>
-
-
-                    <div class="memory-item-content">
-
-                        <span class="memory-item-number">
-                            MEMORY 03
-                        </span>
-
-                        <h2>
-                            [Memory Title]
-                        </h2>
-
-                        <p>
-                            [Short memory description.]
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- MEMORY 04 -->
-
-                <article class="memory-item">
-
-                    <div class="memory-item-photo">
-
-                        <span>♡</span>
-
-                    </div>
-
-
-                    <div class="memory-item-content">
-
-                        <span class="memory-item-number">
-                            MEMORY 04
-                        </span>
-
-                        <h2>
-                            [Memory Title]
-                        </h2>
-
-                        <p>
-                            [Short memory description.]
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- MEMORY 05 -->
-
-                <article class="memory-item">
-
-                    <div class="memory-item-photo">
-
-                        <span>♡</span>
-
-                    </div>
-
-
-                    <div class="memory-item-content">
-
-                        <span class="memory-item-number">
-                            MEMORY 05
-                        </span>
-
-                        <h2>
-                            [Memory Title]
-                        </h2>
-
-                        <p>
-                            [Short memory description.]
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- MEMORY 06 -->
-
-                <article class="memory-item">
-
-                    <div class="memory-item-photo">
-
-                        <span>♡</span>
-
-                    </div>
-
-
-                    <div class="memory-item-content">
-
-                        <span class="memory-item-number">
-                            MEMORY 06
-                        </span>
-
-                        <h2>
-                            [Memory Title]
-                        </h2>
-
-                        <p>
-                            [Short memory description.]
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- ========================================
-             END
-        ========================================= -->
-
-        <section class="memories-end">
-
-            <span class="memories-end-heart">
-                ♡
+            <span class="memory-caption">
+                One of our little moments.
             </span>
 
+        </div>
 
-            <p>
-
-                [There are still so many
-                memories waiting to be added.]
-
-            </p>
-
-        </section>
+    `;
 
 
-       <!-- ========================================
-        NAVIGATION
-        ========================================= -->
+    memoriesGrid.appendChild(article);
 
-        <nav
-            class="memories-navigation"
-            aria-label="Memories navigation"
-        >
-
-            <!-- Back to Chapter 13 -->
-
-            <a
-                href="chapters/chapter-13.html"
-                class="memories-back-link"
-            >
-
-                <span class="memories-back-arrow">
-                    ←
-                </span>
-
-                CHAPTER 13
-
-            </a>
+}
 
 
-            <!-- Continue to 27 Reasons -->
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
-            <a
-                href="reasons.html"
-                class="memories-next-link"
-            >
-
-                <span>
-                    <small>CONTINUE TO</small>
-                    27 Reasons
-                </span>
-
-                <span class="memories-next-arrow">
-                    →
-                </span>
-
-            </a>
-
-        </nav>
+const memoryItems =
+    document.querySelectorAll(".memory-item");
 
 
-    </main>
+const observer =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "is-visible"
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.18
+        }
+    );
 
 
-    <script src="js/main.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/locking.js"></script>
+memoryItems.forEach(item => {
+
+    observer.observe(item);
+
+});
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+const lightbox =
+    document.getElementById(
+        "memoriesLightbox"
+    );
+
+
+const lightboxImage =
+    document.getElementById(
+        "lightboxImage"
+    );
+
+
+const closeButton =
+    document.getElementById(
+        "lightboxClose"
+    );
+
+
+const prevButton =
+    document.getElementById(
+        "lightboxPrev"
+    );
+
+
+const nextButton =
+    document.getElementById(
+        "lightboxNext"
+    );
+
+
+let currentPhoto = 1;
+
+
+function openLightbox(number) {
+
+    currentPhoto = number;
+
+    lightboxImage.src =
+        `assets/memories/photo-${number}.jpg`;
+
+    lightboxImage.alt =
+        `Memory ${number}`;
+
+    lightbox.classList.add(
+        "is-open"
+    );
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.style.overflow =
+        "hidden";
+}
+
+
+function closeLightbox() {
+
+    lightbox.classList.remove(
+        "is-open"
+    );
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.style.overflow =
+        "";
+}
+
+
+function changePhoto(direction) {
+
+    currentPhoto += direction;
+
+
+    if (currentPhoto > photoCount) {
+        currentPhoto = 1;
+    }
+
+
+    if (currentPhoto < 1) {
+        currentPhoto = photoCount;
+    }
+
+
+    lightboxImage.src =
+        `assets/memories/photo-${currentPhoto}.jpg`;
+}
+
+
+/* click photo */
+
+memoryItems.forEach((item, index) => {
+
+    const image =
+        item.querySelector("img");
+
+
+    image.addEventListener(
+        "click",
+        () => {
+
+            openLightbox(index + 1);
+
+        }
+    );
+
+});
+
+
+closeButton.addEventListener(
+    "click",
+    closeLightbox
+);
+
+
+prevButton.addEventListener(
+    "click",
+    () => changePhoto(-1)
+);
+
+
+nextButton.addEventListener(
+    "click",
+    () => changePhoto(1)
+);
+
+
+lightbox.addEventListener(
+    "click",
+    event => {
+
+        if (
+            event.target === lightbox
+        ) {
+            closeLightbox();
+        }
+
+    }
+);
+
+
+/* keyboard */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            !lightbox.classList.contains(
+                "is-open"
+            )
+        ) {
+            return;
+        }
+
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+
+        if (event.key === "ArrowLeft") {
+            changePhoto(-1);
+        }
+
+
+        if (event.key === "ArrowRight") {
+            changePhoto(1);
+        }
+
+    }
+);
+
+</script>
 
 </body>
 
