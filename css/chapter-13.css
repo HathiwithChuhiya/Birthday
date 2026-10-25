@@ -1,0 +1,2237 @@
+/* =========================================================
+   CHAPTER 13 — THE GRAND FINALE
+   THE SEVEN HUSBANDS OF EVELYN HUGO
+   ========================================================= */
+
+:root {
+    --final-black: #09080b;
+    --final-navy: #111a29;
+    --final-red: #55131b;
+    --final-deep-red: #2a080d;
+    --final-gold: #dcae62;
+    --final-gold-light: #f5d99b;
+    --final-paper: #f1dfb8;
+    --final-ink: #342318;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.chapter-page.chapter13-page {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    min-height: 100svh;
+    height: auto !important;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(105, 28, 36, .18),
+            transparent 35%
+        ),
+        #07070a;
+    color: var(--final-paper);
+    position: relative;
+}
+
+
+/* =========================================================
+   ATMOSPHERE
+   ========================================================= */
+
+.chapter13-atmosphere {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(212, 155, 72, .10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(143, 30, 45, .13),
+            transparent 30%
+        );
+
+    opacity: .9;
+}
+
+
+.chapter13-stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.chapter13-stars span {
+    position: absolute;
+    color: rgba(245, 217, 155, .45);
+    font-size: 12px;
+    animation: finalTwinkle 4s ease-in-out infinite;
+}
+
+.chapter13-stars span:nth-child(1) {
+    top: 8%;
+    left: 8%;
+}
+
+.chapter13-stars span:nth-child(2) {
+    top: 15%;
+    left: 30%;
+}
+
+.chapter13-stars span:nth-child(3) {
+    top: 9%;
+    right: 14%;
+}
+
+.chapter13-stars span:nth-child(4) {
+    top: 30%;
+    right: 8%;
+}
+
+.chapter13-stars span:nth-child(5) {
+    top: 62%;
+    left: 5%;
+}
+
+.chapter13-stars span:nth-child(6) {
+    bottom: 15%;
+    right: 20%;
+}
+
+.chapter13-stars span:nth-child(7) {
+    bottom: 8%;
+    left: 35%;
+}
+
+.chapter13-stars span:nth-child(8) {
+    top: 45%;
+    right: 40%;
+}
+
+@keyframes finalTwinkle {
+    0%,
+    100% {
+        opacity: .25;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.chapter13-header {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================================
+   OPEN BOOK
+   ========================================================= */
+
+.chapter13-book {
+    position: relative;
+    z-index: 5;
+
+    width: min(1450px, calc(100% - 36px));
+    margin: 34px auto 0;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 7px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT BOOK
+   ========================================================= */
+
+.chapter13-left {
+    min-width: 0;
+    position: relative;
+}
+
+
+.final-book {
+    min-height: 930px;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #070709 0%,
+            #171119 12%,
+            #180b10 100%
+        );
+
+    border-radius: 8px 0 0 8px;
+
+    box-shadow:
+        inset -15px 0 25px rgba(0,0,0,.7),
+        0 25px 70px rgba(0,0,0,.6);
+}
+
+
+/* =========================================================
+   BOOK SPINE
+   ========================================================= */
+
+.final-spine {
+    position: relative;
+    z-index: 8;
+
+    height: 100%;
+
+    padding: 40px 13px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            90deg,
+            #050507,
+            #19151b 45%,
+            #08070a
+        );
+
+    border-right: 2px solid rgba(220,174,98,.42);
+
+    box-shadow:
+        inset -8px 0 14px rgba(0,0,0,.75),
+        inset 8px 0 14px rgba(255,255,255,.025);
+}
+
+
+.final-spine::before,
+.final-spine::after {
+    content: "";
+    position: absolute;
+    left: 11px;
+    right: 11px;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--final-gold),
+            transparent
+        );
+
+    opacity: .6;
+}
+
+.final-spine::before {
+    top: 95px;
+}
+
+.final-spine::after {
+    bottom: 95px;
+}
+
+
+.spine-decoration {
+    color: var(--final-gold);
+    font-size: 28px;
+}
+
+
+.spine-title {
+    color: var(--final-gold-light);
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.55;
+    letter-spacing: 1.8px;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,.8);
+}
+
+
+.spine-heart {
+    color: #e5b766;
+    font-size: 26px;
+}
+
+
+.spine-line {
+    width: 65%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--final-gold),
+            transparent
+        );
+}
+
+
+.spine-script {
+    color: #d5b47b;
+
+    font-family: "Brush Script MT", cursive;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+
+    transform: rotate(-90deg);
+    white-space: nowrap;
+
+    opacity: .9;
+}
+
+
+/* =========================================================
+   MAIN COVER
+   ========================================================= */
+
+.final-cover {
+    position: relative;
+    min-height: 930px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 70%,
+            rgba(133, 47, 42, .4),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #08101d 0%,
+            #10182a 40%,
+            #230f16 100%
+        );
+
+    border-radius: 0 5px 5px 0;
+
+    isolation: isolate;
+}
+
+
+.cover-frame {
+    position: absolute;
+    inset: 13px;
+
+    border: 1px solid rgba(222,177,96,.55);
+
+    pointer-events: none;
+    z-index: 15;
+}
+
+
+.cover-frame-inner {
+    position: absolute;
+    inset: 21px;
+
+    border: 1px solid rgba(222,177,96,.18);
+
+    pointer-events: none;
+    z-index: 15;
+}
+
+
+/* =========================================================
+   CURTAINS
+   ========================================================= */
+
+.red-curtain {
+    position: absolute;
+    top: 0;
+    width: 115px;
+    height: 42%;
+
+    z-index: 3;
+
+    background:
+        linear-gradient(
+            90deg,
+            #24070d,
+            #6e1722 45%,
+            #2a080e
+        );
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.55);
+}
+
+.curtain-left {
+    left: -22px;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        78% 100%,
+        0 86%
+    );
+}
+
+.curtain-right {
+    right: -22px;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 86%,
+        22% 100%
+    );
+}
+
+
+/* =========================================================
+   COVER HEADER
+   ========================================================= */
+
+.final-cover-header {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    width: 78%;
+
+    text-align: center;
+
+    color: var(--final-gold-light);
+
+    font-family: Georgia, serif;
+    font-size: 18px;
+    letter-spacing: 7px;
+}
+
+
+.cover-ornament {
+    margin-top: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+}
+
+.cover-ornament i {
+    width: 70px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--final-gold)
+        );
+}
+
+.cover-ornament i:last-child {
+    background:
+        linear-gradient(
+            90deg,
+            var(--final-gold),
+            transparent
+        );
+}
+
+.cover-ornament b {
+    font-size: 25px;
+    color: #f4cf86;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.final-title {
+    position: absolute;
+    top: 102px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 18;
+
+    width: 92%;
+
+    text-align: center;
+
+    color: #f7dfaa;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    text-shadow:
+        0 3px 8px rgba(0,0,0,.8);
+}
+
+
+.title-the {
+    font-size: 18px;
+    letter-spacing: 8px;
+    margin-bottom: 3px;
+}
+
+
+.title-seven {
+    font-size: clamp(25px, 3vw, 44px);
+    letter-spacing: 2px;
+    line-height: .95;
+}
+
+
+.title-of {
+    font-size: 16px;
+    letter-spacing: 6px;
+    margin: 7px 0;
+}
+
+
+.title-evelyn {
+    font-size: clamp(30px, 4vw, 54px);
+    line-height: .9;
+    letter-spacing: 1px;
+}
+
+
+.title-divider {
+    margin: 15px auto 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--final-gold);
+}
+
+.title-divider i {
+    width: 50px;
+    height: 1px;
+    background: var(--final-gold);
+}
+
+
+.final-subtitle {
+    color: #efc87e;
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 21px;
+    letter-spacing: 1px;
+
+    transform: rotate(-2deg);
+}
+
+
+/* =========================================================
+   CINEMATIC SCENE
+   ========================================================= */
+
+.final-scene {
+    position: absolute;
+
+    left: 4%;
+    right: 4%;
+    bottom: 18%;
+
+    height: 47%;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(219,174,94,.45);
+
+    background: #090e18;
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.55);
+}
+
+
+.scene-window {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050b16 0%,
+            #18263c 45%,
+            #8d4435 72%,
+            #1d1118 100%
+        );
+}
+
+
+/* stars */
+.scene-window::before {
+    content: "✦   ·   ✧     ·   ✦       ·    ✧   ·   ✦";
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+
+    color: rgba(255,225,163,.7);
+
+    font-size: 14px;
+    letter-spacing: 13px;
+    text-align: center;
+}
+
+
+/* city */
+.city {
+    position: absolute;
+    bottom: 28%;
+
+    background: #11131a;
+
+    box-shadow:
+        inset 0 5px 10px rgba(255,174,75,.08);
+}
+
+.city::after {
+    content: "";
+    position: absolute;
+    inset: 12px 5px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(241,180,82,.7) 0 3px,
+            transparent 3px 10px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(241,180,82,.5) 0 3px,
+            transparent 3px 10px
+        );
+    opacity: .55;
+}
+
+.city-one {
+    left: 0;
+    width: 18%;
+    height: 25%;
+}
+
+.city-two {
+    left: 15%;
+    width: 19%;
+    height: 39%;
+}
+
+.city-three {
+    left: 33%;
+    width: 18%;
+    height: 30%;
+}
+
+.city-four {
+    right: 20%;
+    width: 22%;
+    height: 43%;
+}
+
+.city-five {
+    right: 0;
+    width: 24%;
+    height: 31%;
+}
+
+
+/* moon */
+.moon-final {
+    position: absolute;
+
+    top: 16%;
+    right: 13%;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+
+    background: #f7d994;
+
+    box-shadow:
+        0 0 35px rgba(247,217,148,.4);
+}
+
+.moon-final::after {
+    content: "";
+
+    position: absolute;
+    top: -4px;
+    left: 17px;
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+
+    background: #101827;
+}
+
+
+/* water */
+.water-line {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+
+    height: 2px;
+
+    background: rgba(242,187,96,.45);
+}
+
+.water-reflection {
+    position: absolute;
+    bottom: 3%;
+    left: 35%;
+    width: 30%;
+    height: 20%;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(235,177,87,.35) 0 2px,
+            transparent 2px 8px
+        );
+
+    filter: blur(1px);
+}
+
+
+/* =========================================================
+   COUPLE
+   ========================================================= */
+
+.final-couple {
+    position: absolute;
+
+    bottom: 12%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 42%;
+    height: 55%;
+
+    z-index: 7;
+}
+
+
+.final-person {
+    position: absolute;
+    bottom: 0;
+}
+
+
+.person-him {
+    left: 17%;
+    width: 45%;
+    height: 92%;
+}
+
+.person-her {
+    right: 4%;
+    width: 42%;
+    height: 82%;
+}
+
+
+.person-head {
+    position: absolute;
+    top: 0;
+    left: 32%;
+
+    width: 38%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background: #08080b;
+}
+
+
+.person-hair {
+    position: absolute;
+    top: -5%;
+    left: 22%;
+
+    width: 55%;
+    height: 27%;
+
+    border-radius: 50%;
+
+    background: #050509;
+}
+
+
+.person-body {
+    position: absolute;
+
+    bottom: 0;
+    left: 10%;
+
+    width: 78%;
+    height: 75%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #050509,
+            #14151a,
+            #050509
+        );
+
+    border-radius: 45% 45% 0 0;
+}
+
+
+.person-arm {
+    position: absolute;
+
+    top: 35%;
+    right: -2%;
+
+    width: 65%;
+    height: 11%;
+
+    background: #07080b;
+
+    border-radius: 20px;
+
+    transform: rotate(16deg);
+}
+
+
+.girl-ribbon {
+    position: absolute;
+    top: 8%;
+    right: 15%;
+
+    color: #dcae62;
+    font-size: 18px;
+}
+
+
+/* sofa */
+.final-sofa {
+    position: absolute;
+    z-index: 6;
+
+    bottom: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 24%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #391016,
+            #15090d
+        );
+
+    border-radius: 50% 50% 5px 5px;
+
+    box-shadow:
+        0 -10px 20px rgba(0,0,0,.35);
+}
+
+.final-sofa span {
+    position: absolute;
+    top: 8%;
+
+    width: 22%;
+    height: 65%;
+
+    background: #2c0c12;
+    border-radius: 50%;
+}
+
+.final-sofa span:first-child {
+    left: 4%;
+}
+
+.final-sofa span:last-child {
+    right: 4%;
+}
+
+
+/* =========================================================
+   MINI OPEN BOOK
+   ========================================================= */
+
+.cover-open-book {
+    position: absolute;
+
+    left: 7%;
+    bottom: 5%;
+
+    width: 35%;
+    height: 15%;
+
+    z-index: 12;
+
+    display: flex;
+
+    transform: rotate(-3deg);
+}
+
+
+.mini-book-page {
+    flex: 1;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e7d1a6,
+            #b89567
+        );
+
+    border: 1px solid rgba(65,34,19,.5);
+
+    color: #3c2517;
+
+    padding: 13px 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+}
+
+
+.mini-book-page span {
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.mini-book-page strong {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.mini-book-page small {
+    margin-top: 5px;
+    color: #711521;
+}
+
+
+.mini-book-spine {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    transform: translateX(-50%);
+
+    background: #432719;
+}
+
+
+/* =========================================================
+   MEMORY CARDS
+   ========================================================= */
+
+.memory-card {
+    position: absolute;
+
+    z-index: 25;
+
+    width: 115px;
+    min-height: 72px;
+
+    padding: 9px 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e7d4ae,
+            #c9ad7a
+        );
+
+    color: #3d2619;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.45);
+
+    font-family: "Segoe Print", cursive;
+
+    font-size: 10px;
+    line-height: 1.25;
+
+    text-align: center;
+}
+
+
+.memory-card span,
+.memory-card strong,
+.memory-card small {
+    display: block;
+}
+
+
+.memory-card strong {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.memory-card small {
+    margin-top: 4px;
+}
+
+
+.memory-one {
+    left: 5%;
+    bottom: 37%;
+    transform: rotate(-8deg);
+}
+
+.memory-two {
+    right: 5%;
+    bottom: 34%;
+    transform: rotate(7deg);
+}
+
+.memory-three {
+    right: 8%;
+    bottom: 6%;
+    transform: rotate(-5deg);
+}
+
+
+/* =========================================================
+   COVER BOTTOM
+   ========================================================= */
+
+.final-cover-bottom {
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    bottom: 20px;
+
+    z-index: 30;
+
+    text-align: center;
+
+    color: var(--final-gold-light);
+
+    font-family: Georgia, serif;
+
+    letter-spacing: 3px;
+}
+
+
+.bottom-rule {
+    width: 100%;
+    height: 1px;
+
+    margin: 7px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(220,174,98,.7),
+            transparent
+        );
+}
+
+
+.final-cover-bottom span {
+    display: block;
+
+    font-size: 9px;
+}
+
+
+.final-cover-bottom strong {
+    display: block;
+
+    font-size: 14px;
+
+    margin-top: 4px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   RIGHT PAPER
+   ========================================================= */
+
+.chapter13-right {
+    min-width: 0;
+}
+
+
+.final-paper {
+    position: relative;
+
+    min-height: 930px;
+
+    overflow: hidden;
+
+    padding: 48px 75px 170px 65px;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 45%,
+            rgba(255,248,215,.75),
+            transparent 60%
+        ),
+        linear-gradient(
+            90deg,
+            #c5a975,
+            #f0dfb7 5%,
+            #f4e5c3 94%,
+            #b69764
+        );
+
+    color: var(--final-ink);
+
+    border-radius: 0 8px 8px 0;
+
+    box-shadow:
+        inset 15px 0 25px rgba(85,53,24,.16),
+        inset -15px 0 22px rgba(85,53,24,.18),
+        0 25px 70px rgba(0,0,0,.6);
+}
+
+
+.final-paper::before {
+    content: "";
+
+    position: absolute;
+    inset: 13px;
+
+    border: 1px solid rgba(98,65,31,.25);
+
+    pointer-events: none;
+}
+
+
+.final-paper::after {
+    content: "";
+
+    position: absolute;
+    inset: 21px;
+
+    border: 1px solid rgba(98,65,31,.11);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PAPER CORNERS
+   ========================================================= */
+
+.paper-corner {
+    position: absolute;
+
+    color: rgba(85,56,28,.6);
+
+    font-size: 19px;
+}
+
+.corner-one {
+    top: 35px;
+    left: 28px;
+}
+
+.corner-two {
+    top: 35px;
+    right: 30px;
+}
+
+.corner-three {
+    bottom: 120px;
+    left: 30px;
+}
+
+.corner-four {
+    bottom: 120px;
+    right: 30px;
+}
+
+
+/* =========================================================
+   SIDE DECORATION
+   ========================================================= */
+
+.paper-side-decoration {
+    position: absolute;
+
+    top: 130px;
+    right: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    color: rgba(104,70,31,.55);
+}
+
+.paper-side-decoration i {
+    width: 1px;
+    height: 45px;
+
+    background: rgba(104,70,31,.3);
+}
+
+
+/* =========================================================
+   LETTER
+   ========================================================= */
+
+.final-letter {
+    position: relative;
+    z-index: 10;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    font-family:
+        "Segoe Print",
+        "Noto Sans Devanagari",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+    line-height: 1.52;
+}
+
+
+.final-letter p {
+    margin: 0 0 13px;
+}
+
+
+.final-letter-heading {
+    text-align: center;
+
+    margin-bottom: 24px;
+
+    padding-bottom: 13px;
+
+    border-bottom: 1px solid rgba(87,53,25,.3);
+}
+
+
+.final-letter-heading span {
+    display: block;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+    opacity: .65;
+}
+
+
+.final-letter-heading strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+    letter-spacing: 1px;
+}
+
+
+.opening-line {
+    font-family: "Segoe Print", cursive;
+
+    font-size: 15px;
+}
+
+
+.center-small {
+    text-align: center;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+   ========================================================= */
+
+.final-highlight {
+    margin: 18px auto;
+
+    max-width: 520px;
+
+    padding: 13px 18px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(100,63,27,.35);
+    border-bottom: 1px solid rgba(100,63,27,.35);
+
+    background: rgba(255,249,222,.3);
+}
+
+
+.final-highlight span {
+    display: block;
+
+    font-size: 12px;
+}
+
+
+.final-highlight strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    color: #5b2022;
+}
+
+
+/* =========================================================
+   FINAL QUOTE
+   ========================================================= */
+
+.final-quote {
+    margin: 20px 25px;
+
+    padding: 15px 20px;
+
+    text-align: center;
+
+    border-left: 3px solid #9c5d3a;
+
+    background:
+        rgba(124,76,42,.07);
+}
+
+
+.final-quote span {
+    display: block;
+
+    font-size: 12px;
+}
+
+
+.final-quote strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    color: #682d25;
+}
+
+
+/* =========================================================
+   SPOKEN LINE
+   ========================================================= */
+
+.spoken-line {
+    margin: 17px auto;
+
+    max-width: 620px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    color: #552c22;
+}
+
+
+.spoken-line strong {
+    display: block;
+
+    margin: 5px 0;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   THE WORD
+   ========================================================= */
+
+.the-word {
+    margin: 25px auto;
+
+    text-align: center;
+}
+
+
+.the-word span {
+    display: block;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+.the-word strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+    letter-spacing: 7px;
+
+    color: #682020;
+
+    text-shadow:
+        1px 1px 0 rgba(255,255,255,.5);
+}
+
+
+.the-word small {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MEMORY BOX
+   ========================================================= */
+
+.final-memory-box {
+    margin: 22px auto;
+
+    max-width: 510px;
+
+    padding: 15px 20px;
+
+    text-align: center;
+
+    border: 1px solid rgba(101,65,30,.35);
+
+    background:
+        rgba(255,249,225,.36);
+
+    box-shadow:
+        0 5px 14px rgba(72,43,18,.08);
+}
+
+
+.final-memory-box > span {
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+}
+
+
+.final-memory-box strong {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    margin: 4px 0;
+}
+
+
+.final-memory-box b {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #75252b;
+
+    letter-spacing: 3px;
+}
+
+
+.memory-line {
+    width: 70%;
+    height: 1px;
+
+    margin: 8px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(95,60,29,.45),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   POWER LINE
+   ========================================================= */
+
+.power-line-final {
+    position: relative;
+
+    margin: 24px auto;
+
+    max-width: 650px;
+
+    padding: 18px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(104,35,36,.08),
+            rgba(255,249,220,.35)
+        );
+
+    border-top: 1px solid rgba(103,58,31,.35);
+    border-bottom: 1px solid rgba(103,58,31,.35);
+}
+
+
+.power-line-final span {
+    display: block;
+
+    font-size: 12px;
+}
+
+
+.power-line-final strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    color: #672328;
+}
+
+
+.power-line-final small {
+    display: block;
+
+    margin-top: 7px;
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   CONTINUED
+   ========================================================= */
+
+.continued {
+    margin: 20px auto;
+
+    text-align: center;
+
+    transform: rotate(-2deg);
+}
+
+
+.continued span {
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+}
+
+
+.continued strong {
+    display: block;
+
+    margin-top: -3px;
+
+    color: #a2272c;
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 34px;
+}
+
+
+.continued small {
+    display: block;
+
+    margin-top: -5px;
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   FINAL CHOICE
+   ========================================================= */
+
+.final-choice {
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   BIRTHDAY FINALE
+   ========================================================= */
+
+.birthday-final {
+    margin: 27px auto 20px;
+
+    text-align: center;
+
+    padding: 15px;
+
+    border-top: 1px solid rgba(96,58,27,.3);
+    border-bottom: 1px solid rgba(96,58,27,.3);
+}
+
+
+.birthday-final span {
+    display: block;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+
+.birthday-final strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+
+    color: #6b2528;
+}
+
+
+.birthday-final small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 10px;
+    opacity: .65;
+}
+
+
+/* =========================================================
+   LOVE ENDING
+   ========================================================= */
+
+.love-ending {
+    text-align: center;
+
+    font-family: "Segoe Print", cursive;
+
+    font-size: 13px;
+
+    margin-top: 20px;
+}
+
+
+.love-ending strong {
+    font-size: 17px;
+
+    color: #6e2027;
+}
+
+
+/* =========================================================
+   SIGNATURE
+   ========================================================= */
+
+.signature-final {
+    margin-top: 18px;
+
+    text-align: right;
+
+    padding-right: 30px;
+
+    font-family: "Brush Script MT", cursive;
+
+    font-size: 17px;
+}
+
+
+.signature-final strong {
+    margin-left: 8px;
+
+    color: #a32631;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   PAPER NOTES
+   ========================================================= */
+
+.paper-note-final {
+    position: absolute;
+
+    z-index: 30;
+
+    padding: 8px 12px;
+
+    min-width: 120px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ead7ac,
+            #c7a76f
+        );
+
+    color: #432b1c;
+
+    font-family: "Segoe Print", cursive;
+
+    font-size: 10px;
+
+    box-shadow:
+        0 7px 15px rgba(60,35,15,.2);
+}
+
+
+.note-final-one {
+    top: 13%;
+    right: 4%;
+
+    transform: rotate(6deg);
+}
+
+
+.note-final-two {
+    top: 42%;
+    right: 4%;
+
+    transform: rotate(-5deg);
+}
+
+
+.note-final-three {
+    bottom: 8%;
+    right: 7%;
+
+    transform: rotate(4deg);
+
+    color: #76272b;
+}
+
+
+/* =========================================================
+   PAPER SKYLINE
+   ========================================================= */
+
+.paper-skyline {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 110px;
+
+    z-index: 2;
+
+    opacity: .28;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(83,55,29,.18),
+            transparent
+        );
+}
+
+
+.building {
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+
+    background: #5e472c;
+}
+
+
+.b1 {
+    left: 2%;
+    width: 8%;
+    height: 35%;
+}
+
+.b2 {
+    left: 11%;
+    width: 11%;
+    height: 58%;
+}
+
+.b3 {
+    left: 24%;
+    width: 8%;
+    height: 45%;
+}
+
+.b4 {
+    left: 34%;
+    width: 13%;
+    height: 72%;
+}
+
+.b5 {
+    right: 32%;
+    width: 10%;
+    height: 50%;
+}
+
+.b6 {
+    right: 18%;
+    width: 14%;
+    height: 65%;
+}
+
+.b7 {
+    right: 2%;
+    width: 12%;
+    height: 43%;
+}
+
+
+/* little final couple */
+.skyline-couple {
+    position: absolute;
+
+    bottom: 9px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 50px;
+    height: 65px;
+}
+
+
+.skyline-couple span {
+    position: absolute;
+    bottom: 0;
+
+    width: 15px;
+    height: 42px;
+
+    background: #47331f;
+
+    border-radius: 10px 10px 0 0;
+}
+
+
+.skyline-couple span::before {
+    content: "";
+
+    position: absolute;
+    top: -14px;
+    left: 1px;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #47331f;
+}
+
+
+.skyline-couple span:first-child {
+    left: 9px;
+}
+
+
+.skyline-couple span:last-child {
+    right: 9px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.chapter13-navigation {
+    position: relative;
+    z-index: 20;
+
+    margin-top: 28px;
+    padding-bottom: 60px;
+}
+
+
+.final-progress {
+    color: var(--final-gold-light);
+}
+
+
+.final-end-link {
+    border-color: rgba(220,174,98,.35);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .chapter13-book {
+        width: min(1250px, calc(100% - 22px));
+    }
+
+    .final-book {
+        grid-template-columns: 78px minmax(0, 1fr);
+    }
+
+    .spine-title {
+        font-size: 11px;
+    }
+
+    .spine-script {
+        font-size: 11px;
+    }
+
+    .final-paper {
+        padding-left: 48px;
+        padding-right: 55px;
+    }
+
+    .final-letter {
+        font-size: 13px;
+    }
+
+    .paper-note-final {
+        display: none;
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .chapter13-book {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .final-book,
+    .final-cover {
+        min-height: 820px;
+    }
+
+    .final-paper {
+        min-height: 900px;
+
+        border-radius: 8px;
+
+        padding: 45px 55px 150px;
+    }
+
+    .chapter13-left {
+        width: 100%;
+    }
+
+    .chapter13-right {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .chapter13-book {
+        width: calc(100% - 12px);
+        margin-top: 18px;
+    }
+
+    .final-book {
+        grid-template-columns: 57px 1fr;
+        min-height: 710px;
+    }
+
+    .final-cover {
+        min-height: 710px;
+    }
+
+    .final-spine {
+        padding: 30px 6px;
+    }
+
+    .spine-title {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .spine-script {
+        font-size: 8px;
+    }
+
+    .spine-heart {
+        font-size: 18px;
+    }
+
+    .final-cover-header {
+        top: 28px;
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    .cover-ornament i {
+        width: 35px;
+    }
+
+    .final-title {
+        top: 77px;
+    }
+
+    .title-the {
+        font-size: 11px;
+        letter-spacing: 5px;
+    }
+
+    .title-seven {
+        font-size: 20px;
+    }
+
+    .title-of {
+        font-size: 10px;
+    }
+
+    .title-evelyn {
+        font-size: 27px;
+    }
+
+    .title-divider {
+        margin: 9px auto 6px;
+    }
+
+    .title-divider i {
+        width: 25px;
+    }
+
+    .final-subtitle {
+        font-size: 13px;
+    }
+
+    .final-scene {
+        left: 4%;
+        right: 4%;
+        bottom: 18%;
+        height: 43%;
+    }
+
+    .memory-card {
+        width: 78px;
+        min-height: 48px;
+
+        padding: 5px;
+
+        font-size: 7px;
+    }
+
+    .memory-card strong {
+        font-size: 8px;
+    }
+
+    .memory-one {
+        bottom: 36%;
+    }
+
+    .memory-two {
+        bottom: 33%;
+    }
+
+    .memory-three {
+        bottom: 7%;
+    }
+
+    .cover-open-book {
+        width: 38%;
+        height: 13%;
+    }
+
+    .mini-book-page {
+        padding: 5px;
+    }
+
+    .mini-book-page span {
+        font-size: 5px;
+    }
+
+    .mini-book-page strong {
+        font-size: 7px;
+    }
+
+    .final-cover-bottom {
+        bottom: 11px;
+        letter-spacing: 1px;
+    }
+
+    .final-cover-bottom span {
+        font-size: 6px;
+    }
+
+    .final-cover-bottom strong {
+        font-size: 8px;
+    }
+
+
+    /* paper */
+
+    .final-paper {
+        min-height: 900px;
+
+        padding:
+            35px 30px 130px;
+    }
+
+    .final-letter {
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+    .final-letter-heading {
+        margin-bottom: 20px;
+    }
+
+    .final-letter-heading span {
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .final-letter-heading strong {
+        font-size: 18px;
+    }
+
+    .final-highlight strong {
+        font-size: 16px;
+    }
+
+    .final-quote {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .spoken-line {
+        font-size: 13px;
+    }
+
+    .spoken-line strong {
+        font-size: 15px;
+    }
+
+    .the-word strong {
+        font-size: 32px;
+    }
+
+    .final-memory-box {
+        padding: 12px;
+    }
+
+    .power-line-final strong {
+        font-size: 16px;
+    }
+
+    .continued strong {
+        font-size: 27px;
+    }
+
+    .birthday-final strong {
+        font-size: 18px;
+    }
+
+    .love-ending {
+        font-size: 11px;
+    }
+
+    .love-ending strong {
+        font-size: 14px;
+    }
+
+    .paper-side-decoration {
+        display: none;
+    }
+
+    .chapter13-navigation {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .chapter13-stars span {
+        animation: none;
+    }
+}
