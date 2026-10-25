@@ -1,0 +1,1742 @@
+/* =========================================================
+   CHAPTER 10 — THE SILENT PATIENT
+   ========================================================= */
+
+.chapter-page.chapter10-page {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    min-height: 100svh;
+    height: auto !important;
+    background: #08090d;
+    color: #211c17;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.chapter10-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            circle at 25% 20%,
+            rgba(87, 65, 42, .28),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(137, 82, 30, .18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #07080c 0%,
+            #10151d 45%,
+            #08090c 100%
+        );
+}
+
+
+/* =========================================================
+   BOOK
+   ========================================================= */
+
+.chapter10-book {
+    position: relative;
+    z-index: 2;
+
+    width: min(1350px, calc(100% - 40px));
+    margin: 45px auto 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.chapter10-left {
+    min-width: 0;
+}
+
+.chapter10-cover {
+    position: relative;
+
+    min-height: 900px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 52% 42%,
+            rgba(214, 143, 61, .24),
+            transparent 27%
+        ),
+        linear-gradient(
+            110deg,
+            #05070b 0%,
+            #111a26 45%,
+            #07101b 100%
+        );
+
+    border: 1px solid rgba(205, 151, 79, .5);
+
+    box-shadow:
+        0 35px 70px rgba(0,0,0,.55),
+        inset 0 0 50px rgba(0,0,0,.7);
+}
+
+
+/* GOLD FRAME */
+
+.cover10-frame {
+    position: absolute;
+    inset: 18px;
+
+    border: 1px solid rgba(205, 151, 79, .55);
+
+    pointer-events: none;
+}
+
+.cover10-frame::before,
+.cover10-frame::after {
+    content: "";
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border: 1px solid rgba(205, 151, 79, .55);
+}
+
+.cover10-frame::before {
+    top: -1px;
+    left: -1px;
+
+    border-right: none;
+    border-bottom: none;
+}
+
+.cover10-frame::after {
+    right: -1px;
+    bottom: -1px;
+
+    border-left: none;
+    border-top: none;
+}
+
+
+/* =========================================================
+   BOOK SPINE
+   ========================================================= */
+
+.cover10-spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 112px;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 45px 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #020307,
+            #111823 45%,
+            #05070b
+        );
+
+    border-right: 2px solid rgba(194, 139, 69, .55);
+
+    box-shadow:
+        inset -12px 0 20px rgba(0,0,0,.45),
+        5px 0 20px rgba(0,0,0,.45);
+}
+
+.cover10-spine::before,
+.cover10-spine::after {
+    content: "";
+
+    position: absolute;
+
+    left: 16px;
+    right: 16px;
+
+    height: 1px;
+
+    background: rgba(207, 155, 80, .65);
+}
+
+.cover10-spine::before {
+    top: 34px;
+}
+
+.cover10-spine::after {
+    bottom: 34px;
+}
+
+.spine-decoration {
+    color: #d69c52;
+    font-size: 24px;
+}
+
+.spine-title {
+    color: #d7a35f;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+    line-height: 2;
+
+    letter-spacing: 1px;
+}
+
+.spine-heart {
+    color: #d7a35f;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   MAIN COVER
+   ========================================================= */
+
+.cover10-main {
+    position: relative;
+
+    min-height: 900px;
+
+    margin-left: 112px;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+/* HEADER */
+
+.cover10-header {
+    position: relative;
+
+    padding-top: 31px;
+
+    color: #e6c48f;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.cover10-ornament {
+    margin-top: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    color: #d6a25b;
+}
+
+.cover10-ornament span {
+    width: 45px;
+    height: 1px;
+
+    background: #d6a25b;
+}
+
+.cover10-ornament b {
+    font-size: 18px;
+}
+
+
+/* TITLE */
+
+.cover10-title {
+    position: relative;
+
+    z-index: 5;
+
+    margin-top: 10px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #f0dfc2;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.7);
+}
+
+.cover10-title small {
+    display: block;
+
+    font-size: 25px;
+
+    letter-spacing: 7px;
+
+    margin-bottom: 0;
+}
+
+.cover10-title strong {
+    display: block;
+
+    font-size: clamp(43px, 4.5vw, 68px);
+
+    font-weight: 400;
+
+    line-height: .9;
+
+    letter-spacing: 1px;
+}
+
+.cover10-title-line {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 10px auto 0;
+
+    width: 70%;
+
+    color: #dca65e;
+}
+
+.cover10-title-line i {
+    display: block;
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #dca65e;
+}
+
+
+/* =========================================================
+   CINEMATIC SCENE
+   ========================================================= */
+
+.silent10-scene {
+    position: absolute;
+
+    left: 25px;
+    right: 18px;
+
+    bottom: 92px;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(189, 137, 65, .3);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #081827 0%,
+            #162c3e 46%,
+            #5d3b2c 75%,
+            #160f0c 100%
+        );
+
+    box-shadow:
+        inset 0 0 80px rgba(0,0,0,.65);
+}
+
+
+/* CITY WINDOW */
+
+.scene10-window {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .95;
+}
+
+.scene10-window::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0 48%,
+            rgba(5,8,13,.5) 48% 50%,
+            transparent 50%
+        );
+}
+
+.window-city {
+    position: absolute;
+
+    bottom: 82px;
+
+    background: #111922;
+}
+
+.city-one {
+    left: 0;
+    width: 110px;
+    height: 105px;
+}
+
+.city-two {
+    left: 95px;
+    width: 90px;
+    height: 155px;
+}
+
+.city-three {
+    right: 0;
+    width: 140px;
+    height: 125px;
+}
+
+.window-light {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    background: #e3a653;
+
+    box-shadow:
+        0 0 8px rgba(239, 175, 79, .8);
+}
+
+.light-one {
+    left: 55px;
+    bottom: 128px;
+}
+
+.light-two {
+    left: 130px;
+    bottom: 180px;
+}
+
+.light-three {
+    right: 72px;
+    bottom: 150px;
+}
+
+.light-four {
+    right: 35px;
+    bottom: 130px;
+}
+
+.light-five {
+    left: 160px;
+    bottom: 112px;
+}
+
+.light-six {
+    right: 112px;
+    bottom: 195px;
+}
+
+
+/* LAMP */
+
+.scene10-lamp {
+    position: absolute;
+
+    right: 52px;
+    top: 80px;
+
+    width: 90px;
+    height: 260px;
+}
+
+.lamp-glow {
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    left: -40px;
+    top: -30px;
+
+    border-radius: 50%;
+
+    background: rgba(226, 150, 61, .08);
+
+    filter: blur(20px);
+}
+
+.lamp-shade {
+    position: absolute;
+
+    left: 12px;
+    top: 0;
+
+    width: 68px;
+    height: 48px;
+
+    background: #a56d38;
+
+    clip-path: polygon(
+        18% 0,
+        82% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.lamp-stem {
+    position: absolute;
+
+    top: 47px;
+    left: 45px;
+
+    width: 4px;
+    height: 160px;
+
+    background: #8c6037;
+}
+
+.lamp-base {
+    position: absolute;
+
+    bottom: 25px;
+    left: 22px;
+
+    width: 50px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #704725;
+}
+
+
+/* SOFA */
+
+.scene10-sofa {
+    position: absolute;
+
+    left: 30px;
+    right: 30px;
+
+    bottom: 90px;
+
+    height: 110px;
+
+    border-radius: 30px 30px 10px 10px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #171718,
+            #08090a
+        );
+
+    box-shadow:
+        0 -12px 30px rgba(0,0,0,.5);
+}
+
+
+/* =========================================================
+   COUPLE
+   ========================================================= */
+
+.silent10-person {
+    position: absolute;
+
+    bottom: 105px;
+
+    z-index: 8;
+}
+
+
+/* BOY */
+
+.person-boy {
+    left: 29%;
+}
+
+.person10-head {
+    width: 80px;
+    height: 90px;
+
+    border-radius: 50% 50% 45% 45%;
+
+    background: #07090b;
+
+    position: relative;
+}
+
+.person10-hair {
+    position: absolute;
+
+    top: -15px;
+    left: -6px;
+
+    width: 92px;
+    height: 58px;
+
+    border-radius: 50% 50% 30% 30%;
+
+    background: #030406;
+
+    transform: rotate(-5deg);
+}
+
+.person10-body {
+    position: absolute;
+
+    top: 70px;
+    left: -45px;
+
+    width: 170px;
+    height: 205px;
+
+    border-radius: 60px 60px 20px 20px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #080a0c,
+            #17191c
+        );
+}
+
+.person10-arm {
+    position: absolute;
+
+    top: 110px;
+
+    width: 125px;
+    height: 28px;
+
+    border-radius: 30px;
+
+    background: #08090a;
+}
+
+.arm-left {
+    left: -75px;
+
+    transform: rotate(28deg);
+}
+
+.arm-right {
+    left: 40px;
+
+    transform: rotate(20deg);
+}
+
+
+/* GIRL */
+
+.person-girl {
+    left: 52%;
+
+    bottom: 103px;
+
+    z-index: 9;
+}
+
+.girl-head {
+    width: 78px;
+    height: 82px;
+
+    background: #111;
+
+    border-radius: 50%;
+}
+
+.girl-hair {
+    top: -22px;
+    left: -35px;
+
+    width: 125px;
+    height: 150px;
+
+    border-radius: 60% 60% 45% 45%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #0a0909,
+            #1c1615
+        );
+
+    transform: rotate(-12deg);
+}
+
+.girl-body {
+    top: 62px;
+    left: -30px;
+
+    width: 140px;
+    height: 195px;
+
+    border-radius: 55px 55px 25px 25px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #252326,
+            #0b0b0c
+        );
+}
+
+.girl-arm {
+    top: 100px;
+    left: -30px;
+
+    width: 100px;
+    height: 25px;
+
+    border-radius: 30px;
+
+    background: #121214;
+
+    transform: rotate(12deg);
+}
+
+
+/* OPEN BOOK */
+
+.scene10-open-book {
+    position: absolute;
+
+    left: 12%;
+    right: 12%;
+
+    bottom: -5px;
+
+    height: 145px;
+
+    z-index: 12;
+
+    display: flex;
+
+    filter:
+        drop-shadow(0 -8px 15px rgba(0,0,0,.55));
+}
+
+.book10-page {
+    width: 50%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ded0ad,
+            #9d875f
+        );
+
+    border-top: 2px solid #d7c496;
+
+    overflow: hidden;
+}
+
+.book10-page.left {
+    transform: skewY(7deg);
+
+    border-radius: 12px 3px 0 0;
+}
+
+.book10-page.right {
+    transform: skewY(-7deg);
+
+    border-radius: 3px 12px 0 0;
+}
+
+.book10-image {
+    width: 100%;
+    height: 100%;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(210, 141, 71, .7),
+            transparent 24%
+        ),
+        linear-gradient(
+            135deg,
+            #142334,
+            #4b3025
+        );
+}
+
+.book10-spine {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 8px;
+    height: 150px;
+
+    transform: translateX(-50%);
+
+    background: #4a3425;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   COVER QUOTE
+   ========================================================= */
+
+.cover10-quote {
+    position: absolute;
+
+    left: 150px;
+    right: 20px;
+
+    bottom: 50px;
+
+    z-index: 20;
+
+    color: #dcb378;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    font-style: italic;
+
+    line-height: 1.5;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+.cover10-quote span {
+    color: #e8b36b;
+
+    font-size: 18px;
+}
+
+
+/* STARS */
+
+.gold10-star {
+    position: absolute;
+
+    color: #dca45d;
+
+    z-index: 6;
+
+    opacity: .85;
+}
+
+.star-one {
+    top: 210px;
+    left: 145px;
+}
+
+.star-two {
+    top: 250px;
+    right: 45px;
+}
+
+.star-three {
+    top: 370px;
+    left: 150px;
+}
+
+.star-four {
+    bottom: 245px;
+    right: 45px;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.cover10-bottom {
+    position: absolute;
+
+    left: 135px;
+    right: 18px;
+
+    bottom: 12px;
+
+    z-index: 20;
+
+    color: #cda066;
+
+    text-align: center;
+}
+
+.bottom10-book {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    font-family: Georgia, serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.bottom10-book b {
+    font-size: 15px;
+}
+
+.bottom10-line {
+    width: 45%;
+
+    height: 1px;
+
+    margin: 5px auto;
+
+    background: rgba(205, 160, 102, .55);
+}
+
+.bottom10-caption {
+    font-family: Georgia, serif;
+
+    font-size: 9px;
+
+    font-style: italic;
+
+    line-height: 1.3;
+
+    opacity: .8;
+}
+
+
+/* =========================================================
+   RIGHT PAPER
+   ========================================================= */
+
+.chapter10-right {
+    min-width: 0;
+}
+
+.chapter10-paper {
+    position: relative;
+
+    min-height: 900px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(131, 91, 43, .08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(131, 91, 43, .08),
+            transparent 30%
+        ),
+        #f1dfb9;
+
+    border-radius: 13px 7px 10px 8px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.5),
+        inset 0 0 45px rgba(110, 70, 30, .15);
+
+    border: 1px solid rgba(113, 77, 38, .5);
+}
+
+
+/* PAPER TEXTURE */
+
+.paper10-texture {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .25;
+
+    background-image:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(70, 45, 20, .18) 0 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle at 70% 70%,
+            rgba(70, 45, 20, .15) 0 1px,
+            transparent 1px
+        );
+
+    background-size: 17px 17px, 23px 23px;
+}
+
+
+/* CORNERS */
+
+.paper10-corner {
+    position: absolute;
+
+    z-index: 3;
+
+    color: #725027;
+
+    font-size: 48px;
+
+    opacity: .8;
+}
+
+.corner-top {
+    top: 30px;
+    right: 34px;
+}
+
+.corner-bottom {
+    bottom: 25px;
+    left: 25px;
+}
+
+
+/* =========================================================
+   LETTER
+   ========================================================= */
+
+.letter10-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(72%, 600px);
+
+    margin: 0 auto;
+
+    padding:
+        40px
+        0
+        65px;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 15px;
+
+    line-height: 1.42;
+
+    color: #2c2117;
+}
+
+.letter10-content p {
+    margin: 0 0 10px;
+}
+
+.letter10-content strong {
+    font-weight: 700;
+}
+
+.letter10-opening {
+    margin-bottom: 10px;
+}
+
+
+/* EMPHASIS */
+
+.letter10-emphasis {
+    margin: 10px 0 15px;
+
+    padding-left: 15px;
+
+    border-left: 2px solid #a2743b;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   POWER LINES
+   ========================================================= */
+
+.power10-one,
+.power10-main,
+.power10-final {
+    margin: 18px auto;
+
+    padding: 12px 15px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(116, 78, 39, .45);
+    border-bottom: 1px solid rgba(116, 78, 39, .45);
+
+    font-family: Georgia, serif;
+}
+
+.power10-one span,
+.power10-main span,
+.power10-final span {
+    display: block;
+
+    font-size: 13px;
+}
+
+.power10-one strong,
+.power10-main strong,
+.power10-final strong {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 19px;
+
+    color: #694522;
+}
+
+.power10-one small,
+.power10-main small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 12px;
+}
+
+.power10-main {
+    padding: 18px;
+
+    background:
+        rgba(126, 87, 42, .06);
+}
+
+.power10-main strong {
+    font-size: 21px;
+}
+
+.power10-final {
+    margin-top: 25px;
+
+    padding: 17px;
+
+    background:
+        rgba(120, 80, 35, .08);
+}
+
+.power10-final strong {
+    margin-top: 5px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   MINI QUOTE
+   ========================================================= */
+
+.letter10-mini-quote {
+    margin: 16px auto;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    color: #674522;
+}
+
+.letter10-mini-quote span {
+    display: block;
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+.letter10-mini-quote strong {
+    display: block;
+
+    margin: 3px 0;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   UNDERSTANDING DIAGRAM
+   ========================================================= */
+
+.understanding10 {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 18px 0;
+
+    padding: 10px 5px;
+
+    border-top: 1px dashed rgba(105, 71, 36, .35);
+    border-bottom: 1px dashed rgba(105, 71, 36, .35);
+
+    font-family: Georgia, serif;
+}
+
+.understand10-item {
+    text-align: center;
+}
+
+.understand10-item span {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+.understand10-item small {
+    display: block;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 9px;
+
+    opacity: .7;
+}
+
+.understand10-heart {
+    font-size: 24px;
+
+    color: #9a4038;
+}
+
+.understand10-arrow {
+    font-size: 18px;
+
+    opacity: .7;
+}
+
+.understanding10 > strong {
+    font-size: 17px;
+
+    color: #694522;
+}
+
+
+/* =========================================================
+   ENDING
+   ========================================================= */
+
+.letter10-ending {
+    margin-top: 22px;
+
+    text-align: center;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.letter10-ending strong {
+    font-size: 15px;
+
+    color: #6f3d25;
+}
+
+
+/* =========================================================
+   PHOTO STRIPS
+   ========================================================= */
+
+.photo10-strip {
+    position: absolute;
+
+    z-index: 8;
+
+    width: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.strip-left {
+    left: -12px;
+    top: 55px;
+
+    transform: rotate(-5deg);
+}
+
+.strip-right {
+    right: -12px;
+    top: 215px;
+
+    transform: rotate(5deg);
+}
+
+.photo10-frame {
+    padding: 6px 6px 18px;
+
+    background: #e8d4a9;
+
+    box-shadow:
+        0 8px 15px rgba(54, 35, 19, .25);
+
+    border: 1px solid #bda579;
+}
+
+.photo10-placeholder {
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 1 / 1.05;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: rgba(240, 196, 119, .8);
+
+    font-size: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101a26,
+            #4b3327
+        );
+}
+
+.photo10-placeholder::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 60% 45%,
+            rgba(222, 154, 74, .35),
+            transparent 30%
+        );
+}
+
+.photo-hands {
+    background:
+        linear-gradient(
+            145deg,
+            #0b1018,
+            #3d2a22
+        );
+}
+
+.photo-night {
+    background:
+        linear-gradient(
+            145deg,
+            #07101c,
+            #755036
+        );
+}
+
+.photo-couple {
+    background:
+        radial-gradient(
+            circle at 50% 60%,
+            rgba(206, 135, 66, .4),
+            transparent 30%
+        ),
+        linear-gradient(
+            145deg,
+            #101a26,
+            #38241e
+        );
+}
+
+.photo-city {
+    background:
+        linear-gradient(
+            to bottom,
+            #0b1928,
+            #60412f
+        );
+}
+
+
+/* =========================================================
+   PAPER NOTES
+   ========================================================= */
+
+.paper10-note {
+    position: absolute;
+
+    z-index: 10;
+
+    padding: 6px 9px;
+
+    background: #e8c985;
+
+    color: #553719;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 9px;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,.15);
+}
+
+.note10-one {
+    right: 38px;
+    top: 135px;
+
+    transform: rotate(5deg);
+}
+
+.note10-two {
+    left: 30px;
+    bottom: 135px;
+
+    transform: rotate(-4deg);
+}
+
+.note10-three {
+    right: 28px;
+    bottom: 75px;
+
+    transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   FLOWERS
+   ========================================================= */
+
+.paper10-flower {
+    position: absolute;
+
+    z-index: 4;
+
+    color: #a88959;
+
+    opacity: .65;
+
+    font-size: 28px;
+}
+
+.flower10-one {
+    right: 95px;
+    top: 35px;
+}
+
+.flower10-two {
+    right: 45px;
+    bottom: 175px;
+}
+
+.flower10-three {
+    left: 90px;
+    bottom: 30px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.chapter10-page .chapter-navigation {
+    position: relative;
+    z-index: 20;
+
+    width: min(calc(100% - 40px), 1000px);
+
+    margin-inline: auto;
+
+    padding: 35px 0 60px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .chapter10-book {
+        width: min(1000px, calc(100% - 28px));
+    }
+
+    .cover10-spine {
+        width: 88px;
+    }
+
+    .cover10-main {
+        margin-left: 88px;
+    }
+
+    .cover10-title strong {
+        font-size: 46px;
+    }
+
+    .letter10-content {
+        width: 68%;
+        font-size: 13px;
+    }
+
+    .photo10-strip {
+        width: 85px;
+    }
+}
+
+
+@media (max-width: 950px) {
+
+    .chapter10-book {
+        grid-template-columns: 1fr;
+        width: min(760px, calc(100% - 28px));
+    }
+
+    .chapter10-cover,
+    .cover10-main {
+        min-height: 780px;
+    }
+
+    .cover10-main {
+        min-height: 780px;
+    }
+
+    .silent10-scene {
+        bottom: 88px;
+        height: 430px;
+    }
+
+    .chapter10-paper {
+        min-height: 850px;
+    }
+
+    .letter10-content {
+        width: 76%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .chapter10-book {
+        width: calc(100% - 18px);
+
+        margin-top: 25px;
+    }
+
+    .chapter10-cover {
+        min-height: 650px;
+    }
+
+    .cover10-main {
+        min-height: 650px;
+
+        margin-left: 70px;
+    }
+
+    .cover10-spine {
+        width: 70px;
+
+        padding: 35px 7px;
+    }
+
+    .spine-title {
+        font-size: 13px;
+    }
+
+    .cover10-header {
+        padding-top: 25px;
+
+        font-size: 13px;
+
+        letter-spacing: 3px;
+    }
+
+    .cover10-title small {
+        font-size: 17px;
+    }
+
+    .cover10-title strong {
+        font-size: 36px;
+    }
+
+    .cover10-title-line {
+        width: 82%;
+    }
+
+    .silent10-scene {
+        left: 12px;
+        right: 10px;
+
+        bottom: 75px;
+
+        height: 350px;
+    }
+
+    .scene10-open-book {
+        left: 5%;
+        right: 5%;
+
+        height: 105px;
+    }
+
+    .person-boy {
+        left: 27%;
+
+        transform: scale(.72);
+        transform-origin: bottom;
+    }
+
+    .person-girl {
+        left: 53%;
+
+        transform: scale(.72);
+        transform-origin: bottom;
+    }
+
+    .cover10-quote {
+        left: 82px;
+        right: 8px;
+
+        bottom: 38px;
+
+        font-size: 10px;
+    }
+
+    .cover10-bottom {
+        left: 75px;
+
+        font-size: 8px;
+    }
+
+    .chapter10-paper {
+        min-height: 850px;
+    }
+
+    .letter10-content {
+        width: 78%;
+
+        padding-top: 32px;
+
+        font-size: 12px;
+
+        line-height: 1.4;
+    }
+
+    .photo10-strip {
+        width: 68px;
+
+        opacity: .9;
+    }
+
+    .strip-left {
+        left: -9px;
+    }
+
+    .strip-right {
+        right: -9px;
+    }
+
+    .power10-main strong {
+        font-size: 17px;
+    }
+
+    .power10-final strong {
+        font-size: 14px;
+    }
+
+    .paper10-note {
+        display: none;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .cover10-title strong {
+        font-size: 30px;
+    }
+
+    .cover10-title small {
+        font-size: 14px;
+    }
+
+    .cover10-header {
+        font-size: 11px;
+    }
+
+    .silent10-scene {
+        height: 310px;
+    }
+
+    .letter10-content {
+        width: 74%;
+
+        font-size: 11px;
+    }
+
+    .photo10-strip {
+        width: 55px;
+    }
+
+    .understanding10 {
+        gap: 6px;
+    }
+}
