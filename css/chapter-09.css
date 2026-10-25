@@ -1,0 +1,1851 @@
+/* =========================================================
+   CHAPTER 09
+   THE HUNGER GAMES
+   NEW BOOK COVER DESIGN
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.chapter-page.chapter09-page {
+    min-height: 100svh;
+    height: auto !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(170, 85, 62, 0.10),
+            transparent 35%
+        ),
+        #080708;
+}
+
+.chapter09-bg {
+    position: fixed;
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 15% 40%,
+            rgba(145, 56, 45, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 60%,
+            rgba(201, 143, 74, 0.08),
+            transparent 30%
+        );
+}
+
+
+/* =========================================================
+   OPEN BOOK
+========================================================= */
+
+.chapter09-book {
+    position: relative;
+    z-index: 2;
+
+    width:
+        min(
+            calc(100% - 40px),
+            1350px
+        );
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   LEFT BOOK
+========================================================= */
+
+.chapter09-left {
+    min-height: 900px;
+
+    padding: 12px;
+
+    background: #111;
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================================
+   NEW COVER
+========================================================= */
+
+.chapter09-cover {
+    position: relative;
+
+    min-height: 876px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171014 0%,
+            #241318 36%,
+            #6c3a36 62%,
+            #171014 100%
+        );
+
+    border:
+        1px solid
+        rgba(213, 173, 117, 0.55);
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255,255,255,0.04),
+
+        inset 0 0 100px
+        rgba(0,0,0,0.55);
+}
+
+
+/* Book-cover inner frame */
+
+.cover09-border {
+    position: absolute;
+
+    inset: 10px;
+
+    z-index: 20;
+
+    border:
+        1px solid
+        rgba(221, 180, 118, 0.32);
+
+    pointer-events: none;
+}
+
+.cover09-border::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border:
+        1px solid
+        rgba(221, 180, 118, 0.10);
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.cover09-top {
+    position: absolute;
+
+    top: 27px;
+    left: 40px;
+    right: 40px;
+
+    z-index: 25;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color:
+        rgba(
+            231,
+            202,
+            158,
+            0.82
+        );
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.22em;
+}
+
+.cover09-number {
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 1.2rem;
+
+    color:
+        rgba(
+            246,
+            217,
+            171,
+            0.9
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND WORDS
+========================================================= */
+
+.chapter09-background-words {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 145px;
+    left: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    transform:
+        rotate(-3deg);
+
+    pointer-events: none;
+}
+
+.chapter09-background-words span {
+    color:
+        rgba(
+            243,
+            211,
+            167,
+            0.22
+        );
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            0.55rem,
+            1vw,
+            0.75rem
+        );
+
+    letter-spacing: 0.16em;
+}
+
+.chapter09-background-words span::before {
+    content: "→ ";
+
+    color:
+        rgba(
+            211,
+            151,
+            91,
+            0.48
+        );
+}
+
+.chapter09-background-words span:nth-child(2) {
+    margin-left: 25px;
+}
+
+.chapter09-background-words span:nth-child(3) {
+    margin-left: 5px;
+}
+
+.chapter09-background-words span:nth-child(4) {
+    margin-left: 35px;
+}
+
+.chapter09-background-words span:nth-child(5) {
+    margin-left: 12px;
+}
+
+.chapter09-background-words span:last-child {
+    margin-left: 42px;
+
+    color:
+        rgba(
+            225,
+            157,
+            177,
+            0.34
+        );
+}
+
+
+/* =========================================================
+   SMALL TITLE
+========================================================= */
+
+.cover09-small-title {
+    position: absolute;
+
+    z-index: 25;
+
+    top: 106px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    color:
+        rgba(
+            237,
+            208,
+            165,
+            0.7
+        );
+
+    font-size: 0.56rem;
+
+    letter-spacing: 0.3em;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.chapter09-main-title {
+    position: absolute;
+
+    z-index: 25;
+
+    top: 175px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 82%;
+
+    text-align: center;
+}
+
+.title-small {
+    color:
+        #e6c998;
+
+    font-size:
+        clamp(
+            1rem,
+            2vw,
+            1.4rem
+        );
+
+    letter-spacing: 0.35em;
+
+    margin-bottom: 4px;
+}
+
+.title-big {
+    color:
+        #f0dfc0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            3rem,
+            5.4vw,
+            5.5rem
+        );
+
+    line-height: 0.82;
+
+    letter-spacing: 0.025em;
+
+    text-shadow:
+        0 4px 18px
+        rgba(0,0,0,0.5);
+}
+
+.title-games {
+    color:
+        #d6a66d;
+
+    margin-top: 4px;
+}
+
+.title-rule {
+    width: 150px;
+
+    height: 1px;
+
+    margin:
+        22px auto 13px;
+
+    background:
+        rgba(
+            220,
+            178,
+            116,
+            0.7
+        );
+}
+
+.title-subtitle {
+    color:
+        #e5a4b7;
+
+    font-family:
+        var(--font-script);
+
+    font-size:
+        clamp(
+            1.25rem,
+            2.4vw,
+            2rem
+        );
+
+    transform:
+        rotate(-2deg);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.cover09-arrow {
+    position: absolute;
+
+    z-index: 15;
+
+    top: 210px;
+
+    right: 7%;
+
+    width: 150px;
+
+    height: 50px;
+
+    transform:
+        rotate(-16deg);
+}
+
+.arrow-line {
+    position: absolute;
+
+    left: 0;
+    top: 23px;
+
+    width: 125px;
+
+    height: 2px;
+
+    background:
+        rgba(
+            222,
+            183,
+            123,
+            0.75
+        );
+}
+
+.arrow-head {
+    position: absolute;
+
+    right: 9px;
+    top: 16px;
+
+    width: 15px;
+    height: 15px;
+
+    border-top:
+        2px solid
+        rgba(222,183,123,0.75);
+
+    border-right:
+        2px solid
+        rgba(222,183,123,0.75);
+
+    transform:
+        rotate(45deg);
+}
+
+.arrow-feather {
+    position: absolute;
+
+    left: 0;
+
+    width: 25px;
+
+    height: 9px;
+
+    border-top:
+        1px solid
+        rgba(
+            222,
+            183,
+            123,
+            0.6
+        );
+
+    transform-origin: left;
+}
+
+.arrow-feather.one {
+    top: 18px;
+
+    transform:
+        rotate(28deg);
+}
+
+.arrow-feather.two {
+    top: 23px;
+
+    transform:
+        rotate(-28deg);
+}
+
+.arrow-feather.three {
+    top: 23px;
+
+    width: 20px;
+
+    transform:
+        rotate(10deg);
+}
+
+
+/* =========================================================
+   TARGET
+========================================================= */
+
+.cover09-target {
+    position: absolute;
+
+    z-index: 6;
+
+    right: 12%;
+
+    top: 335px;
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    opacity: 0.34;
+}
+
+.target-ring {
+    position: absolute;
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid
+        #e3bd80;
+}
+
+.ring-one {
+    width: 90px;
+    height: 90px;
+}
+
+.ring-two {
+    width: 62px;
+    height: 62px;
+}
+
+.ring-three {
+    width: 34px;
+    height: 34px;
+}
+
+.cover09-target span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color:
+        #e4a1b7;
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   SCENE
+========================================================= */
+
+.battle09-scene {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 48%;
+
+    overflow: hidden;
+}
+
+.scene09-sky {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(28,19,28,0.15),
+            rgba(95,45,42,0.4) 45%,
+            rgba(14,10,14,0.9) 100%
+        );
+}
+
+.scene09-sun {
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    right: 21%;
+    top: 15%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,208,133,0.75),
+            rgba(228,124,72,0.22) 55%,
+            transparent 72%
+        );
+}
+
+.scene09-horizon {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 34%;
+
+    height: 1px;
+
+    background:
+        rgba(
+            235,
+            173,
+            103,
+            0.32
+        );
+}
+
+
+/* =========================================================
+   MOUNTAINS
+========================================================= */
+
+.scene09-mountain {
+    position: absolute;
+
+    left: -10%;
+    right: -10%;
+
+    bottom: 26%;
+
+    clip-path:
+        polygon(
+            0 100%,
+            14% 52%,
+            25% 76%,
+            38% 35%,
+            52% 70%,
+            66% 28%,
+            79% 68%,
+            91% 45%,
+            100% 65%,
+            100% 100%
+        );
+}
+
+.mountain-back {
+    height: 55%;
+
+    background:
+        rgba(
+            43,
+            30,
+            37,
+            0.8
+        );
+}
+
+.mountain-mid {
+    height: 44%;
+
+    bottom: 20%;
+
+    background:
+        #171016;
+
+    transform:
+        scale(1.05);
+}
+
+.mountain-front {
+    height: 34%;
+
+    bottom: 17%;
+
+    background:
+        #0b090d;
+}
+
+
+/* =========================================================
+   PATH
+========================================================= */
+
+.scene09-path {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -10px;
+
+    width: 160px;
+
+    height: 230px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(128,82,63,0.1),
+            rgba(8,7,10,0.9)
+        );
+
+    clip-path:
+        polygon(
+            42% 0,
+            58% 0,
+            100% 100%,
+            0 100%
+        );
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   COUPLE
+========================================================= */
+
+.cover09-couple {
+    position: absolute;
+
+    z-index: 12;
+
+    left: 50%;
+
+    bottom: 9%;
+
+    width: 260px;
+    height: 260px;
+
+    transform:
+        translateX(-50%);
+}
+
+.cover09-person {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 90px;
+
+    height: 230px;
+}
+
+.cover09-person.boy {
+    left: 35px;
+}
+
+.cover09-person.girl {
+    right: 35px;
+}
+
+.person-head {
+    position: absolute;
+
+    top: 0;
+
+    left: 25px;
+
+    width: 43px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background:
+        #07070a;
+}
+
+.person-hair {
+    position: absolute;
+
+    top: -5px;
+
+    left: 14px;
+
+    width: 63px;
+    height: 58px;
+
+    border-radius:
+        50% 50% 42% 48%;
+
+    background:
+        #050508;
+}
+
+.person-body {
+    position: absolute;
+
+    top: 45px;
+
+    left: 8px;
+
+    width: 75px;
+    height: 185px;
+
+    border-radius:
+        35px 35px 8px 8px;
+
+    background:
+        #07070a;
+}
+
+.person-arm {
+    position: absolute;
+
+    top: 95px;
+
+    right: -23px;
+
+    width: 65px;
+    height: 20px;
+
+    border-radius: 20px;
+
+    background:
+        #07070a;
+
+    transform:
+        rotate(22deg);
+}
+
+.girl .person-arm {
+    left: -25px;
+    right: auto;
+
+    transform:
+        rotate(-22deg);
+}
+
+.girl .person-hair {
+    width: 70px;
+    height: 95px;
+
+    left: 7px;
+}
+
+.girl .person-hair::after {
+    content: "";
+
+    position: absolute;
+
+    right: -13px;
+    top: 35px;
+
+    width: 32px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background:
+        #050508;
+}
+
+.girl-bow {
+    position: absolute;
+
+    z-index: 4;
+
+    top: 36px;
+
+    right: -9px;
+
+    color:
+        #d88fa5;
+
+    font-size: 1.2rem;
+}
+
+.joined-hands {
+    position: absolute;
+
+    z-index: 20;
+
+    left: 50%;
+
+    top: 122px;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        #dc9bad;
+
+    font-size: 1.4rem;
+}
+
+
+/* =========================================================
+   SCENE CAPTION
+========================================================= */
+
+.scene09-caption {
+    position: absolute;
+
+    z-index: 20;
+
+    left: 8%;
+
+    bottom: 18%;
+
+    color:
+        rgba(
+            243,
+            216,
+            180,
+            0.8
+        );
+
+    font-family:
+        var(--font-script);
+
+    font-size:
+        1.05rem;
+
+    line-height: 1.1;
+
+    transform:
+        rotate(-4deg);
+}
+
+
+/* =========================================================
+   COVER NOTES
+========================================================= */
+
+.cover09-note {
+    position: absolute;
+
+    z-index: 30;
+
+    padding:
+        9px 13px;
+
+    background:
+        #e6c696;
+
+    color:
+        #3b2923;
+
+    font-family:
+        var(--font-script);
+
+    box-shadow:
+        0 8px 18px
+        rgba(0,0,0,0.35);
+}
+
+.note-battles {
+    left: 23px;
+
+    bottom: 32%;
+
+    transform:
+        rotate(-6deg);
+}
+
+.note-courage {
+    right: 23px;
+
+    bottom: 24%;
+
+    transform:
+        rotate(5deg);
+}
+
+.cover09-note span {
+    display: block;
+
+    font-size: 0.82rem;
+}
+
+.cover09-note small {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   COVER BOTTOM
+========================================================= */
+
+.cover09-bottom {
+    position: absolute;
+
+    z-index: 30;
+
+    left: 50%;
+
+    bottom: 22px;
+
+    width: 80%;
+
+    transform:
+        translateX(-50%);
+
+    text-align: center;
+
+    color:
+        #e4cfaa;
+
+    font-family:
+        var(--font-script);
+}
+
+.bottom-line {
+    width: 90px;
+
+    height: 1px;
+
+    margin:
+        0 auto 8px;
+
+    background:
+        rgba(
+            218,
+            175,
+            110,
+            0.7
+        );
+}
+
+.cover09-bottom span {
+    display: block;
+
+    font-size: 0.63rem;
+
+    letter-spacing: 0.16em;
+}
+
+.cover09-bottom strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+        #e0a0b5;
+
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   RIGHT PAGE
+========================================================= */
+
+.chapter09-right {
+    min-height: 900px;
+
+    padding: 12px;
+
+    background:
+        #111;
+
+    box-shadow:
+        0 30px 90px
+        rgba(0,0,0,0.5);
+}
+
+.chapter09-paper {
+    position: relative;
+
+    min-height: 876px;
+
+    overflow: hidden;
+
+    padding:
+        50px
+        62px
+        45px;
+
+    background:
+        radial-gradient(
+            circle at 82% 12%,
+            rgba(168,117,66,0.12),
+            transparent 23%
+        ),
+        linear-gradient(
+            130deg,
+            #f0d8b1,
+            #fae9c8 48%,
+            #e8cda6
+        );
+
+    border:
+        1px solid
+        rgba(115,80,49,0.35);
+
+    box-shadow:
+        inset 0 0 60px
+        rgba(105,72,39,0.10);
+}
+
+.chapter09-paper::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border:
+        1px solid
+        rgba(115,80,49,0.17);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.paper09-corner {
+    position: absolute;
+
+    top: 25px;
+    right: 32px;
+
+    z-index: 5;
+
+    color:
+        #a64d68;
+
+    font-size: 2rem;
+
+    transform:
+        rotate(8deg);
+}
+
+.letter09-content {
+    position: relative;
+
+    z-index: 4;
+
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    color:
+        #40322a;
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        "Kohinoor Devanagari",
+        var(--font-display),
+        sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.72;
+}
+
+.letter09-content p {
+    margin:
+        0 0 22px;
+}
+
+.letter09-content strong {
+    color:
+        #71384b;
+}
+
+.letter09-date {
+    margin-bottom: 28px;
+
+    color:
+        #8b6250;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.18em;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+========================================================= */
+
+.letter09-highlight {
+    margin:
+        28px 0;
+
+    padding:
+        15px 20px;
+
+    border-left:
+        3px solid
+        #b35b73;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.22
+        );
+
+    font-family:
+        var(--font-script);
+
+    text-align:
+        center;
+
+    line-height:
+        1.3;
+}
+
+.letter09-highlight span,
+.letter09-highlight strong {
+    display: block;
+}
+
+.letter09-highlight strong {
+    margin-top: 5px;
+
+    font-size: 1.15rem;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.quote09 {
+    margin:
+        28px auto;
+
+    width:
+        72%;
+
+    padding:
+        14px;
+
+    border-top:
+        1px solid
+        rgba(102,70,46,0.35);
+
+    border-bottom:
+        1px solid
+        rgba(102,70,46,0.35);
+
+    text-align:
+        center;
+
+    font-family:
+        var(--font-script);
+
+    transform:
+        rotate(-1deg);
+}
+
+.quote09 span {
+    display: block;
+
+    color:
+        #73394c;
+
+    font-size:
+        1.55rem;
+}
+
+.quote09 small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size:
+        0.95rem;
+}
+
+
+/* =========================================================
+   YOU ME US DOODLE
+========================================================= */
+
+.paper09-doodle {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin:
+        28px auto;
+
+    width:
+        270px;
+
+    padding:
+        13px;
+
+    border:
+        1px dashed
+        rgba(103,72,47,0.45);
+
+    font-family:
+        var(--font-script);
+
+    transform:
+        rotate(2deg);
+}
+
+.paper09-doodle div {
+    color:
+        #ae5570;
+
+    font-size:
+        1.3rem;
+}
+
+.paper09-doodle strong {
+    font-size:
+        1.35rem;
+}
+
+.doodle-arrow {
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -22px;
+
+    color:
+        #805c48;
+
+    font-size:
+        1.3rem;
+}
+
+
+/* =========================================================
+   POWER
+========================================================= */
+
+.chapter09-power {
+    margin:
+        30px 0;
+
+    padding:
+        17px 20px;
+
+    border-top:
+        1px solid
+        rgba(108,74,48,0.35);
+
+    border-bottom:
+        1px solid
+        rgba(108,74,48,0.35);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.17
+        );
+
+    text-align:
+        center;
+
+    font-family:
+        var(--font-script);
+
+    line-height:
+        1.35;
+
+    transform:
+        rotate(-1deg);
+}
+
+.chapter09-power span {
+    display: block;
+}
+
+.chapter09-power strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size:
+        1.28rem;
+}
+
+
+/* =========================================================
+   FINAL CHOICE
+========================================================= */
+
+.final-choice09 {
+    margin:
+        30px auto;
+
+    width:
+        250px;
+
+    text-align:
+        center;
+
+    font-family:
+        var(--font-script);
+
+    transform:
+        rotate(2deg);
+}
+
+.final-choice09 span {
+    display: block;
+
+    color:
+        #6d394b;
+
+    font-size:
+        1.35rem;
+}
+
+.final-choice09 strong {
+    display: block;
+
+    font-size:
+        1.15rem;
+}
+
+
+/* =========================================================
+   FINAL POWER
+========================================================= */
+
+.chapter09-final-power {
+    margin:
+        35px 0 28px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid
+        rgba(111,76,49,0.32);
+
+    text-align:
+        center;
+
+    font-family:
+        var(--font-script);
+
+    font-size:
+        1.05rem;
+
+    line-height:
+        1.35;
+
+    background:
+        rgba(
+            255,
+            245,
+            225,
+            0.24
+        );
+}
+
+.chapter09-final-power strong {
+    display: block;
+
+    color:
+        #74384c;
+
+    font-size:
+        1.25rem;
+}
+
+
+/* =========================================================
+   ENDING
+========================================================= */
+
+.letter09-ending {
+    margin-top:
+        30px;
+
+    text-align:
+        center;
+
+    color:
+        #71384b;
+
+    font-family:
+        var(--font-script);
+
+    font-size:
+        1.1rem;
+
+    line-height:
+        1.35;
+}
+
+.letter09-ending strong {
+    font-size:
+        1.25rem;
+}
+
+
+/* =========================================================
+   PAPER NOTES
+========================================================= */
+
+.paper09-note {
+    position: absolute;
+
+    z-index: 10;
+
+    padding:
+        8px 13px;
+
+    background:
+        #e6c696;
+
+    color:
+        #392b24;
+
+    font-family:
+        var(--font-script);
+
+    font-size:
+        0.78rem;
+
+    box-shadow:
+        0 5px 14px
+        rgba(80,50,30,0.18);
+}
+
+.paper-note-one {
+    top: 17%;
+
+    right: -6px;
+
+    transform:
+        rotate(5deg);
+}
+
+.paper-note-two {
+    top: 45%;
+
+    left: -8px;
+
+    transform:
+        rotate(-5deg);
+}
+
+.paper-note-three {
+    bottom: 12%;
+
+    right: 8px;
+
+    transform:
+        rotate(4deg);
+}
+
+
+/* =========================================================
+   HEARTS
+========================================================= */
+
+.paper09-heart {
+    position: absolute;
+
+    z-index: 5;
+
+    color:
+        #ad4f69;
+
+    font-size:
+        2rem;
+}
+
+.heart-one {
+    left: 5%;
+
+    top: 25%;
+
+    transform:
+        rotate(-12deg);
+}
+
+.heart-two {
+    left: 7%;
+
+    bottom: 20%;
+
+    transform:
+        rotate(9deg);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .chapter09-book {
+        grid-template-columns:
+            1fr;
+
+        width:
+            min(
+                calc(100% - 28px),
+                720px
+            );
+    }
+
+    .chapter09-left,
+    .chapter09-right {
+        min-height:
+            auto;
+    }
+
+    .chapter09-cover,
+    .chapter09-paper {
+        min-height:
+            820px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .chapter09-book {
+        width:
+            calc(100% - 24px);
+
+        margin-top:
+            25px;
+    }
+
+    .chapter09-cover,
+    .chapter09-paper {
+        min-height:
+            760px;
+    }
+
+    .cover09-top {
+        left: 25px;
+        right: 25px;
+
+        font-size:
+            0.52rem;
+    }
+
+    .chapter09-background-words {
+        left: 25px;
+
+        top: 125px;
+
+        gap: 7px;
+    }
+
+    .chapter09-background-words span {
+        font-size:
+            0.48rem;
+    }
+
+    .cover09-small-title {
+        top: 93px;
+
+        font-size:
+            0.42rem;
+    }
+
+    .chapter09-main-title {
+        top: 155px;
+    }
+
+    .title-big {
+        font-size:
+            3rem;
+    }
+
+    .title-subtitle {
+        font-size:
+            1.2rem;
+    }
+
+    .cover09-arrow {
+        right: 2%;
+
+        top: 205px;
+
+        transform:
+            scale(0.65)
+            rotate(-16deg);
+    }
+
+    .cover09-target {
+        right: 8%;
+
+        top: 330px;
+
+        transform:
+            scale(0.65);
+    }
+
+    .cover09-couple {
+        transform:
+            translateX(-50%)
+            scale(0.75);
+
+        transform-origin:
+            bottom center;
+    }
+
+    .scene09-caption {
+        left: 5%;
+
+        bottom: 17%;
+
+        font-size:
+            0.8rem;
+    }
+
+    .cover09-note {
+        font-size:
+            0.62rem;
+    }
+
+    .note-battles {
+        left: 15px;
+    }
+
+    .note-courage {
+        right: 15px;
+    }
+
+    .cover09-bottom {
+        width:
+            88%;
+    }
+
+    .cover09-bottom strong {
+        font-size:
+            0.9rem;
+    }
+
+    .chapter09-paper {
+        padding:
+            42px 24px 35px;
+    }
+
+    .letter09-content {
+        font-size:
+            0.9rem;
+
+        line-height:
+            1.62;
+    }
+
+    .paper09-note {
+        font-size:
+            0.58rem;
+    }
+
+    .paper-note-one {
+        right: 2px;
+    }
+
+    .paper-note-two {
+        left: 2px;
+    }
+
+    .chapter09-final-power {
+        font-size:
+            0.9rem;
+    }
+
+    .chapter09-final-power strong {
+        font-size:
+            1.05rem;
+    }
+
+    .chapter-navigation {
+        width:
+            calc(100% - 24px);
+    }
+}

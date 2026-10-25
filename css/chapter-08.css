@@ -1,0 +1,1450 @@
+/* =========================================================
+   CHAPTER 08
+   CROOKED KINGDOM
+   STILL HERE, STILL US ♡
+   SAME CINEMATIC BOOK SYSTEM AS CHAPTER 02
+========================================================= */
+
+
+/* =========================================================
+   PAGE / SCROLL FIX
+========================================================= */
+
+.chapter-page.chapter08-page {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    min-height: 100svh;
+    height: auto !important;
+}
+
+.chapter08-page {
+    background:
+        radial-gradient(
+            circle at 50% 8%,
+            rgba(216, 178, 124, 0.13),
+            transparent 32%
+        ),
+        #090708;
+}
+
+.chapter08-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.55;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 184, 93, 0.14),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(168, 82, 111, 0.12),
+            transparent 28%
+        );
+}
+
+
+/* =========================================================
+   OPEN BOOK
+========================================================= */
+
+.chapter08-book {
+    position: relative;
+    z-index: 2;
+
+    width: min(calc(100% - 40px), 1350px);
+    margin: 45px auto 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT PAGE / COVER
+========================================================= */
+
+.chapter08-left {
+    min-height: 900px;
+    padding: 12px;
+
+    background: #111;
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.45);
+}
+
+.chapter08-cover {
+    position: relative;
+
+    min-height: 876px;
+    overflow: hidden;
+
+    padding: 35px;
+
+    border: 1px solid rgba(216, 178, 124, 0.55);
+
+    background:
+        radial-gradient(
+            circle at 50% 72%,
+            rgba(216, 178, 124, 0.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            160deg,
+            #151014,
+            #08090b 72%
+        );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+        inset 0 0 70px rgba(0, 0, 0, 0.45);
+}
+
+.chapter08-cover::before {
+    content: "";
+
+    position: absolute;
+    inset: 8px;
+
+    border: 1px solid rgba(216, 178, 124, 0.22);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   COVER HEADER
+========================================================= */
+
+.cover08-top {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 24px;
+
+    color: var(--gold);
+
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+}
+
+.cover08-top span:first-child,
+.cover08-top span:last-child {
+    font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   LEFT ANNOTATIONS
+========================================================= */
+
+.cover08-side {
+    position: absolute;
+
+    z-index: 6;
+
+    top: 78px;
+    left: 28px;
+
+    width: 185px;
+
+    display: grid;
+    gap: 9px;
+
+    color: rgba(246, 238, 224, 0.88);
+
+    font-family: var(--font-display);
+
+    font-size: 0.68rem;
+    line-height: 1.35;
+
+    font-style: italic;
+
+    transform: rotate(-2deg);
+}
+
+
+/* =========================================================
+   COVER TITLE
+========================================================= */
+
+.cover08-title {
+    position: relative;
+    z-index: 6;
+
+    margin: 56px auto 0;
+
+    width: 76%;
+
+    text-align: center;
+}
+
+.cover08-title h1 {
+    margin: 0;
+
+    color: #f5ead9;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(3rem, 5vw, 5.1rem);
+
+    line-height: 0.93;
+
+    letter-spacing: 0.02em;
+
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cover08-title h1 span {
+    display: block;
+}
+
+.cover08-subtitle {
+    width: fit-content;
+
+    margin: 24px auto 0;
+
+    padding:
+        0
+        18px
+        10px;
+
+    border-bottom:
+        1px solid
+        rgba(216, 178, 124, 0.8);
+
+    color: var(--gold);
+
+    font-family: var(--font-script);
+
+    font-size: clamp(1.8rem, 3vw, 3rem);
+
+    line-height: 1;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   CROWN
+========================================================= */
+
+.cover08-crown {
+    position: absolute;
+
+    top: 75px;
+    right: 48px;
+
+    z-index: 7;
+
+    color: #f5ead9;
+
+    font-size: 3.2rem;
+
+    transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   CINEMATIC COUPLE SCENE
+========================================================= */
+
+.crooked08-scene {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 58%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(20, 20, 31, 0.05),
+            rgba(7, 7, 10, 0.88) 78%
+        ),
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(238, 171, 101, 0.28),
+            transparent 23%
+        );
+}
+
+.scene08-sky {
+    position: absolute;
+
+    inset: 0 0 35% 0;
+
+    background:
+        radial-gradient(
+            circle at 51% 66%,
+            rgba(244, 177, 98, 0.35),
+            transparent 14%
+        ),
+        linear-gradient(
+            to bottom,
+            #17131b,
+            #33232a 62%,
+            #9b5b42
+        );
+}
+
+.star {
+    position: absolute;
+    color: rgba(255, 240, 203, 0.9);
+}
+
+.s1 {
+    left: 15%;
+    top: 18%;
+}
+
+.s2 {
+    right: 21%;
+    top: 14%;
+}
+
+.s3 {
+    left: 31%;
+    top: 30%;
+}
+
+.moon08 {
+    position: absolute;
+
+    top: 10%;
+    right: 10%;
+
+    color: #f3dfb9;
+
+    font-size: 2rem;
+}
+
+
+/* =========================================================
+   CITY SILHOUETTE
+========================================================= */
+
+.scene08-city {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 29%;
+
+    height: 18%;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 3%;
+
+    padding: 0 8%;
+}
+
+.scene08-city i {
+    display: block;
+
+    width: 10%;
+    height: 45%;
+
+    background: #121116;
+
+    box-shadow:
+        0 -2px 15px
+        rgba(245, 166, 92, 0.12);
+}
+
+.scene08-city i:nth-child(2) {
+    height: 72%;
+}
+
+.scene08-city i:nth-child(3) {
+    height: 55%;
+}
+
+.scene08-city i:nth-child(4) {
+    height: 85%;
+}
+
+.scene08-city i:nth-child(5) {
+    height: 62%;
+}
+
+.scene08-city i:nth-child(6) {
+    height: 48%;
+}
+
+
+/* =========================================================
+   LAMP
+========================================================= */
+
+.scene08-lamp {
+    position: absolute;
+
+    right: 14%;
+    bottom: 27%;
+
+    width: 22px;
+    height: 145px;
+
+    border-left:
+        4px solid
+        #19151a;
+}
+
+.scene08-lamp b {
+    position: absolute;
+
+    top: -8px;
+    left: -18px;
+
+    width: 35px;
+    height: 30px;
+
+    border-radius:
+        50%
+        50%
+        35%
+        35%;
+
+    background:
+        rgba(255, 196, 111, 0.72);
+
+    box-shadow:
+        0 0 30px
+        rgba(255, 179, 83, 0.55);
+}
+
+.scene08-lamp span {
+    position: absolute;
+
+    bottom: -4px;
+    left: -14px;
+
+    width: 26px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #141116;
+}
+
+
+/* =========================================================
+   CUTE COUPLE
+========================================================= */
+
+.couple08 {
+    position: absolute;
+
+    left: 50%;
+    bottom: 11%;
+
+    width: 330px;
+    height: 280px;
+
+    transform: translateX(-50%);
+}
+
+.person08 {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 125px;
+    height: 245px;
+}
+
+.boy08 {
+    left: 55px;
+}
+
+.girl08 {
+    right: 45px;
+}
+
+.head08 {
+    position: absolute;
+
+    top: 8px;
+    left: 38px;
+
+    width: 58px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background: #0a090c;
+}
+
+.hair08 {
+    position: absolute;
+
+    top: 0;
+    left: 26px;
+
+    width: 82px;
+    height: 75px;
+
+    border-radius:
+        52%
+        48%
+        42%
+        42%;
+
+    background: #08080a;
+}
+
+.body08 {
+    position: absolute;
+
+    top: 65px;
+    left: 22px;
+
+    width: 82px;
+    height: 155px;
+
+    border-radius:
+        42px
+        42px
+        10px
+        10px;
+
+    background: #09090c;
+}
+
+.arm08 {
+    position: absolute;
+
+    top: 95px;
+    right: -8px;
+
+    width: 75px;
+    height: 23px;
+
+    border-radius: 20px;
+
+    background: #09090c;
+
+    transform: rotate(18deg);
+}
+
+.boy08 .head08::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 -8px 0 3px
+        #050507;
+}
+
+.bow08 {
+    position: absolute;
+
+    top: 32px;
+    right: 1px;
+
+    color: #e9a8b9;
+
+    font-size: 1.2rem;
+}
+
+.hands08 {
+    position: absolute;
+
+    left: 50%;
+    top: 118px;
+
+    z-index: 4;
+
+    color: #d88aa4;
+
+    font-size: 1.4rem;
+
+    transform:
+        translateX(-50%);
+}
+
+
+/* =========================================================
+   SCENE TEXT
+========================================================= */
+
+.scene08-caption {
+    position: absolute;
+
+    left: 7%;
+    bottom: 6%;
+
+    z-index: 5;
+
+    color:
+        rgba(242, 221, 191, 0.9);
+
+    font-family: var(--font-script);
+
+    font-size: 1.1rem;
+    line-height: 1.2;
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   BOOK STACK
+========================================================= */
+
+.scene08-book-stack {
+    position: absolute;
+
+    right: 5%;
+    bottom: 3%;
+
+    z-index: 5;
+
+    width: 190px;
+
+    display: grid;
+    gap: 2px;
+
+    transform: rotate(-3deg);
+}
+
+.scene08-book-stack span {
+    display: block;
+
+    padding: 5px 8px;
+
+    border-top:
+        1px solid
+        rgba(216, 178, 124, 0.25);
+
+    background:
+        rgba(42, 28, 30, 0.9);
+
+    color: #d8b27c;
+
+    font-size: 0.47rem;
+
+    letter-spacing: 0.08em;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   COVER NOTES
+========================================================= */
+
+.cover08-note {
+    position: absolute;
+
+    z-index: 8;
+
+    padding:
+        12px
+        15px;
+
+    background: #e8c99e;
+
+    color: #30241d;
+
+    font-family: var(--font-script);
+
+    font-size: 0.9rem;
+    line-height: 1.05;
+
+    box-shadow:
+        0 8px 18px
+        rgba(0, 0, 0, 0.35);
+}
+
+.note08-one {
+    left: 22px;
+    bottom: 25%;
+
+    transform: rotate(-7deg);
+}
+
+.note08-two {
+    right: 24px;
+    bottom: 17%;
+
+    transform: rotate(7deg);
+}
+
+.note08-three {
+    right: 20px;
+    top: 28%;
+
+    transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   COVER POWER LINE
+========================================================= */
+
+.cover08-power {
+    position: absolute;
+
+    z-index: 9;
+
+    left: 50%;
+    bottom: 13px;
+
+    transform:
+        translateX(-50%);
+
+    width: 75%;
+
+    text-align: center;
+
+    color: #ead9c0;
+
+    font-family: var(--font-script);
+
+    font-size: 1rem;
+}
+
+.cover08-power strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #e5a6ba;
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================================
+   RIGHT PAGE
+========================================================= */
+
+.chapter08-right {
+    min-height: 900px;
+
+    padding: 12px;
+
+    background: #111;
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.45);
+}
+
+.crooked08-letter {
+    position: relative;
+
+    min-height: 876px;
+
+    overflow: hidden;
+
+    padding:
+        52px
+        64px
+        45px;
+
+    border:
+        1px solid
+        rgba(126, 91, 62, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(181, 133, 81, 0.11),
+            transparent 22%
+        ),
+        linear-gradient(
+            125deg,
+            #f0d9b3,
+            #f8e9c9 50%,
+            #e8cfaa
+        );
+
+    color: #3d3028;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255, 255, 255, 0.35),
+
+        inset 0 0 60px
+        rgba(116, 79, 39, 0.12);
+}
+
+.crooked08-letter::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border:
+        1px solid
+        rgba(115, 80, 49, 0.18);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PAPER HEADER
+========================================================= */
+
+.letter08-heart {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    color: #b65b70;
+
+    font-size: 2rem;
+
+    transform: rotate(9deg);
+}
+
+.letter08-title {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 520px;
+
+    margin:
+        0 auto
+        22px;
+
+    padding-bottom: 12px;
+
+    border-bottom:
+        1px dashed
+        rgba(112, 76, 46, 0.35);
+
+    font-family: var(--font-script);
+
+    font-size: 1.25rem;
+
+    text-align: center;
+
+    transform: rotate(-1deg);
+}
+
+.letter08-title span {
+    display: block;
+
+    color: #8c3e57;
+}
+
+
+/* =========================================================
+   LETTER CONTENT
+========================================================= */
+
+.crooked08-letter-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 610px;
+
+    margin: auto;
+
+    font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        "Kohinoor Devanagari",
+        var(--font-display),
+        sans-serif;
+
+    font-size: 1.03rem;
+
+    line-height: 1.72;
+}
+
+.crooked08-letter-content p {
+    margin:
+        0 0
+        24px;
+}
+
+.crooked08-letter-content i {
+    font-family: var(--font-script);
+
+    font-size: 1.18em;
+}
+
+.crooked08-letter-content strong {
+    color: #74384c;
+}
+
+
+/* =========================================================
+   MIDDLE POWER LINE
+========================================================= */
+
+.chapter08-middle-power,
+.chapter08-quote,
+.chapter08-ending-power {
+    margin: 30px 0;
+
+    padding:
+        18px
+        24px;
+
+    border-left:
+        3px solid
+        #b85c75;
+
+    background:
+        rgba(255, 255, 255, 0.22);
+
+    text-align: center;
+
+    font-family: var(--font-script);
+
+    line-height: 1.35;
+}
+
+.chapter08-middle-power span,
+.chapter08-ending-power span {
+    display: block;
+
+    font-size: 1rem;
+}
+
+.chapter08-middle-power strong,
+.chapter08-quote strong,
+.chapter08-ending-power strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.chapter08-quote {
+    border-left: 0;
+
+    border-top:
+        1px solid
+        rgba(126, 91, 62, 0.25);
+
+    border-bottom:
+        1px solid
+        rgba(126, 91, 62, 0.25);
+
+    background: transparent;
+
+    transform: rotate(-1deg);
+}
+
+
+/* =========================================================
+   PAPER DOODLE
+========================================================= */
+
+.paper08-doodle {
+    position: absolute;
+
+    color: #b65b70;
+
+    font-size: 2.2rem;
+
+    opacity: 0.75;
+}
+
+.doodle08-broken {
+    top: 320px;
+    right: 35px;
+
+    transform: rotate(-12deg);
+}
+
+
+/* =========================================================
+   TEAM SIGN
+========================================================= */
+
+.chapter08-team-sign {
+    width: 220px;
+
+    margin: 32px auto;
+
+    padding:
+        10px
+        14px;
+
+    border:
+        1px solid
+        rgba(89, 65, 47, 0.5);
+
+    background:
+        rgba(255, 245, 220, 0.35);
+
+    text-align: center;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 0.08em;
+}
+
+.chapter08-team-sign b {
+    display: block;
+
+    color: #a34c64;
+
+    margin: 3px 0;
+}
+
+.chapter08-team-sign strong {
+    display: block;
+
+    color: #633447;
+}
+
+
+/* =========================================================
+   FINAL POWER LINE
+========================================================= */
+
+.chapter08-ending-power {
+    margin-top: 40px;
+
+    border-left: 0;
+
+    border-top:
+        1px solid
+        rgba(112, 76, 46, 0.35);
+
+    border-bottom:
+        1px solid
+        rgba(112, 76, 46, 0.35);
+}
+
+
+/* =========================================================
+   LETTER ENDING
+========================================================= */
+
+.chapter08-ending {
+    margin:
+        34px 0
+        8px;
+
+    text-align: center;
+
+    color: #74384c;
+
+    font-family: var(--font-script);
+
+    font-size: 1.25rem;
+
+    line-height: 1.3;
+}
+
+.chapter08-ending strong {
+    font-size: 1.45rem;
+}
+
+
+/* =========================================================
+   PAPER NOTES
+========================================================= */
+
+.paper08-note {
+    position: absolute;
+
+    z-index: 4;
+
+    width: 145px;
+
+    padding:
+        9px
+        11px;
+
+    background: #e9c99d;
+
+    color: #3c2e25;
+
+    font-family: var(--font-script);
+
+    font-size: 0.78rem;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 12px
+        rgba(70, 40, 20, 0.18);
+}
+
+.note08-paper-one {
+    top: 11%;
+    right: -12px;
+
+    transform: rotate(5deg);
+}
+
+.note08-paper-two {
+    top: 31%;
+    right: -10px;
+
+    transform: rotate(-4deg);
+}
+
+.note08-paper-three {
+    top: 50%;
+    right: -10px;
+
+    transform: rotate(4deg);
+}
+
+.note08-paper-four {
+    bottom: 21%;
+    right: -8px;
+
+    transform: rotate(-5deg);
+}
+
+.note08-paper-five {
+    bottom: 5%;
+    right: 16px;
+
+    transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   HEART DOODLES
+========================================================= */
+
+.paper08-heart {
+    position: absolute;
+
+    z-index: 3;
+
+    color: #b64d68;
+
+    font-family: var(--font-script);
+
+    font-size: 2rem;
+}
+
+.heart08-one {
+    top: 18%;
+    left: 5%;
+
+    transform: rotate(-15deg);
+}
+
+.heart08-two {
+    top: 63%;
+    left: 8%;
+
+    transform: rotate(12deg);
+}
+
+.heart08-three {
+    bottom: 10%;
+    left: 42%;
+
+    font-size: 2.6rem;
+}
+
+
+/* =========================================================
+   PAPER COUPLE DOODLE
+========================================================= */
+
+.paper08-couple {
+    position: absolute;
+
+    right: 5%;
+    bottom: 14%;
+
+    width: 105px;
+    height: 80px;
+
+    opacity: 0.38;
+}
+
+.paper08-couple div {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 34px;
+    height: 54px;
+
+    border-radius:
+        18px
+        18px
+        5px
+        5px;
+
+    background: #6c4b43;
+}
+
+.paper08-couple div:first-of-type {
+    left: 24px;
+}
+
+.paper08-couple div:last-of-type {
+    right: 22px;
+    height: 48px;
+}
+
+.paper08-couple::before,
+.paper08-couple::after {
+    content: "";
+
+    position: absolute;
+
+    top: 4px;
+
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    background: #6c4b43;
+}
+
+.paper08-couple::before {
+    left: 28px;
+}
+
+.paper08-couple::after {
+    right: 26px;
+}
+
+.paper08-couple span {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 50%;
+    top: 28px;
+
+    transform:
+        translateX(-50%);
+
+    color: #a14c64;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .chapter08-book {
+        grid-template-columns: 1fr;
+
+        width:
+            min(
+                calc(100% - 28px),
+                700px
+            );
+    }
+
+    .chapter08-left,
+    .chapter08-right {
+        min-height: auto;
+    }
+
+    .chapter08-cover,
+    .crooked08-letter {
+        min-height: 780px;
+    }
+
+    .cover08-side {
+        width: 160px;
+    }
+
+    .cover08-title {
+        width: 70%;
+    }
+
+    .paper08-note {
+        right: 4px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .chapter08-book {
+        margin-top: 28px;
+    }
+
+    .chapter08-cover,
+    .crooked08-letter {
+        min-height: 760px;
+    }
+
+    .chapter08-cover {
+        padding:
+            24px
+            18px;
+    }
+
+    .cover08-side {
+        top: 66px;
+        left: 16px;
+
+        width: 150px;
+
+        font-size: 0.57rem;
+
+        gap: 6px;
+    }
+
+    .cover08-title {
+        width: 100%;
+
+        margin-top: 82px;
+    }
+
+    .cover08-title h1 {
+        font-size: 2.7rem;
+    }
+
+    .cover08-subtitle {
+        font-size: 1.7rem;
+    }
+
+    .cover08-crown {
+        top: 58px;
+        right: 24px;
+
+        font-size: 2.4rem;
+    }
+
+    .crooked08-scene {
+        height: 58%;
+    }
+
+    .couple08 {
+        transform:
+            translateX(-50%)
+            scale(0.76);
+
+        transform-origin: bottom center;
+    }
+
+    .scene08-book-stack {
+        width: 130px;
+    }
+
+    .scene08-book-stack span {
+        font-size: 0.38rem;
+    }
+
+    .scene08-caption {
+        font-size: 0.85rem;
+
+        left: 4%;
+    }
+
+    .cover08-note {
+        font-size: 0.68rem;
+
+        padding:
+            8px
+            10px;
+    }
+
+    .note08-three {
+        top: 31%;
+    }
+
+    .crooked08-letter {
+        padding:
+            42px
+            25px
+            35px;
+    }
+
+    .crooked08-letter-content {
+        font-size: 0.92rem;
+
+        line-height: 1.62;
+    }
+
+    .letter08-title {
+        font-size: 1.05rem;
+    }
+
+    .paper08-note {
+        width: 112px;
+
+        font-size: 0.62rem;
+    }
+
+    .doodle08-broken {
+        display: none;
+    }
+
+    .chapter08-team-sign {
+        width: 190px;
+
+        font-size: 0.58rem;
+    }
+
+    .chapter08-ending {
+        font-size: 1rem;
+    }
+
+    .chapter08-ending strong {
+        font-size: 1.15rem;
+    }
+
+    .chapter-navigation {
+        width:
+            calc(100% - 28px);
+
+        gap: 12px;
+    }
+}
