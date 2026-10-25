@@ -1,0 +1,1900 @@
+/* =========================================================
+   CHAPTER 11 — THE ALCHEMIST
+   ========================================================= */
+
+.chapter-page.chapter11-page {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    min-height: 100svh;
+    height: auto !important;
+    background: #07090d;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.chapter11-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            circle at 25% 20%,
+            rgba(164, 104, 52, .20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(62, 82, 120, .20),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #05070c,
+            #111722 48%,
+            #080a0e
+        );
+}
+
+
+/* =========================================================
+   OPEN BOOK
+   ========================================================= */
+
+.chapter11-book {
+    position: relative;
+    z-index: 2;
+
+    width: min(1350px, calc(100% - 40px));
+
+    margin: 45px auto 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   LEFT COVER
+   ========================================================= */
+
+.chapter11-cover {
+    position: relative;
+
+    min-height: 900px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 55% 42%,
+            rgba(234, 155, 73, .28),
+            transparent 28%
+        ),
+        linear-gradient(
+            110deg,
+            #05070c,
+            #0c1622 50%,
+            #15100e
+        );
+
+    border: 1px solid rgba(202, 150, 74, .55);
+
+    box-shadow:
+        0 30px 65px rgba(0,0,0,.55),
+        inset 0 0 60px rgba(0,0,0,.65);
+}
+
+
+/* =========================================================
+   SPINE
+   ========================================================= */
+
+.cover11-spine {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 112px;
+
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 48px 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #020305,
+            #121c29 48%,
+            #040608
+        );
+
+    border-right: 2px solid rgba(190, 139, 66, .55);
+
+    box-shadow:
+        inset -10px 0 22px rgba(0,0,0,.45);
+}
+
+.cover11-spine::before,
+.cover11-spine::after {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+
+    height: 1px;
+
+    background: rgba(202, 151, 77, .7);
+}
+
+.cover11-spine::before {
+    top: 34px;
+}
+
+.cover11-spine::after {
+    bottom: 34px;
+}
+
+.spine11-ornament,
+.spine11-symbol {
+    color: #d9a55e;
+
+    font-size: 23px;
+}
+
+.spine11-title {
+    color: #d7b477;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   MAIN COVER
+   ========================================================= */
+
+.cover11-main {
+    position: relative;
+
+    min-height: 900px;
+
+    margin-left: 112px;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+/* HEADER */
+
+.cover11-top {
+    padding-top: 28px;
+
+    color: #e2c28b;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    letter-spacing: 6px;
+}
+
+.cover11-heart {
+    margin-top: 7px;
+
+    color: #dca55e;
+
+    font-size: 19px;
+}
+
+
+/* TITLE */
+
+.cover11-title {
+    position: relative;
+
+    z-index: 8;
+
+    margin-top: 5px;
+
+    color: #f0dfc3;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    text-shadow:
+        0 3px 14px rgba(0,0,0,.8);
+}
+
+.cover11-title small {
+    display: block;
+
+    font-size: 24px;
+
+    letter-spacing: 5px;
+}
+
+.cover11-title strong {
+    display: block;
+
+    font-size: clamp(50px, 5vw, 72px);
+
+    line-height: .95;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+.cover11-title-decoration {
+    position: relative;
+
+    z-index: 8;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 65%;
+
+    margin: 9px auto 0;
+
+    color: #dba25b;
+}
+
+.cover11-title-decoration span {
+    flex: 1;
+
+    height: 1px;
+
+    background: #dba25b;
+}
+
+
+/* =========================================================
+   JOURNEY SCENE
+   ========================================================= */
+
+.journey11-scene {
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+
+    bottom: 82px;
+
+    height: 540px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(205, 151, 76, .35);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #07101e 0%,
+            #12263c 34%,
+            #8a5136 67%,
+            #d78343 76%,
+            #211713 100%
+        );
+
+    box-shadow:
+        inset 0 0 80px rgba(0,0,0,.6);
+}
+
+
+/* STARS */
+
+.sky11-stars span {
+    position: absolute;
+
+    z-index: 4;
+
+    color: #e4c38c;
+
+    text-shadow:
+        0 0 8px rgba(235, 192, 119, .8);
+}
+
+.s1 { top: 7%; left: 9%; }
+.s2 { top: 12%; left: 28%; }
+.s3 { top: 8%; right: 14%; }
+.s4 { top: 19%; left: 46%; }
+.s5 { top: 16%; right: 32%; }
+.s6 { top: 26%; left: 72%; }
+.s7 { top: 30%; left: 18%; }
+.s8 { top: 4%; right: 42%; }
+
+
+/* MILKY WAY */
+
+.milky11-way {
+    position: absolute;
+
+    top: -50px;
+    right: 12%;
+
+    width: 230px;
+    height: 450px;
+
+    transform: rotate(27deg);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(220, 228, 236, .20),
+            transparent 60%
+        );
+
+    filter: blur(12px);
+
+    opacity: .7;
+}
+
+
+/* SUN */
+
+.sun11 {
+    position: absolute;
+
+    right: 9%;
+    top: 40%;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: #ffc66b;
+
+    box-shadow:
+        0 0 35px rgba(255, 187, 80, .8);
+}
+
+
+/* MOUNTAINS */
+
+.mountain11 {
+    position: absolute;
+
+    left: -5%;
+    right: -5%;
+
+    bottom: 160px;
+
+    height: 150px;
+
+    clip-path: polygon(
+        0 100%,
+        15% 45%,
+        25% 70%,
+        38% 20%,
+        48% 62%,
+        62% 15%,
+        72% 58%,
+        86% 30%,
+        100% 70%,
+        100% 100%
+    );
+}
+
+.mountain11.back {
+    background: #283345;
+    opacity: .8;
+}
+
+.mountain11.middle {
+    bottom: 135px;
+
+    background: #1d2530;
+
+    transform: scale(1.15);
+}
+
+.mountain11.front {
+    bottom: 112px;
+
+    background: #11171d;
+
+    transform: scale(1.35);
+}
+
+
+/* DESERT */
+
+.desert11 {
+    position: absolute;
+
+    left: -10%;
+    right: -10%;
+
+    bottom: 0;
+
+    height: 220px;
+
+    background:
+        radial-gradient(
+            ellipse at 30% 30%,
+            #93603a,
+            transparent 40%
+        ),
+        linear-gradient(
+            to bottom,
+            #4d3024,
+            #15100e
+        );
+
+    clip-path: polygon(
+        0 30%,
+        15% 18%,
+        30% 34%,
+        48% 13%,
+        65% 31%,
+        80% 12%,
+        100% 30%,
+        100% 100%,
+        0 100%
+    );
+}
+
+
+/* WATER */
+
+.water11 {
+    position: absolute;
+
+    left: 12%;
+    right: 12%;
+
+    bottom: 100px;
+
+    height: 36px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(86, 105, 113, .65) 0 2px,
+            transparent 2px 8px
+        );
+
+    opacity: .7;
+}
+
+
+/* CITY LIGHTS */
+
+.journey11-lights {
+    position: absolute;
+
+    left: 17%;
+
+    bottom: 138px;
+
+    width: 65%;
+
+    height: 35px;
+
+    z-index: 7;
+}
+
+.journey11-lights i {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #f7bd64;
+
+    box-shadow:
+        0 0 8px rgba(255, 193, 87, .9);
+}
+
+.journey11-lights i:nth-child(1) { left: 3%; top: 50%; }
+.journey11-lights i:nth-child(2) { left: 15%; top: 25%; }
+.journey11-lights i:nth-child(3) { left: 26%; top: 60%; }
+.journey11-lights i:nth-child(4) { left: 39%; top: 35%; }
+.journey11-lights i:nth-child(5) { left: 51%; top: 65%; }
+.journey11-lights i:nth-child(6) { left: 64%; top: 25%; }
+.journey11-lights i:nth-child(7) { left: 78%; top: 55%; }
+.journey11-lights i:nth-child(8) { left: 91%; top: 30%; }
+
+
+/* =========================================================
+   COUPLE
+   ========================================================= */
+
+.travelling11-couple {
+    position: absolute;
+
+    z-index: 15;
+
+    left: 44%;
+
+    bottom: 115px;
+
+    width: 130px;
+
+    height: 220px;
+}
+
+.traveller11 {
+    position: absolute;
+
+    bottom: 0;
+}
+
+.traveller11.boy {
+    left: 4px;
+}
+
+.traveller11.girl {
+    left: 67px;
+}
+
+.head11 {
+    width: 37px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #070809;
+}
+
+.hair11 {
+    position: absolute;
+
+    left: -4px;
+    top: -7px;
+
+    width: 45px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #020304;
+}
+
+.body11 {
+    width: 65px;
+    height: 110px;
+
+    margin-left: -13px;
+
+    border-radius: 30px 30px 10px 10px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #050608,
+            #17191c
+        );
+}
+
+.traveller11.girl .body11 {
+    width: 55px;
+
+    margin-left: -8px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #171719,
+            #050506
+        );
+}
+
+.traveller11.girl .hair11 {
+    left: -14px;
+
+    width: 65px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #090808;
+}
+
+.arm11 {
+    position: absolute;
+
+    top: 62px;
+    left: 42px;
+
+    width: 60px;
+    height: 12px;
+
+    border-radius: 20px;
+
+    background: #08090a;
+
+    transform: rotate(18deg);
+}
+
+.joined11-hand {
+    position: absolute;
+
+    left: 62px;
+    top: 108px;
+
+    z-index: 20;
+
+    color: #dca45d;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   MAP
+   ========================================================= */
+
+.map11 {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: -10px;
+
+    height: 155px;
+
+    z-index: 25;
+
+    background:
+        linear-gradient(
+            120deg,
+            #d5bb8a,
+            #a98a59
+        );
+
+    opacity: .93;
+
+    transform: rotate(-2deg);
+
+    box-shadow:
+        0 -8px 25px rgba(0,0,0,.4);
+}
+
+.map11::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px dashed rgba(78, 54, 30, .45);
+}
+
+.map11-line {
+    position: absolute;
+
+    height: 1px;
+
+    border-top: 2px dashed rgba(77, 54, 29, .7);
+
+    border-radius: 50%;
+}
+
+.line-a {
+    width: 260px;
+
+    left: 18%;
+
+    top: 50%;
+
+    transform: rotate(-12deg);
+}
+
+.line-b {
+    width: 180px;
+
+    left: 45%;
+
+    top: 40%;
+
+    transform: rotate(16deg);
+}
+
+.map11-compass {
+    position: absolute;
+
+    right: 18px;
+    top: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    border: 2px solid rgba(75, 50, 28, .65);
+
+    border-radius: 50%;
+
+    color: #52371f;
+
+    font-family: Georgia, serif;
+
+    font-size: 9px;
+
+    padding-top: 4px;
+}
+
+.map11-compass span {
+    position: absolute;
+}
+
+.map11-compass span:first-child {
+    top: -15px;
+    left: 22px;
+}
+
+.map11-compass span:nth-child(2) {
+    right: -13px;
+    top: 22px;
+}
+
+.map11-compass span:nth-child(3) {
+    bottom: -15px;
+    left: 23px;
+}
+
+.map11-compass span:nth-child(4) {
+    left: -13px;
+    top: 22px;
+}
+
+.map11-compass span {
+    display: none;
+}
+
+.map11-compass span:first-child {
+    display: block;
+}
+
+.map11-compass::before {
+    content: "N";
+}
+
+.map11-compass b {
+    position: absolute;
+
+    inset: 18px;
+
+    font-size: 16px;
+}
+
+.map11-map-mark {
+    position: absolute;
+
+    color: #6a4424;
+}
+
+.mark-one {
+    left: 27%;
+    top: 55%;
+}
+
+.mark-two {
+    left: 64%;
+    top: 30%;
+}
+
+
+/* =========================================================
+   POLAROIDS
+   ========================================================= */
+
+.polaroid11 {
+    position: absolute;
+
+    z-index: 30;
+
+    width: 92px;
+
+    padding: 6px 6px 15px;
+
+    background: #e5d4ae;
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.45);
+
+    color: #594126;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 8px;
+
+    text-align: center;
+}
+
+.polaroid11 div {
+    height: 75px;
+
+    background:
+        radial-gradient(
+            circle at 55% 55%,
+            rgba(214, 140, 62, .5),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #102033,
+            #543629
+        );
+}
+
+.p-one {
+    left: 14px;
+    bottom: 195px;
+
+    transform: rotate(-8deg);
+}
+
+.p-two {
+    left: 7px;
+    bottom: 50px;
+
+    transform: rotate(6deg);
+}
+
+.p-three {
+    right: 12px;
+    bottom: 65px;
+
+    transform: rotate(-7deg);
+}
+
+
+/* =========================================================
+   LANTERNS
+   ========================================================= */
+
+.lantern11 {
+    position: absolute;
+
+    z-index: 20;
+
+    width: 25px;
+    height: 44px;
+
+    border: 2px solid #ad7337;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffc267,
+            #7b4325 65%
+        );
+
+    box-shadow:
+        0 0 22px rgba(255, 174, 77, .6);
+}
+
+.lantern11 span {
+    position: absolute;
+
+    top: -10px;
+    left: 6px;
+
+    width: 9px;
+    height: 10px;
+
+    border: 2px solid #9b6935;
+
+    border-bottom: none;
+}
+
+.lantern11 i {
+    position: absolute;
+
+    bottom: -8px;
+    left: 5px;
+
+    width: 12px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #744326;
+}
+
+.lantern-left {
+    left: 10px;
+    top: 180px;
+
+    transform: rotate(-5deg);
+}
+
+.lantern-right {
+    right: 12px;
+    bottom: 260px;
+
+    transform: rotate(4deg);
+}
+
+
+/* =========================================================
+   COVER QUOTE
+   ========================================================= */
+
+.cover11-quote {
+    position: absolute;
+
+    z-index: 40;
+
+    left: 145px;
+    right: 15px;
+
+    bottom: 43px;
+
+    color: #d9b376;
+
+    font-family: Georgia, serif;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+
+    font-style: italic;
+
+    text-align: center;
+}
+
+.cover11-quote span {
+    display: block;
+
+    color: #e0a85f;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.cover11-bottom {
+    position: absolute;
+
+    left: 120px;
+    right: 18px;
+
+    bottom: 10px;
+
+    z-index: 50;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    color: #cda062;
+
+    font-family: Georgia, serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+.cover11-bottom b {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RIGHT PAPER
+   ========================================================= */
+
+.chapter11-paper {
+    position: relative;
+
+    min-height: 900px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(123, 87, 43, .08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(123, 87, 43, .08),
+            transparent 30%
+        ),
+        #f0dfb9;
+
+    border-radius: 12px 7px 10px 8px;
+
+    border: 1px solid rgba(112, 76, 38, .5);
+
+    box-shadow:
+        0 28px 60px rgba(0,0,0,.5),
+        inset 0 0 45px rgba(105, 70, 30, .14);
+}
+
+
+/* TEXTURE */
+
+.paper11-texture {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .22;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(65, 42, 20, .16) 0 1px,
+            transparent 1px
+        );
+
+    background-size: 18px 18px;
+}
+
+
+/* MOON */
+
+.paper11-moon {
+    position: absolute;
+
+    right: 35px;
+    top: 55px;
+
+    z-index: 3;
+
+    color: #725027;
+
+    font-size: 55px;
+}
+
+.paper11-stars {
+    position: absolute;
+
+    right: 125px;
+    top: 48px;
+
+    color: #76532d;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   COMPASS
+   ========================================================= */
+
+.paper11-compass {
+    position: absolute;
+
+    right: 35px;
+    top: 175px;
+
+    z-index: 4;
+
+    width: 105px;
+    height: 105px;
+
+    border: 2px solid rgba(99, 67, 34, .55);
+
+    border-radius: 50%;
+
+    color: #654526;
+
+    font-family: Georgia, serif;
+
+    text-align: center;
+
+    font-size: 10px;
+}
+
+.paper11-compass::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px dashed rgba(99, 67, 34, .5);
+
+    border-radius: 50%;
+}
+
+.paper11-compass span {
+    position: absolute;
+
+    z-index: 3;
+}
+
+.north {
+    top: -16px;
+    left: 47px;
+}
+
+.east {
+    right: -15px;
+    top: 47px;
+}
+
+.south {
+    bottom: -16px;
+    left: 47px;
+}
+
+.west {
+    left: -15px;
+    top: 47px;
+}
+
+.compass11-needle {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 2px;
+    height: 75px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(43deg);
+
+    background:
+        linear-gradient(
+            to bottom,
+            #6b3e2b 0 50%,
+            #a77a4a 50%
+        );
+}
+
+.paper11-compass b {
+    position: absolute;
+
+    left: 43px;
+    top: 42px;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   MAP ON PAPER
+   ========================================================= */
+
+.paper11-map {
+    position: absolute;
+
+    right: 20px;
+    bottom: 180px;
+
+    width: 330px;
+    height: 420px;
+
+    z-index: 3;
+
+    color: #76512e;
+
+    opacity: .72;
+
+    pointer-events: none;
+}
+
+.top-mountains {
+    position: absolute;
+
+    top: 80px;
+    left: 50px;
+
+    font-family: Georgia, serif;
+
+    font-size: 40px;
+
+    letter-spacing: -9px;
+}
+
+.map11-route {
+    position: absolute;
+
+    left: 150px;
+    top: 90px;
+
+    width: 115px;
+    height: 260px;
+
+    border-left: 2px dashed #76512e;
+
+    border-radius: 50%;
+
+    transform: rotate(-15deg);
+}
+
+.map11-route::after {
+    content: "";
+
+    position: absolute;
+
+    left: 100px;
+    bottom: -20px;
+
+    width: 70px;
+    height: 70px;
+
+    border-left: 2px dashed #76512e;
+
+    border-radius: 50%;
+
+    transform: rotate(30deg);
+}
+
+.map11-palms {
+    position: absolute;
+
+    font-size: 42px;
+}
+
+.palm-one {
+    left: 65px;
+    bottom: 105px;
+}
+
+.palm-two {
+    right: 40px;
+    bottom: 155px;
+}
+
+.map11-castle {
+    position: absolute;
+
+    right: 15px;
+    bottom: 92px;
+
+    font-size: 60px;
+}
+
+.map11-final-couple {
+    position: absolute;
+
+    bottom: 25px;
+    left: 140px;
+
+    font-size: 42px;
+}
+
+
+/* =========================================================
+   LETTER CONTENT
+   ========================================================= */
+
+.letter11-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(72%, 600px);
+
+    margin-left: 42px;
+
+    padding:
+        32px
+        0
+        55px;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    color: #2c2118;
+
+    font-size: 14px;
+
+    line-height: 1.38;
+}
+
+.letter11-content p {
+    margin: 0 0 10px;
+}
+
+.letter11-content strong {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SOFT SECTION
+   ========================================================= */
+
+.letter11-soft {
+    margin: 12px 0;
+
+    padding-left: 14px;
+
+    border-left: 2px solid rgba(116, 78, 38, .6);
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   HIGHLIGHT
+   ========================================================= */
+
+.journey11-highlight {
+    margin: 16px 0;
+
+    padding: 13px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(112, 76, 38, .4);
+    border-bottom: 1px solid rgba(112, 76, 38, .4);
+
+    background: rgba(116, 78, 38, .05);
+
+    font-family: Georgia, serif;
+}
+
+.journey11-highlight span,
+.journey11-highlight strong {
+    display: block;
+}
+
+.journey11-highlight strong {
+    margin-top: 3px;
+
+    color: #684522;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   POWER
+   ========================================================= */
+
+.power11-one,
+.power11-main,
+.power11-final {
+    margin: 18px 0;
+
+    padding: 13px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(112, 76, 38, .45);
+    border-bottom: 1px solid rgba(112, 76, 38, .45);
+
+    font-family: Georgia, serif;
+}
+
+.power11-one span,
+.power11-main span,
+.power11-final span {
+    display: block;
+
+    font-size: 12px;
+}
+
+.power11-one strong,
+.power11-main strong,
+.power11-final strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #684522;
+
+    font-size: 18px;
+}
+
+.power11-one small,
+.power11-main small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 11px;
+}
+
+.power11-main {
+    padding: 18px;
+
+    background: rgba(116, 78, 38, .07);
+}
+
+.power11-main strong {
+    font-size: 20px;
+}
+
+.power11-final {
+    padding: 18px;
+
+    background: rgba(116, 78, 38, .08);
+}
+
+.power11-final strong {
+    font-size: 16px;
+
+    margin-top: 6px;
+}
+
+
+/* =========================================================
+   MINI QUOTE
+   ========================================================= */
+
+.letter11-mini {
+    margin: 17px auto;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    color: #684522;
+}
+
+.letter11-mini span {
+    display: block;
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+.letter11-mini strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   JOURNEY DIAGRAM
+   ========================================================= */
+
+.journey11-diagram {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 17px 0;
+
+    padding: 12px 4px;
+
+    border-top: 1px dashed rgba(108, 73, 36, .45);
+    border-bottom: 1px dashed rgba(108, 73, 36, .45);
+
+    font-family: Georgia, serif;
+}
+
+.journey11-diagram div {
+    text-align: center;
+}
+
+.journey11-diagram span {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.journey11-diagram small {
+    display: block;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 8px;
+
+    opacity: .7;
+}
+
+.journey11-diagram b {
+    color: #86552c;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   QUESTION
+   ========================================================= */
+
+.letter11-question {
+    margin: 18px 0;
+
+    padding: 13px;
+
+    text-align: center;
+
+    background: rgba(113, 75, 37, .055);
+
+    font-family: Georgia, serif;
+}
+
+.letter11-question span {
+    display: inline;
+}
+
+.letter11-question strong {
+    color: #684522;
+    margin: 0 4px;
+}
+
+
+/* =========================================================
+   ENDING
+   ========================================================= */
+
+.letter11-ending {
+    margin-top: 22px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.letter11-ending strong {
+    color: #714129;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   PAPER NOTES
+   ========================================================= */
+
+.paper11-note {
+    position: absolute;
+
+    z-index: 20;
+
+    padding: 6px 10px;
+
+    background: #dfc17e;
+
+    color: #5d3e21;
+
+    font-family:
+        "Segoe Print",
+        cursive;
+
+    font-size: 9px;
+
+    box-shadow:
+        0 4px 9px rgba(0,0,0,.15);
+}
+
+.note11-one {
+    left: 25px;
+    top: 95px;
+
+    transform: rotate(-5deg);
+}
+
+.note11-two {
+    right: 28px;
+    bottom: 135px;
+
+    transform: rotate(4deg);
+}
+
+.note11-three {
+    left: 45px;
+    bottom: 75px;
+
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.chapter11-page .chapter-navigation {
+    position: relative;
+
+    z-index: 30;
+
+    width: min(calc(100% - 40px), 1000px);
+
+    margin-inline: auto;
+
+    padding: 35px 0 60px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .chapter11-book {
+        width: min(1000px, calc(100% - 28px));
+    }
+
+    .cover11-spine {
+        width: 88px;
+    }
+
+    .cover11-main {
+        margin-left: 88px;
+    }
+
+    .cover11-title strong {
+        font-size: 50px;
+    }
+
+    .letter11-content {
+        width: 68%;
+
+        font-size: 13px;
+    }
+
+    .paper11-map {
+        transform: scale(.85);
+
+        transform-origin: right bottom;
+    }
+}
+
+
+@media (max-width: 950px) {
+
+    .chapter11-book {
+        grid-template-columns: 1fr;
+
+        width: min(760px, calc(100% - 28px));
+    }
+
+    .chapter11-cover,
+    .cover11-main {
+        min-height: 790px;
+    }
+
+    .journey11-scene {
+        height: 450px;
+    }
+
+    .chapter11-paper {
+        min-height: 900px;
+    }
+
+    .letter11-content {
+        width: 72%;
+    }
+
+    .paper11-map {
+        opacity: .55;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .chapter11-book {
+        width: calc(100% - 18px);
+
+        margin-top: 25px;
+    }
+
+    .chapter11-cover {
+        min-height: 680px;
+    }
+
+    .cover11-main {
+        min-height: 680px;
+
+        margin-left: 70px;
+    }
+
+    .cover11-spine {
+        width: 70px;
+
+        padding: 35px 7px;
+    }
+
+    .spine11-title {
+        font-size: 13px;
+    }
+
+    .cover11-top {
+        padding-top: 22px;
+
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+    .cover11-title small {
+        font-size: 16px;
+    }
+
+    .cover11-title strong {
+        font-size: 34px;
+    }
+
+    .journey11-scene {
+        left: 10px;
+        right: 8px;
+
+        bottom: 70px;
+
+        height: 365px;
+    }
+
+    .travelling11-couple {
+        transform: scale(.75);
+
+        transform-origin: bottom;
+    }
+
+    .polaroid11 {
+        width: 62px;
+    }
+
+    .polaroid11 div {
+        height: 50px;
+    }
+
+    .p-three {
+        display: none;
+    }
+
+    .map11 {
+        height: 100px;
+    }
+
+    .cover11-quote {
+        left: 78px;
+        right: 8px;
+
+        bottom: 35px;
+
+        font-size: 9px;
+    }
+
+    .cover11-bottom {
+        left: 75px;
+
+        font-size: 7px;
+    }
+
+    .chapter11-paper {
+        min-height: 900px;
+    }
+
+    .letter11-content {
+        width: 75%;
+
+        margin-left: 32px;
+
+        padding-top: 28px;
+
+        font-size: 11px;
+    }
+
+    .paper11-compass {
+        right: 15px;
+
+        transform: scale(.7);
+
+        transform-origin: top right;
+    }
+
+    .paper11-map {
+        right: -30px;
+        bottom: 120px;
+
+        transform: scale(.65);
+
+        transform-origin: right bottom;
+
+        opacity: .42;
+    }
+
+    .paper11-note {
+        display: none;
+    }
+
+    .power11-main strong {
+        font-size: 16px;
+    }
+
+    .journey11-diagram {
+        gap: 5px;
+    }
+
+    .journey11-diagram span {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .cover11-title strong {
+        font-size: 29px;
+    }
+
+    .cover11-title small {
+        font-size: 13px;
+    }
+
+    .cover11-top {
+        font-size: 10px;
+    }
+
+    .journey11-scene {
+        height: 325px;
+    }
+
+    .letter11-content {
+        width: 72%;
+
+        margin-left: 30px;
+
+        font-size: 10px;
+    }
+
+    .paper11-map {
+        opacity: .3;
+    }
+
+    .power11-final strong {
+        font-size: 13px;
+    }
+}
