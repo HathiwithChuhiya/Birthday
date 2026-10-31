@@ -2097,3 +2097,598 @@ body.birthday-lock-active {
     }
 
 }
+/* =========================================================
+   FINAL MOBILE LOCK SCREEN FIX
+   Stable viewport + content-aware scrolling
+========================================================= */
+
+/* ---------------------------------------------------------
+   BASE LOCK OVERLAY
+--------------------------------------------------------- */
+
+.birthday-lock-overlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior: contain;
+}
+
+
+/* ---------------------------------------------------------
+   LOCK CARD
+--------------------------------------------------------- */
+
+.birthday-lock-card {
+    width: min(700px, 100%);
+
+    height: auto;
+    min-height: 0;
+    max-height: none;
+
+    margin: auto;
+
+    flex: 0 0 auto;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+
+/* ---------------------------------------------------------
+   MESSAGE
+--------------------------------------------------------- */
+
+.birthday-lock-message {
+    width: 100%;
+    max-width: 620px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
+
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+
+/* ---------------------------------------------------------
+   COUNTDOWN
+--------------------------------------------------------- */
+
+.birthday-lock-countdown {
+    width: 100%;
+    max-width: 570px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.birthday-lock-time-box {
+    flex: 1 1 110px;
+
+    min-width: 95px;
+    max-width: 135px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .birthday-lock-overlay {
+
+        padding: 20px 16px;
+
+        align-items: center;
+
+        height: 100vh;
+        height: 100dvh;
+
+    }
+
+
+    .birthday-lock-card {
+
+        width: min(620px, 100%);
+
+        margin: auto;
+
+        box-sizing: border-box;
+
+    }
+
+
+    .birthday-lock-title {
+
+        font-size: clamp(
+            2.2rem,
+            8vw,
+            4rem
+        );
+
+        line-height: 1.05;
+
+    }
+
+
+    .birthday-lock-message {
+
+        font-size: 1rem;
+
+        line-height: 1.75;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+
+    }
+
+
+    .birthday-lock-overlay {
+
+        position: fixed;
+
+        inset: 0;
+
+        width: 100%;
+
+        height: 100vh;
+        height: 100dvh;
+
+        min-height: 0;
+
+        padding: 14px 10px;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+
+        overscroll-behavior-y: contain;
+
+    }
+
+
+    /* -----------------------------------------------------
+       CARD
+    ----------------------------------------------------- */
+
+    .birthday-lock-card {
+
+        width: 100%;
+        max-width: 500px;
+
+        height: auto;
+        min-height: 0;
+        max-height: none;
+
+        margin: auto;
+
+        padding: 24px 16px;
+
+        box-sizing: border-box;
+
+        flex: 0 0 auto;
+
+        overflow: visible;
+
+    }
+
+
+    /* -----------------------------------------------------
+       LOCK ICON
+    ----------------------------------------------------- */
+
+    .birthday-lock-icon {
+
+        margin-bottom: 10px;
+
+        transform: scale(0.82);
+
+        transform-origin: center;
+
+    }
+
+
+    /* -----------------------------------------------------
+       EYEBROW
+    ----------------------------------------------------- */
+
+    .birthday-lock-eyebrow {
+
+        font-size: 0.65rem;
+
+        line-height: 1.5;
+
+        letter-spacing: 0.18em;
+
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+
+    }
+
+
+    /* -----------------------------------------------------
+       TITLE
+    ----------------------------------------------------- */
+
+    .birthday-lock-title {
+
+        width: 100%;
+
+        margin-top: 12px;
+        margin-bottom: 18px;
+
+        padding: 0;
+
+        font-size: clamp(
+            2rem,
+            10vw,
+            3.2rem
+        );
+
+        line-height: 1.05;
+
+        text-align: center;
+
+        overflow-wrap: anywhere;
+
+        word-break: normal;
+
+    }
+
+
+    /* -----------------------------------------------------
+       MESSAGE
+    ----------------------------------------------------- */
+
+    .birthday-lock-message {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 0 3px;
+
+        margin: 0 auto;
+
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+
+        text-align: center;
+
+        overflow-wrap: anywhere;
+
+        word-break: normal;
+
+    }
+
+
+    /* -----------------------------------------------------
+       UNLOCK LABEL
+    ----------------------------------------------------- */
+
+    .birthday-lock-unlock-label {
+
+        margin-top: 22px;
+
+        font-size: 0.62rem;
+
+        letter-spacing: 0.18em;
+
+    }
+
+
+    /* -----------------------------------------------------
+       UNLOCK TIME
+    ----------------------------------------------------- */
+
+    .birthday-lock-unlock-time {
+
+        max-width: 100%;
+
+        margin-top: 5px;
+
+        font-size: 1.05rem;
+
+        line-height: 1.45;
+
+        overflow-wrap: break-word;
+
+    }
+
+
+    /* -----------------------------------------------------
+       COUNTDOWN
+    ----------------------------------------------------- */
+
+    .birthday-lock-countdown {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 20px;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+
+    }
+
+
+    .birthday-lock-time-box {
+
+        width: 100%;
+
+        min-width: 0;
+
+        max-width: none;
+
+        padding: 13px 6px;
+
+        box-sizing: border-box;
+
+    }
+
+
+    .birthday-lock-time-number {
+
+        font-size: 1.45rem;
+
+    }
+
+
+    .birthday-lock-time-label {
+
+        font-size: 0.5rem;
+
+        letter-spacing: 0.1em;
+
+    }
+
+
+    /* -----------------------------------------------------
+       BACK BUTTON
+    ----------------------------------------------------- */
+
+    .birthday-lock-close {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-height: 48px;
+
+        margin-top: 20px;
+
+        box-sizing: border-box;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .birthday-lock-overlay {
+
+        padding: 10px 7px;
+
+    }
+
+
+    .birthday-lock-card {
+
+        padding: 20px 13px;
+
+        border-radius: 24px;
+
+    }
+
+
+    .birthday-lock-title {
+
+        font-size: clamp(
+            1.8rem,
+            9.5vw,
+            2.5rem
+        );
+
+    }
+
+
+    .birthday-lock-message {
+
+        font-size: 0.88rem;
+
+        line-height: 1.65;
+
+    }
+
+
+    .birthday-lock-unlock-time {
+
+        font-size: 0.95rem;
+
+    }
+
+
+    .birthday-lock-countdown {
+
+        gap: 7px;
+
+    }
+
+
+    .birthday-lock-time-box {
+
+        padding: 11px 4px;
+
+    }
+
+
+    .birthday-lock-time-number {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    .birthday-lock-time-label {
+
+        font-size: 0.46rem;
+
+    }
+
+
+    .birthday-lock-close {
+
+        min-height: 46px;
+
+        margin-top: 17px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SHORT MOBILE SCREENS
+   e.g. landscape / small-height devices
+========================================================= */
+
+@media (max-height: 700px) and (max-width: 600px) {
+
+    .birthday-lock-overlay {
+
+        align-items: flex-start;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+
+
+    .birthday-lock-card {
+
+        margin-top: 0;
+        margin-bottom: 0;
+
+        padding-top: 18px;
+        padding-bottom: 18px;
+
+    }
+
+
+    .birthday-lock-icon {
+
+        transform: scale(0.7);
+
+        margin-top: -8px;
+        margin-bottom: 0;
+
+    }
+
+
+    .birthday-lock-title {
+
+        margin-top: 6px;
+        margin-bottom: 12px;
+
+    }
+
+
+    .birthday-lock-message {
+
+        line-height: 1.6;
+
+    }
+
+
+    .birthday-lock-unlock-label {
+
+        margin-top: 16px;
+
+    }
+
+
+    .birthday-lock-countdown {
+
+        margin-top: 14px;
+
+    }
+
+
+    .birthday-lock-close {
+
+        margin-top: 14px;
+
+    }
+
+}
