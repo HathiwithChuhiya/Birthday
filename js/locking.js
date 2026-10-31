@@ -5,6 +5,7 @@
 ========================================================= */
 
 (function () {
+
     "use strict";
 
 
@@ -29,7 +30,9 @@
             time: "00:00",
             title: "It's finally here…",
             message:
-                "Happy 27th Birthday, my love. ❤️\n\nI've been waiting for this moment.\n\nThis is only the beginning."
+                "Happy 27th Birthday, my love. ❤️\n\n" +
+                "I've been waiting for this moment.\n\n" +
+                "This is only the beginning."
         },
 
         morning: {
@@ -37,7 +40,8 @@
             time: "09:00",
             title: "Good morning, birthday girl.",
             message:
-                "I hope your first morning of 27 feels a little extra special. ☀️\n\nBecause I have something waiting for you…"
+                "I hope your first morning of 27 feels a little extra special. ☀️\n\n" +
+                "Because I have something waiting for you…"
         },
 
         story: {
@@ -45,7 +49,10 @@
             time: "11:00",
             title: "Now I want to tell you something.",
             message:
-                "There are memories you know.\nThere are memories I remember differently.\n\nAnd there are things from my side that I've never really told you.\n\nSo today… let me tell you our story the way I remember it. ❤️"
+                "There are memories you know.\n" +
+                "There are memories I remember differently.\n\n" +
+                "And there are things from my side that I've never really told you.\n\n" +
+                "So today… let me tell you our story the way I remember it. ❤️"
         },
 
         memories: {
@@ -53,7 +60,10 @@
             time: "13:00",
             title: "Remember these?",
             message:
-                "Some moments became memories without us even realizing it.\n\nSome made us laugh.\nSome changed us.\nAnd some… I wish I could go back and live again."
+                "Some moments became memories without us even realizing it.\n\n" +
+                "Some made us laugh.\n" +
+                "Some changed us.\n" +
+                "And some… I wish I could go back and live again."
         },
 
         reasons: {
@@ -61,7 +71,9 @@
             time: "16:00",
             title: "27.",
             message:
-                "A pretty important number today.\n\nSo I thought… why not give you 27 little reasons why you're so special to me?\n\nAnd yes… choosing only 27 was unfair. 😌"
+                "A pretty important number today.\n\n" +
+                "So I thought… why not give you 27 little reasons why you're so special to me?\n\n" +
+                "And yes… choosing only 27 was unfair. 😌"
         },
 
         letter: {
@@ -69,7 +81,11 @@
             time: "19:00",
             title: "This one is just from me to you.",
             message:
-                "No game.\nNo countdown.\nNo guessing.\n\nJust words I've been wanting to put together for you.\n\nSo when you open this… take your time. 💌"
+                "No game.\n" +
+                "No countdown.\n" +
+                "No guessing.\n\n" +
+                "Just words I've been wanting to put together for you.\n\n" +
+                "So when you open this… take your time. 💌"
         },
 
         video: {
@@ -77,7 +93,9 @@
             time: "21:00",
             title: "Lights down. Volume up. 🔊",
             message:
-                "For the next few minutes, forget everything else.\n\nJust watch.\n\nThis one is ours. ❤️"
+                "For the next few minutes, forget everything else.\n\n" +
+                "Just watch.\n\n" +
+                "This one is ours. ❤️"
         },
 
         final: {
@@ -85,7 +103,9 @@
             time: "23:00",
             title: "You made it this far.",
             message:
-                "You've opened every little surprise…\n\nbut there's still one thing left.\n\nAnd this one… means the most to me. ❤️"
+                "You've opened every little surprise…\n\n" +
+                "but there's still one thing left.\n\n" +
+                "And this one… means the most to me. ❤️"
         },
 
         midnight: {
@@ -93,8 +113,13 @@
             time: "23:59",
             title: "Before today ends…",
             message:
-                "Your 27th birthday is almost over.\n\nBut before today ends, I just want you to know one thing…\n\nI'm still here.\n\nAnd tomorrow?\nWe go back to being us. ❤️"
+                "Your 27th birthday is almost over.\n\n" +
+                "But before today ends, I just want you to know one thing…\n\n" +
+                "I'm still here.\n\n" +
+                "And tomorrow?\n" +
+                "We go back to being us. ❤️"
         }
+
     };
 
 
@@ -103,11 +128,13 @@
     ----------------------------------------------------- */
 
     const PAGE_UNLOCKS = {
+
         memories: "memories",
         reasons: "reasons",
         letter: "letter",
         video: "video",
         final: "final"
+
     };
 
 
@@ -122,49 +149,88 @@
 
     /* -----------------------------------------------------
        PLAYFUL MESSAGES
+       7 DIFFERENT MESSAGES
     ----------------------------------------------------- */
 
     const LOCK_MESSAGES = [
 
         {
-            title: "Ohooo… nice try! 👀",
-            message:
-                "This one isn't ready yet.\n\nSome things are worth waiting for. ❤️"
-        },
-
-        {
             title: "Caught you! 😂",
             message:
-                "You're definitely curious, aren't you?\n\nBut nope… not yet."
+                "I knew you wouldn't be able to wait.\n\n" +
+                "But patience, my little princess…\n" +
+                "something beautiful is waiting for you. 💜"
         },
 
         {
-            title: "Not yet… 👀",
+            title: "Ohhh… you came back again? 👀",
             message:
-                "I know you're curious.\n\nBut you're going to have to wait for this one. ❤️"
+                "Still trying to unlock my little surprise?\n\n" +
+                "Nice try, chuhiya. 😂\n" +
+                "You'll have to wait just a little longer. ❤️"
         },
 
         {
-            title: "You're checking again?",
+            title: "Some things are worth waiting for. 💗",
             message:
-                "Seriously? 😂\n\nOkay, okay… I'll give you a hint.\n\nSomething special is waiting here."
+                "And believe me,\n" +
+                "I've been waiting for the right moment\n" +
+                "to make this birthday a little more special for you.\n\n" +
+                "Just a little more patience…"
         },
 
         {
-            title: "Fineee… 😭",
+            title: "If I could give you one thing right now… 🥺",
             message:
-                "You found the locked door.\n\nBut I still have the key.\n\nAnd I'm not giving it to you yet. 😌"
+                "It would be a reminder of how deeply\n" +
+                "you are loved, cherished, and important to me.\n\n" +
+                "But for that… you'll have to wait. ❤️"
         },
 
         {
-            title: "Patience, birthday girl. 💕",
+            title: "Shhh… 🤫",
             message:
-                "I promise this will be worth the wait.\n\nJust not yet."
+                "Something is getting ready for you.\n\n" +
+                "A little story.\n" +
+                "A lot of memories.\n" +
+                "And one very excited person\n" +
+                "waiting to celebrate YOU. 🎂💜"
+        },
+
+        {
+            title: "13 years… and still not enough. ♾️",
+            message:
+                "We've collected thousands of moments,\n" +
+                "countless memories,\n" +
+                "and somehow I'm still excited\n" +
+                "to create another one with you.\n\n" +
+                "Somehow, I'd choose you all over again. ❤️"
+        },
+
+        {
+            title: "Okay okay… one last time. 😂",
+            message:
+                "I know you're curious.\n" +
+                "I know you want to see what's inside.\n\n" +
+                "But your birthday story has its own timing.\n\n" +
+                "November 3rd. 💜\n\n" +
+                "Until then… keep wondering. 😉"
         }
+
     ];
 
 
-    let lockAttemptCount = 0;
+    /* -----------------------------------------------------
+       MESSAGE COUNTER
+       Persists during the browser session
+    ----------------------------------------------------- */
+
+    let lockAttemptCount = parseInt(
+        sessionStorage.getItem(
+            "birthdayLockAttemptCount"
+        ) || "0",
+        10
+    );
 
 
     /* -----------------------------------------------------
@@ -182,6 +248,7 @@
         }
 
         return new Date();
+
     }
 
 
@@ -197,6 +264,7 @@
         return new Date(
             `${unlock.date}T${unlock.time}:00+05:30`
         );
+
     }
 
 
@@ -213,6 +281,7 @@
             getCurrentTime().getTime() >=
             unlockDate.getTime()
         );
+
     }
 
 
@@ -230,6 +299,7 @@
             unlockDate.getTime() -
             getCurrentTime().getTime()
         );
+
     }
 
 
@@ -255,11 +325,21 @@
             totalSeconds % 60;
 
         return {
-            days: String(days).padStart(2, "0"),
-            hours: String(hours).padStart(2, "0"),
-            minutes: String(minutes).padStart(2, "0"),
-            seconds: String(seconds).padStart(2, "0")
+
+            days:
+                String(days).padStart(2, "0"),
+
+            hours:
+                String(hours).padStart(2, "0"),
+
+            minutes:
+                String(minutes).padStart(2, "0"),
+
+            seconds:
+                String(seconds).padStart(2, "0")
+
         };
+
     }
 
 
@@ -283,6 +363,7 @@
                 hour12: true
             }
         );
+
     }
 
 
@@ -321,7 +402,11 @@
 
 
         const filename =
-            href.split("/").pop().split("?")[0].split("#")[0];
+            href
+                .split("/")
+                .pop()
+                .split("?")[0]
+                .split("#")[0];
 
 
         /*
@@ -369,6 +454,7 @@
 
 
         return null;
+
     }
 
 
@@ -443,6 +529,7 @@
 
 
         return null;
+
     }
 
 
@@ -461,20 +548,34 @@
         }
 
         return "index.html";
+
     }
 
 
     /* -----------------------------------------------------
-       RANDOM MESSAGE
+       PLAYFUL MESSAGE
     ----------------------------------------------------- */
 
     function getPlayfulMessage() {
 
+        /*
+           Counter is incremented BEFORE this function
+           is called.
+
+           Therefore:
+           1st attempt → index 0 → Message 1
+           2nd attempt → index 1 → Message 2
+           ...
+           7th attempt → index 6 → Message 7
+           8th attempt → index 0 → Message 1
+        */
+
         const index =
-            lockAttemptCount %
+            (lockAttemptCount - 1) %
             LOCK_MESSAGES.length;
 
         return LOCK_MESSAGES[index];
+
     }
 
 
@@ -504,6 +605,7 @@
 
 
         overlay.innerHTML = `
+
             <div
                 class="birthday-lock-card"
                 role="dialog"
@@ -515,9 +617,11 @@
                     🔒
                 </div>
 
+
                 <div class="birthday-lock-eyebrow">
                     Something is waiting here…
                 </div>
+
 
                 <h1
                     class="birthday-lock-title"
@@ -526,23 +630,28 @@
                     Not yet… 👀
                 </h1>
 
+
                 <div
                     class="birthday-lock-message"
                     id="birthday-lock-message"
                 ></div>
 
+
                 <div class="birthday-lock-unlock-label">
                     Unlocks at
                 </div>
+
 
                 <div
                     class="birthday-lock-unlock-time"
                     id="birthday-lock-unlock-time"
                 ></div>
 
+
                 <div class="birthday-lock-countdown">
 
                     <div class="birthday-lock-time-box">
+
                         <span
                             class="birthday-lock-time-number"
                             id="lock-days"
@@ -553,10 +662,12 @@
                         <span class="birthday-lock-time-label">
                             Days
                         </span>
+
                     </div>
 
 
                     <div class="birthday-lock-time-box">
+
                         <span
                             class="birthday-lock-time-number"
                             id="lock-hours"
@@ -567,10 +678,12 @@
                         <span class="birthday-lock-time-label">
                             Hours
                         </span>
+
                     </div>
 
 
                     <div class="birthday-lock-time-box">
+
                         <span
                             class="birthday-lock-time-number"
                             id="lock-minutes"
@@ -581,10 +694,12 @@
                         <span class="birthday-lock-time-label">
                             Minutes
                         </span>
+
                     </div>
 
 
                     <div class="birthday-lock-time-box">
+
                         <span
                             class="birthday-lock-time-number"
                             id="lock-seconds"
@@ -595,6 +710,7 @@
                         <span class="birthday-lock-time-label">
                             Seconds
                         </span>
+
                     </div>
 
                 </div>
@@ -617,6 +733,7 @@
                 </span>
 
             </div>
+
         `;
 
 
@@ -647,6 +764,7 @@
 
             }
         );
+
     }
 
 
@@ -677,6 +795,7 @@
 
         window.location.href =
             getHomePath();
+
     }
 
 
@@ -694,7 +813,23 @@
         }
 
 
+        /*
+           Increase attempt count
+        */
+
         lockAttemptCount++;
+
+
+        /*
+           Save attempt count so it survives
+           page navigation and refreshes
+           during this browser session.
+        */
+
+        sessionStorage.setItem(
+            "birthdayLockAttemptCount",
+            String(lockAttemptCount)
+        );
 
 
         createLockScreen();
@@ -741,6 +876,7 @@
         document.body.classList.add(
             "birthday-lock-active"
         );
+
     }
 
 
@@ -759,10 +895,15 @@
 
 
         const ids = {
+
             days: "lock-days",
+
             hours: "lock-hours",
+
             minutes: "lock-minutes",
+
             seconds: "lock-seconds"
+
         };
 
 
@@ -783,6 +924,7 @@
 
             }
         );
+
     }
 
 
@@ -857,6 +999,7 @@
             },
             true
         );
+
     }
 
 
@@ -929,6 +1072,7 @@
                         window.location.reload();
 
                         return;
+
                     }
 
 
@@ -939,6 +1083,7 @@
                 },
                 1000
             );
+
     }
 
 
