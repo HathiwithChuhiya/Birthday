@@ -10,11 +10,8 @@
 
 .landing-page {
     position: relative;
-
     min-height: 100svh;
-
     overflow: hidden;
-
     isolation: isolate;
 
     background:
@@ -43,18 +40,11 @@
 
 .landing-background {
     position: absolute;
-
     inset: 0;
-
     overflow: hidden;
-
     pointer-events: none;
-
     z-index: -1;
 }
-
-
-/* Large liquid light */
 
 .landing-background::before {
     content: "";
@@ -81,12 +71,8 @@
 
     filter: blur(45px);
 
-    animation:
-        landingOrb 12s ease-in-out infinite;
+    animation: landingOrb 12s ease-in-out infinite;
 }
-
-
-/* Pink ambient orb */
 
 .landing-background::after {
     content: "";
@@ -110,8 +96,7 @@
 
     filter: blur(70px);
 
-    animation:
-        ambientFloat 10s ease-in-out infinite;
+    animation: ambientFloat 10s ease-in-out infinite;
 }
 
 
@@ -142,8 +127,7 @@
 
     filter: blur(65px);
 
-    animation:
-        glow 5s ease-in-out infinite;
+    animation: glow 5s ease-in-out infinite;
 }
 
 
@@ -167,8 +151,7 @@
 
     background-size: 110px 110px;
 
-    animation:
-        starDrift 14s linear infinite;
+    animation: starDrift 14s linear infinite;
 }
 
 
@@ -182,7 +165,7 @@
     top: 16px;
     left: 16px;
 
-    z-index: 20;
+    z-index: 200;
 
     width: calc(100% - 32px);
 
@@ -196,8 +179,7 @@
 
     padding: 0 22px;
 
-    border:
-        1px solid rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.13);
 
     border-radius: 22px;
 
@@ -215,7 +197,12 @@
         0 18px 55px rgba(0, 0, 0, 0.28),
         inset 0 1px 0 rgba(255, 255, 255, 0.14);
 
-    overflow: hidden;
+    /*
+       IMPORTANT:
+       Must remain visible so the mobile
+       dropdown is not clipped.
+    */
+    overflow: visible;
 }
 
 
@@ -240,6 +227,16 @@
         );
 
     pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* Keep header content above reflection */
+
+.site-header > * {
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -271,8 +268,7 @@
             rgba(255, 255, 255, 0.025)
         );
 
-    border:
-        1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.09);
@@ -282,7 +278,6 @@
         border-color var(--transition),
         background var(--transition);
 }
-
 
 .logo:hover {
     transform: translateY(-1px);
@@ -294,11 +289,9 @@
         rgba(255, 255, 255, 0.09);
 }
 
-
 .logo-main {
     font-family: var(--font-display);
 }
-
 
 .logo-script {
     color: var(--rose-light);
@@ -310,7 +303,6 @@
     text-shadow:
         0 0 20px rgba(232, 160, 181, 0.25);
 }
-
 
 .logo-heart {
     position: absolute;
@@ -334,7 +326,7 @@
 
 
 /* ========================================
-   DESKTOP NAV — GLASS PILL
+   DESKTOP NAV
 ======================================== */
 
 .desktop-nav {
@@ -356,8 +348,10 @@
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-}
 
+    position: relative;
+    z-index: 300;
+}
 
 .desktop-nav a {
     position: relative;
@@ -377,7 +371,6 @@
         background var(--transition),
         transform var(--transition);
 }
-
 
 .desktop-nav a::before {
     content: "";
@@ -403,13 +396,11 @@
     z-index: -1;
 }
 
-
 .desktop-nav a:hover {
     color: var(--rose-light);
 
     transform: translateY(-1px);
 }
-
 
 .desktop-nav a:hover::before {
     opacity: 1;
@@ -443,8 +434,11 @@
         0 8px 25px rgba(0, 0, 0, 0.22);
 
     cursor: pointer;
-}
 
+    position: relative;
+
+    z-index: 400;
+}
 
 .mobile-menu-button span {
     display: block;
@@ -485,11 +479,6 @@
     text-align: center;
 }
 
-
-/* ========================================
-   HERO CONTENT
-======================================== */
-
 .hero-content {
     width: min(
         100%,
@@ -502,7 +491,7 @@
 
 
 /* ========================================
-   EYEBROW — GLASS LABEL
+   EYEBROW
 ======================================== */
 
 .hero-eyebrow {
@@ -580,7 +569,6 @@
         rgba(255, 255, 255, 0.035);
 }
 
-
 .hero-title .script {
     color: var(--rose-light);
 
@@ -594,7 +582,6 @@
         0 0 30px
         rgba(232, 160, 181, 0.25);
 }
-
 
 .title-heart {
     position: absolute;
@@ -620,7 +607,7 @@
 
 
 /* ========================================
-   STORY INFO — GLASS PILL
+   STORY INFO
 ======================================== */
 
 .story-info {
@@ -660,7 +647,6 @@
         rgba(255, 255, 255, 0.10);
 }
 
-
 .story-dot {
     color: var(--gold);
 }
@@ -686,7 +672,6 @@
     line-height: 1.8;
 }
 
-
 .hero-message span {
     color: var(--cream);
 
@@ -699,7 +684,7 @@
 
 
 /* ========================================
-   COUNTDOWN — LIQUID GLASS
+   COUNTDOWN
 ======================================== */
 
 .countdown {
@@ -715,9 +700,6 @@
 
     margin-top: 45px;
 }
-
-
-/* Individual glass capsules */
 
 .countdown-item {
     position: relative;
@@ -770,9 +752,6 @@
         countdownFloat 5s ease-in-out infinite;
 }
 
-
-/* Stagger */
-
 .countdown-item:nth-child(2) {
     animation-delay: -1.2s;
 }
@@ -784,9 +763,6 @@
 .countdown-item:nth-child(4) {
     animation-delay: -3.6s;
 }
-
-
-/* Gloss */
 
 .countdown-item::before {
     content: "";
@@ -812,7 +788,6 @@
     pointer-events: none;
 }
 
-
 .countdown-item:hover {
     transform: translateY(-5px);
 
@@ -834,7 +809,6 @@
         rgba(255, 255, 255, 0.20);
 }
 
-
 .countdown-number {
     color: var(--cream);
 
@@ -855,7 +829,6 @@
         rgba(255, 255, 255, 0.07);
 }
 
-
 .countdown-label {
     margin-top: 9px;
 
@@ -867,7 +840,6 @@
 
     text-transform: uppercase;
 }
-
 
 .countdown-date {
     margin-top: 13px;
@@ -881,7 +853,7 @@
 
 
 /* ========================================
-   LOCKED MESSAGE — GLASS
+   LOCKED MESSAGE
 ======================================== */
 
 .locked-message {
@@ -917,7 +889,6 @@
         inset 0 1px 0
         rgba(255, 255, 255, 0.08);
 }
-
 
 .small-heart {
     display: block;
@@ -971,7 +942,6 @@
         rgba(255, 255, 255, 0.20);
 }
 
-
 .hero-button:hover {
     background:
         linear-gradient(
@@ -989,14 +959,12 @@
         rgba(255, 255, 255, 0.28);
 }
 
-
 .button-arrow {
     font-size: 1rem;
 
     transition:
         transform var(--transition);
 }
-
 
 .hero-button:hover .button-arrow {
     transform: translateX(5px);
@@ -1048,7 +1016,6 @@
 
     text-transform: uppercase;
 }
-
 
 .scroll-line {
     width: 1px;
@@ -1108,7 +1075,6 @@
 
     .desktop-nav a {
         font-size: 0.62rem;
-
         padding-inline: 8px;
     }
 
@@ -1139,25 +1105,28 @@
         padding-inline: 12px;
 
         border-radius: 18px;
-    }
 
+        /*
+           IMPORTANT:
+           Keep visible so dropdown can
+           extend below the header.
+        */
+        overflow: visible;
+    }
 
     .desktop-nav {
         display: none;
     }
 
-
     .mobile-menu-button {
         display: block;
     }
-
 
     .hero {
         padding:
             90px 18px
             115px;
     }
-
 
     .hero-eyebrow {
         max-width: 310px;
@@ -1168,7 +1137,6 @@
 
         padding-inline: 14px;
     }
-
 
     .hero-title {
         flex-direction: column;
@@ -1184,13 +1152,10 @@
         line-height: 0.8;
     }
 
-
     .title-heart {
         top: 0;
-
         right: 18%;
     }
-
 
     .story-info {
         gap: 8px;
@@ -1202,7 +1167,6 @@
         letter-spacing: 0.2em;
     }
 
-
     .hero-message {
         margin-top: 28px;
 
@@ -1211,15 +1175,11 @@
         line-height: 1.7;
     }
 
-
-    /* Mobile countdown */
-
     .countdown {
         gap: 7px;
 
         margin-top: 35px;
     }
-
 
     .countdown-item {
         min-width: 0;
@@ -1234,11 +1194,9 @@
         border-radius: 17px;
     }
 
-
     .countdown-number {
         font-size: 1.7rem;
     }
-
 
     .countdown-label {
         font-size: 0.50rem;
@@ -1246,11 +1204,9 @@
         letter-spacing: 0.10em;
     }
 
-
     .countdown-date {
         font-size: 0.62rem;
     }
-
 
     .locked-message {
         margin-top: 27px;
@@ -1261,7 +1217,6 @@
         font-size: 0.82rem;
     }
 
-
     .hero-button {
         margin-top: 28px;
 
@@ -1269,7 +1224,6 @@
 
         min-height: 52px;
     }
-
 
     .scroll-indicator {
         display: none;
@@ -1287,7 +1241,7 @@
         right: 10px;
         bottom: 10px;
 
-        z-index: 50;
+        z-index: 500;
 
         display: grid;
 
@@ -1323,7 +1277,6 @@
             rgba(255, 255, 255, 0.16);
     }
 
-
     .mobile-bottom-nav::before {
         content: "";
 
@@ -1344,7 +1297,6 @@
 
         pointer-events: none;
     }
-
 
     .mobile-bottom-nav a {
         position: relative;
@@ -1375,7 +1327,6 @@
             transform var(--transition);
     }
 
-
     .mobile-bottom-nav a.active {
         color: var(--rose-light);
 
@@ -1391,11 +1342,9 @@
             rgba(255, 255, 255, 0.12);
     }
 
-
     .mobile-bottom-nav a:active {
         transform: scale(0.93);
     }
-
 
     .mobile-bottom-nav a:hover {
         color: var(--rose-light);
@@ -1403,7 +1352,6 @@
         background:
             rgba(255, 255, 255, 0.06);
     }
-
 
     .nav-icon {
         font-size: 0.9rem;
@@ -1429,21 +1377,17 @@
         padding-inline: 14px;
     }
 
-
     .hero-title {
         font-size: 4rem;
     }
-
 
     .story-info {
         font-size: 0.55rem;
     }
 
-
     .countdown {
         gap: 5px;
     }
-
 
     .countdown-item {
         width: 64px;
@@ -1451,11 +1395,9 @@
         min-height: 73px;
     }
 
-
     .countdown-number {
         font-size: 1.45rem;
     }
-
 
     .countdown-label {
         font-size: 0.45rem;
@@ -1478,7 +1420,7 @@
         left: 16px;
         right: 16px;
 
-        z-index: 100;
+        z-index: 1000;
 
         display: flex;
 
@@ -1520,7 +1462,6 @@
             fadeUp 0.3s var(--ease) both;
     }
 
-
     .desktop-nav.mobile-open a {
 
         display: block;
@@ -1541,7 +1482,6 @@
             transform var(--transition);
     }
 
-
     .desktop-nav.mobile-open a:hover {
 
         background:
@@ -1560,21 +1500,16 @@
     /* Hamburger animation */
 
     .mobile-menu-button.active span:nth-child(1) {
-
         transform:
             translateY(5px)
             rotate(45deg);
     }
 
-
     .mobile-menu-button.active span:nth-child(2) {
-
         opacity: 0;
     }
 
-
     .mobile-menu-button.active span:nth-child(3) {
-
         transform:
             translateY(-5px)
             rotate(-45deg);
@@ -1602,7 +1537,6 @@
     }
 }
 
-
 @keyframes ambientFloat {
 
     0%,
@@ -1616,7 +1550,6 @@
             translate3d(-45px, 35px, 0);
     }
 }
-
 
 @keyframes starDrift {
 
@@ -1636,7 +1569,6 @@
     }
 }
 
-
 @keyframes countdownFloat {
 
     0%,
@@ -1648,7 +1580,6 @@
         transform: translateY(-4px);
     }
 }
-
 
 @keyframes heartPulse {
 
@@ -1665,7 +1596,6 @@
         opacity: 1;
     }
 }
-
 
 @keyframes scrollPulse {
 
