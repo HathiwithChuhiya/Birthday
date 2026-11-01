@@ -541,8 +541,7 @@
     margin:
         35px 0 15px;
 
-    color:
-        #402d34;
+    color:#d57095;
 
     font-family:
         Georgia,
@@ -2430,4 +2429,1093 @@
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
+}
+/* =========================================================
+   LETTER PAGE — PREMIUM LIQUID GLASS UI
+   VISUAL ONLY
+   Does NOT change HTML / JS / content / navigation
+   ========================================================= */
+
+
+/* =========================================================
+   GLASS TOKENS
+   ========================================================= */
+
+.letter-page {
+    --glass-bg: rgba(255, 255, 255, 0.055);
+    --glass-bg-strong: rgba(255, 255, 255, 0.075);
+    --glass-border: rgba(255, 255, 255, 0.14);
+    --glass-border-soft: rgba(255, 255, 255, 0.08);
+
+    --glass-highlight: rgba(255, 255, 255, 0.18);
+
+    --glass-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.42),
+        0 8px 30px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    --rose-glow:
+        rgba(232, 160, 181, 0.18);
+
+    position: relative;
+}
+
+
+/* =========================================================
+   MAIN BACKGROUND
+   ========================================================= */
+
+.letter-page {
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(232, 160, 181, 0.12),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(168, 82, 111, 0.13),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(232, 160, 181, 0.09),
+            transparent 38%
+        ),
+        #0d0a0c;
+}
+
+
+/* =========================================================
+   BACKGROUND ATMOSPHERE
+   ========================================================= */
+
+.scrapbook-bg {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(232, 160, 181, 0.10),
+            transparent 45%
+        );
+}
+
+.paper-noise {
+    opacity: 0.025;
+}
+
+.star-field {
+    opacity: 0.32;
+}
+
+.floating-petal {
+    text-shadow:
+        0 0 10px rgba(232, 160, 181, 0.35),
+        0 0 25px rgba(232, 160, 181, 0.15);
+
+    filter: blur(0.1px);
+}
+
+
+/* =========================================================
+   HEADER — GLASS
+   ========================================================= */
+
+.letter-header {
+    position: relative;
+    z-index: 10;
+
+    margin:
+        20px auto
+        30px;
+
+    width: min(
+        calc(100% - 32px),
+        1180px
+    );
+
+    padding: 18px 26px;
+
+    border:
+        1px solid var(--glass-border);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.075),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    backdrop-filter: blur(24px) saturate(140%);
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
+
+    box-shadow: var(--glass-shadow);
+
+    overflow: hidden;
+}
+
+
+/* Header glass reflection */
+
+.letter-header::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(255, 255, 255, 0.11),
+            transparent 22%,
+            transparent 72%,
+            rgba(255, 255, 255, 0.035)
+        );
+
+    opacity: 0.7;
+}
+
+
+/* Moving shine */
+
+.letter-header::after {
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -35%;
+
+    width: 35%;
+    height: 300%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.10),
+            transparent
+        );
+
+    transform: rotate(18deg);
+
+    animation:
+        letterGlassSweep 9s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+@keyframes letterGlassSweep {
+
+    0% {
+        left: -45%;
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    35% {
+        left: 130%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 130%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   INTRO — LIQUID GLASS
+   ========================================================= */
+
+.scrapbook-intro {
+    position: relative;
+    z-index: 3;
+}
+
+
+.intro-paper {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.035)
+        ) !important;
+
+    border:
+        1px solid var(--glass-border) !important;
+
+    border-radius: 30px !important;
+
+    box-shadow:
+        var(--glass-shadow),
+        0 0 50px rgba(232, 160, 181, 0.07) !important;
+
+    backdrop-filter:
+        blur(28px)
+        saturate(145%);
+
+    -webkit-backdrop-filter:
+        blur(28px)
+        saturate(145%);
+
+    overflow: hidden;
+
+    transform:
+        translateZ(0);
+
+    transition:
+        transform 500ms var(--ease),
+        box-shadow 500ms var(--ease),
+        border-color 500ms var(--ease);
+}
+
+
+/* Intro shine */
+
+.intro-paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.12),
+            transparent 28%,
+            transparent 70%,
+            rgba(232,160,181,0.05)
+        );
+}
+
+
+.intro-paper::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    top: -130px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(232,160,181,0.18),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    pointer-events: none;
+}
+
+
+.intro-paper:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(232,160,181,0.25) !important;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.45),
+        0 0 45px rgba(232,160,181,0.09),
+        inset 0 1px 0 rgba(255,255,255,0.15) !important;
+}
+
+
+/* =========================================================
+   SCRAPBOOK ART — GLASS
+   ========================================================= */
+
+.art-sticky {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.075),
+            rgba(255,255,255,0.025)
+        ) !important;
+
+    border:
+        1px solid var(--glass-border) !important;
+
+    border-radius: 28px !important;
+
+    backdrop-filter:
+        blur(25px)
+        saturate(140%);
+
+    -webkit-backdrop-filter:
+        blur(25px)
+        saturate(140%);
+
+    box-shadow:
+        var(--glass-shadow) !important;
+
+    overflow: hidden;
+
+    transition:
+        transform 500ms var(--ease),
+        box-shadow 500ms var(--ease);
+}
+
+
+.art-sticky::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,0.11),
+            transparent 25%,
+            transparent 70%,
+            rgba(255,255,255,0.035)
+        );
+}
+
+
+.art-sticky::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: -100px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(232,160,181,0.14),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+
+.art-sticky:hover {
+
+    box-shadow:
+        0 35px 85px rgba(0,0,0,0.45),
+        0 0 40px rgba(232,160,181,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.14) !important;
+}
+
+
+/* =========================================================
+   LETTER PAPER — MAIN GLASS PANEL
+   ========================================================= */
+
+.letter-wrapper {
+    position: relative;
+}
+
+
+.letter-paper {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.095),
+            rgba(255,255,255,0.035)
+        ) !important;
+
+    border:
+        1px solid rgba(255,255,255,0.16) !important;
+
+    border-radius: 32px !important;
+
+    backdrop-filter:
+        blur(30px)
+        saturate(145%);
+
+    -webkit-backdrop-filter:
+        blur(30px)
+        saturate(145%);
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,0.48),
+        0 10px 40px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        inset 0 -1px 0 rgba(255,255,255,0.035) !important;
+
+    overflow: hidden;
+
+    transition:
+        border-color 500ms var(--ease),
+        box-shadow 500ms var(--ease);
+}
+
+
+/* Main glass reflection */
+
+.letter-paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            125deg,
+            rgba(255,255,255,0.12),
+            transparent 20%,
+            transparent 62%,
+            rgba(232,160,181,0.045)
+        );
+
+    z-index: 0;
+}
+
+
+/* Ambient glass glow */
+
+.letter-paper::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    right: -220px;
+    top: 15%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(232,160,181,0.13),
+            transparent 68%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.letter-paper:hover {
+
+    border-color:
+        rgba(232,160,181,0.22) !important;
+
+    box-shadow:
+        0 40px 110px rgba(0,0,0,0.50),
+        0 0 55px rgba(232,160,181,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.18) !important;
+}
+
+
+/* =========================================================
+   LETTER CONTENT
+   ========================================================= */
+
+.letter-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        rgba(255,247,248,0.88) !important;
+
+    text-shadow:
+        0 1px 12px rgba(0,0,0,0.18);
+
+}
+
+
+/* =========================================================
+   PAPER DECORATION
+   ========================================================= */
+
+.paper-decoration {
+
+    position: relative;
+
+    z-index: 3;
+
+    color:
+        var(--rose-light) !important;
+
+    text-shadow:
+        0 0 14px rgba(232,160,181,0.35);
+}
+
+
+/* =========================================================
+   TAPE — FROSTED GLASS
+   ========================================================= */
+
+.paper-tape,
+.tape {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.14),
+            rgba(255,255,255,0.045)
+        ) !important;
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+
+/* =========================================================
+   MEMORY TAGS
+   ========================================================= */
+
+.memory-tag {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.075),
+            rgba(255,255,255,0.025)
+        ) !important;
+
+    border:
+        1px solid rgba(255,255,255,0.13) !important;
+
+    border-radius: 16px !important;
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+
+/* =========================================================
+   TINY NOTE
+   ========================================================= */
+
+.tiny-note {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.075),
+            rgba(255,255,255,0.025)
+        ) !important;
+
+    border:
+        1px solid rgba(255,255,255,0.12) !important;
+
+    border-radius: 18px !important;
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+
+/* =========================================================
+   HEART / MOON / FLOWERS
+   ========================================================= */
+
+.heart-shape,
+.heart-glow,
+.moon,
+.flower,
+.leaf,
+.moon-star {
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(232,160,181,0.22)
+        );
+}
+
+
+.heart-glow {
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   POWER SECTION
+   ========================================================= */
+
+.letter-power {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.015)
+        ) !important;
+
+    border:
+        1px solid rgba(255,255,255,0.09);
+
+    border-radius: 32px;
+
+    backdrop-filter:
+        blur(22px)
+        saturate(140%);
+
+    -webkit-backdrop-filter:
+        blur(22px)
+        saturate(140%);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.09);
+
+    overflow: hidden;
+}
+
+
+.power-word-wrap {
+    position: relative;
+}
+
+
+.power-word {
+
+    color:
+        var(--rose-light) !important;
+
+    text-shadow:
+        0 0 15px rgba(232,160,181,0.18),
+        0 0 45px rgba(232,160,181,0.12);
+}
+
+
+.power-mini {
+
+    color:
+        rgba(255,255,255,0.55) !important;
+}
+
+
+.power-message {
+
+    color:
+        rgba(255,255,255,0.65) !important;
+}
+
+
+/* =========================================================
+   FINAL ART — GLASS
+   ========================================================= */
+
+.final-scrap {
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.085),
+            rgba(255,255,255,0.025)
+        ) !important;
+
+    border:
+        1px solid rgba(255,255,255,0.14) !important;
+
+    border-radius: 30px !important;
+
+    backdrop-filter:
+        blur(26px)
+        saturate(145%);
+
+    -webkit-backdrop-filter:
+        blur(26px)
+        saturate(145%);
+
+    box-shadow:
+        var(--glass-shadow) !important;
+
+    overflow: hidden;
+}
+
+
+.final-scrap::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,0.10),
+            transparent 25%,
+            transparent 70%,
+            rgba(232,160,181,0.05)
+        );
+}
+
+
+.final-heart,
+.final-flower,
+.final-stars {
+
+    filter:
+        drop-shadow(
+            0 0 14px rgba(232,160,181,0.28)
+        );
+}
+
+
+.final-scrap h2 {
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.10);
+}
+
+
+/* =========================================================
+   CHAPTER NAVIGATION — GLASS
+   ========================================================= */
+
+.letter-navigation {
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+.chapter-nav-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.075),
+            rgba(255,255,255,0.025)
+        ) !important;
+
+    border:
+        1px solid rgba(255,255,255,0.13) !important;
+
+    border-radius: 20px !important;
+
+    backdrop-filter:
+        blur(20px)
+        saturate(140%);
+
+    -webkit-backdrop-filter:
+        blur(20px)
+        saturate(140%);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.28),
+        inset 0 1px 0 rgba(255,255,255,0.10);
+
+    transition:
+        transform 350ms var(--ease),
+        border-color 350ms var(--ease),
+        box-shadow 350ms var(--ease),
+        background 350ms var(--ease);
+}
+
+
+.chapter-nav-btn:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.10),
+            rgba(232,160,181,0.045)
+        ) !important;
+
+    border-color:
+        rgba(232,160,181,0.24) !important;
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,0.36),
+        0 0 30px rgba(232,160,181,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.14);
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.chapter-progress {
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(232,160,181,0.18)
+        );
+}
+
+
+.progress-dot.active {
+
+    box-shadow:
+        0 0 12px rgba(232,160,181,0.45);
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+   ========================================================= */
+
+.letter-scroll-progress {
+
+    background:
+        rgba(255,255,255,0.045) !important;
+
+    border-left:
+        1px solid rgba(255,255,255,0.06);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+}
+
+
+.letter-scroll-progress span {
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--rose-light),
+            var(--rose),
+            rgba(232,160,181,0.15)
+        ) !important;
+
+    box-shadow:
+        0 0 12px rgba(232,160,181,0.35);
+}
+
+
+/* =========================================================
+   LIQUID GLASS FLOATING ANIMATION
+   ========================================================= */
+
+.intro-paper,
+.art-sticky,
+.letter-paper,
+.final-scrap {
+
+    animation:
+        glassBreath 7s ease-in-out infinite;
+}
+
+
+@keyframes glassBreath {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-3px);
+    }
+}
+
+
+/* =========================================================
+   GLASS HIGHLIGHT ANIMATION
+   ========================================================= */
+
+.letter-paper,
+.intro-paper,
+.art-sticky,
+.final-scrap {
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .letter-header {
+
+        width:
+            calc(100% - 24px);
+
+        margin-top:
+            12px;
+
+        padding:
+            15px 18px;
+
+        border-radius:
+            20px;
+    }
+
+
+    .intro-paper {
+
+        border-radius:
+            24px !important;
+    }
+
+
+    .art-sticky {
+
+        border-radius:
+            24px !important;
+    }
+
+
+    .letter-paper {
+
+        border-radius:
+            25px !important;
+
+        backdrop-filter:
+            blur(22px)
+            saturate(135%);
+
+        -webkit-backdrop-filter:
+            blur(22px)
+            saturate(135%);
+    }
+
+
+    .final-scrap {
+
+        border-radius:
+            24px !important;
+    }
+
+
+    .chapter-nav-btn {
+
+        border-radius:
+            17px !important;
+    }
+
+
+    .intro-paper:hover,
+    .art-sticky:hover,
+    .letter-paper:hover,
+    .final-scrap:hover {
+
+        transform:
+            none;
+    }
+}
+
+
+/* =========================================================
+   PERFORMANCE / SAFETY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .letter-header::after,
+    .intro-paper,
+    .art-sticky,
+    .letter-paper,
+    .final-scrap {
+
+        animation:
+            none !important;
+    }
+
+    .intro-paper:hover,
+    .art-sticky:hover,
+    .letter-paper:hover,
+    .final-scrap:hover,
+    .chapter-nav-btn:hover {
+
+        transform:
+            none !important;
+    }
 }
