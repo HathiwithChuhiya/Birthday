@@ -1635,30 +1635,26 @@
 }
 /* =========================================================
    BIRTHDAY MIDNIGHT CELEBRATION
-   FINAL VERSION
+   BALLOONS + HEARTS + CAKE + CANDLE
    ========================================================= */
 
 .birthday-celebration {
     display: none;
     position: relative;
-
     width: min(760px, 92vw);
-
     margin: 10px auto 0;
-
     text-align: center;
     z-index: 20;
-
-    animation: birthdayReveal 1.2s ease forwards;
 }
 
 .birthday-celebration.is-active {
     display: block;
+    animation: birthdayReveal 1.2s ease forwards;
 }
 
 
 /* =========================================================
-   BIRTHDAY GLASS CARD
+   GLASS CARD
    ========================================================= */
 
 .birthday-message {
@@ -1689,11 +1685,38 @@
 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+
+    overflow: visible;
 }
 
 
 /* =========================================================
-   SMALL TOP TEXT
+   SOFT GLASS SHINE
+   ========================================================= */
+
+.birthday-message::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            125deg,
+            rgba(255,255,255,0.07),
+            transparent 35%,
+            transparent 70%,
+            rgba(255,160,190,0.025)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP TEXT
    ========================================================= */
 
 .birthday-small {
@@ -1710,7 +1733,7 @@
 
 
 /* =========================================================
-   MAIN BIRTHDAY MESSAGE
+   TITLE
    ========================================================= */
 
 .birthday-title {
@@ -1743,15 +1766,196 @@
    ========================================================= */
 
 .birthday-cake {
-    display: inline-block;
+    position: relative;
 
-    font-size: 42px;
+    display: flex;
 
-    margin-top: 2px;
+    align-items: flex-end;
+    justify-content: center;
+
+    width: 90px;
+    height: 70px;
+
+    margin-top: 7px;
+
+    animation: cakeBounce 2.1s ease-in-out infinite;
+}
+
+
+/* Cake body */
+
+.birthday-cake-body {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 62px;
+    height: 34px;
+
+    border-radius: 7px 7px 10px 10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffd7df 0%,
+            #f5a9bc 48%,
+            #df7898 49%,
+            #d96588 100%
+        );
+
+    box-shadow:
+        0 5px 15px rgba(223, 120, 152, 0.25);
+}
+
+
+/* Cake top */
+
+.birthday-cake-body::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -7px;
+
+    width: 66px;
+    height: 14px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #fff0f2;
+
+    box-shadow:
+        0 2px 0 rgba(220, 150, 170, 0.35);
+}
+
+
+/* Cream drip */
+
+.birthday-cake-body::after {
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+    top: -3px;
+
+    width: 48px;
+    height: 12px;
+
+    border-radius: 0 0 10px 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0 8%,
+            #fff4f4 8% 25%,
+            transparent 25% 42%,
+            #fff4f4 42% 58%,
+            transparent 58% 72%,
+            #fff4f4 72% 88%,
+            transparent 88%
+        );
+}
+
+
+/* =========================================================
+   CANDLE
+   ========================================================= */
+
+.birthday-candle {
+    position: absolute;
+
+    left: 50%;
+    bottom: 32px;
+
+    width: 8px;
+    height: 24px;
+
+    transform: translateX(-50%);
+
+    border-radius: 3px 3px 2px 2px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #fff2cf 0 4px,
+            #e7b875 4px 7px
+        );
+
+    box-shadow:
+        0 0 5px rgba(255, 210, 140, 0.18);
+}
+
+
+/* Wick */
+
+.birthday-wick {
+    position: absolute;
+
+    left: 50%;
+    top: -5px;
+
+    width: 2px;
+    height: 6px;
+
+    transform: translateX(-50%);
+
+    background: #342329;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   FLAME
+   ========================================================= */
+
+.birthday-flame {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    width: 12px;
+    height: 20px;
+
+    transform:
+        translateX(-50%)
+        rotate(2deg);
+
+    transform-origin: center bottom;
+
+    border-radius:
+        50% 50% 50% 50% /
+        65% 65% 35% 35%;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 70%,
+            #fff7bb 0 24%,
+            #ffd15c 25% 52%,
+            #f18a42 53% 75%,
+            transparent 76%
+        );
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255, 180, 70, 0.75)
+        );
 
     animation:
-        cakeBounce 1.8s ease-in-out infinite,
-        cakeGlow 2.2s ease-in-out infinite;
+        flameFlicker 0.55s ease-in-out infinite alternate;
+}
+
+
+/* Flame goes out */
+
+.birthday-flame.extinguished {
+    animation: flameOut 1s ease forwards;
 }
 
 
@@ -1784,7 +1988,8 @@
     width: 22px;
     height: 29px;
 
-    border-radius: 50% 50% 45% 45%;
+    border-radius:
+        50% 50% 45% 45%;
 
     opacity: 0;
 
@@ -1793,8 +1998,10 @@
     z-index: 50;
 
     animation:
-        balloonRise var(--balloon-duration) ease-in forwards,
-        balloonSway 2.8s ease-in-out infinite;
+        balloonRise
+        var(--balloon-duration)
+        linear
+        forwards;
 }
 
 
@@ -1807,11 +2014,10 @@
     top: 100%;
 
     width: 1px;
-    height: 45px;
+    height: 55px;
 
-    background: rgba(255, 220, 230, 0.32);
-
-    transform-origin: top;
+    background:
+        rgba(255, 220, 230, 0.35);
 }
 
 
@@ -1823,8 +2029,8 @@
     left: 50%;
     bottom: -4px;
 
-    width: 5px;
-    height: 5px;
+    width: 6px;
+    height: 6px;
 
     background: inherit;
 
@@ -1834,24 +2040,85 @@
 }
 
 
-/* Balloon variations */
+/* Balloon colors */
 
 .birthday-balloon:nth-child(3n) {
-    background: rgba(220, 108, 142, 0.82);
+    background:
+        rgba(220, 108, 142, 0.85);
 }
 
 .birthday-balloon:nth-child(3n + 1) {
-    background: rgba(214, 166, 103, 0.78);
+    background:
+        rgba(214, 166, 103, 0.82);
 }
 
 .birthday-balloon:nth-child(3n + 2) {
-    background: rgba(184, 116, 145, 0.78);
+    background:
+        rgba(184, 116, 145, 0.82);
 }
 
 
 /* =========================================================
-   COUNTDOWN DISAPPEARS COMPLETELY
-   IMPORTANT: removes old vertical space
+   FLOATING HEARTS
+   ========================================================= */
+
+.birthday-heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    pointer-events: none;
+
+    z-index: 51;
+
+    font-size: var(--heart-size);
+
+    color: #df7898;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 12px rgba(223, 120, 152, 0.45);
+
+    animation:
+        heartRise
+        var(--heart-duration)
+        ease-in
+        forwards;
+}
+
+
+/* =========================================================
+   SPARKLES
+   ========================================================= */
+
+.birthday-sparkle {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 49;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #f7d7df;
+
+    box-shadow:
+        0 0 10px rgba(255, 210, 225, 0.75);
+
+    animation:
+        sparkleFloat
+        var(--sparkle-duration)
+        ease-out
+        forwards;
+}
+
+
+/* =========================================================
+   OLD COUNTDOWN — REMOVE SPACE
    ========================================================= */
 
 .countdown.birthday-finished {
@@ -1877,11 +2144,6 @@
         padding 0.7s ease;
 }
 
-
-/* =========================================================
-   OLD COUNTDOWN DATE / LOCKED CONTENT
-   REMOVE THEIR SPACE TOO
-   ========================================================= */
 
 .countdown-date.birthday-hide-after,
 .locked-message.birthday-hide-after,
@@ -1913,20 +2175,22 @@
 
 
 /* =========================================================
-   BIRTHDAY ANIMATIONS
+   ANIMATIONS
    ========================================================= */
 
 @keyframes birthdayReveal {
 
     from {
         opacity: 0;
+
         transform:
-            translateY(20px)
-            scale(0.96);
+            translateY(25px)
+            scale(0.94);
     }
 
     to {
         opacity: 1;
+
         transform:
             translateY(0)
             scale(1);
@@ -1940,34 +2204,66 @@
     100% {
         transform:
             translateY(0)
-            rotate(-2deg);
+            rotate(-1deg);
     }
 
     50% {
         transform:
-            translateY(-7px)
-            rotate(2deg);
+            translateY(-6px)
+            rotate(1deg);
     }
 }
 
 
-@keyframes cakeGlow {
+@keyframes flameFlicker {
 
-    0%,
-    100% {
-        filter:
-            drop-shadow(
-                0 0 4px
-                rgba(255, 170, 190, 0.15)
-            );
+    0% {
+        transform:
+            translateX(-50%)
+            scale(0.88)
+            rotate(-3deg);
     }
 
     50% {
-        filter:
-            drop-shadow(
-                0 0 16px
-                rgba(255, 170, 190, 0.35)
-            );
+        transform:
+            translateX(-50%)
+            scale(1.08)
+            rotate(3deg);
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            scale(0.95)
+            rotate(-2deg);
+    }
+}
+
+
+@keyframes flameOut {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            scale(1);
+    }
+
+    50% {
+        opacity: 0.55;
+
+        transform:
+            translateX(-50%)
+            scale(0.65);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            scale(0.05);
     }
 }
 
@@ -1978,39 +2274,96 @@
         opacity: 0;
 
         transform:
-            translateY(0)
-            translateX(0)
+            translate3d(0, 0, 0)
             rotate(-5deg);
     }
 
-    10% {
+    8% {
         opacity: 0.9;
     }
 
-    85% {
-        opacity: 0.75;
+    45% {
+        transform:
+            translate3d(
+                var(--balloon-drift-half),
+                -55vh,
+                0
+            )
+            rotate(5deg);
     }
 
     100% {
         opacity: 0;
 
         transform:
-            translateY(-115vh)
-            translateX(var(--balloon-drift))
-            rotate(8deg);
+            translate3d(
+                var(--balloon-drift),
+                -120vh,
+                0
+            )
+            rotate(-5deg);
     }
 }
 
 
-@keyframes balloonSway {
+@keyframes heartRise {
 
-    0%,
-    100% {
-        margin-left: -5px;
+    0% {
+        opacity: 0;
+
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.7)
+            rotate(-10deg);
+    }
+
+    12% {
+        opacity: 0.85;
     }
 
     50% {
-        margin-left: 5px;
+        transform:
+            translate3d(
+                var(--heart-drift-half),
+                -55vh,
+                0
+            )
+            scale(1)
+            rotate(8deg);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate3d(
+                var(--heart-drift),
+                -115vh,
+                0
+            )
+            scale(0.65)
+            rotate(-8deg);
+    }
+}
+
+
+@keyframes sparkleFloat {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-70px)
+            scale(1.4);
     }
 }
 
@@ -2023,24 +2376,16 @@
 
     .birthday-celebration {
         width: 94vw;
-
         margin-top: 8px;
     }
 
     .birthday-message {
-        width: auto;
-
         padding: 18px 22px;
-
         border-radius: 22px;
     }
 
     .birthday-title {
         font-size: 34px;
-    }
-
-    .birthday-cake {
-        font-size: 36px;
     }
 
     .birthday-subtitle {
@@ -2060,9 +2405,466 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-    .birthday-celebration,
-    .birthday-cake,
-    .birthday-balloon {
+    .birthday-celebration *,
+    .birthday-balloon,
+    .birthday-heart,
+    .birthday-sparkle {
         animation: none !important;
+    }
+}
+/* =========================================================
+   FORCE BIRTHDAY FLOATING EFFECTS
+   ========================================================= */
+
+.birthday-floating-balloon {
+    position: fixed !important;
+    left: var(--x) !important;
+    bottom: -70px !important;
+
+    width: 24px !important;
+    height: 32px !important;
+
+    display: block !important;
+
+    border-radius: 50% 50% 46% 46% !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+
+    z-index: 99999 !important;
+
+    background: var(--balloon-color) !important;
+
+    box-shadow:
+        inset -4px -5px 7px rgba(0, 0, 0, 0.12),
+        0 0 12px rgba(255, 160, 190, 0.25) !important;
+
+    animation:
+        birthdayBalloonFloat
+        var(--duration)
+        linear
+        forwards !important;
+}
+
+.birthday-floating-balloon::before {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: -5px !important;
+
+    width: 6px !important;
+    height: 6px !important;
+
+    background: var(--balloon-color) !important;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg) !important;
+}
+
+.birthday-floating-balloon::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 100% !important;
+
+    width: 1px !important;
+    height: 65px !important;
+
+    background:
+        rgba(255, 230, 235, 0.42) !important;
+}
+
+
+/* =========================================================
+   HEARTS
+   ========================================================= */
+
+.birthday-floating-heart {
+    position: fixed !important;
+
+    left: var(--x) !important;
+    bottom: -40px !important;
+
+    display: block !important;
+
+    color: #ff86a8 !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: var(--size) !important;
+
+    line-height: 1 !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+
+    z-index: 99998 !important;
+
+    text-shadow:
+        0 0 8px rgba(255, 100, 150, 0.75),
+        0 0 18px rgba(255, 100, 150, 0.35) !important;
+
+    animation:
+        birthdayHeartFloat
+        var(--duration)
+        ease-in
+        forwards !important;
+}
+
+
+/* =========================================================
+   BALLOON ANIMATION
+   ========================================================= */
+
+@keyframes birthdayBalloonFloat {
+
+    0% {
+        opacity: 0 !important;
+
+        transform:
+            translate3d(0, 0, 0)
+            rotate(-8deg)
+            scale(0.85);
+    }
+
+    8% {
+        opacity: 1 !important;
+    }
+
+    25% {
+        transform:
+            translate3d(
+                var(--drift-1),
+                -25vh,
+                0
+            )
+            rotate(7deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(
+                var(--drift-2),
+                -55vh,
+                0
+            )
+            rotate(-6deg)
+            scale(1.03);
+    }
+
+    75% {
+        transform:
+            translate3d(
+                var(--drift-3),
+                -82vh,
+                0
+            )
+            rotate(7deg)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0 !important;
+
+        transform:
+            translate3d(
+                var(--drift-4),
+                -125vh,
+                0
+            )
+            rotate(-5deg)
+            scale(0.92);
+    }
+}
+
+
+/* =========================================================
+   HEART ANIMATION
+   ========================================================= */
+
+@keyframes birthdayHeartFloat {
+
+    0% {
+        opacity: 0 !important;
+
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.5)
+            rotate(-12deg);
+    }
+
+    10% {
+        opacity: 0.95 !important;
+    }
+
+    35% {
+        transform:
+            translate3d(
+                var(--drift-1),
+                -30vh,
+                0
+            )
+            scale(1)
+            rotate(10deg);
+    }
+
+    65% {
+        transform:
+            translate3d(
+                var(--drift-2),
+                -65vh,
+                0
+            )
+            scale(1.15)
+            rotate(-8deg);
+    }
+
+    100% {
+        opacity: 0 !important;
+
+        transform:
+            translate3d(
+                var(--drift-3),
+                -120vh,
+                0
+            )
+            scale(0.7)
+            rotate(10deg);
+    }
+}
+/* =========================================================
+   FORCE BIRTHDAY FLOATING EFFECTS
+   ========================================================= */
+
+.birthday-floating-balloon {
+    position: fixed !important;
+    left: var(--x) !important;
+    bottom: -70px !important;
+
+    width: 24px !important;
+    height: 32px !important;
+
+    display: block !important;
+
+    border-radius: 50% 50% 46% 46% !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+
+    z-index: 99999 !important;
+
+    background: var(--balloon-color) !important;
+
+    box-shadow:
+        inset -4px -5px 7px rgba(0, 0, 0, 0.12),
+        0 0 12px rgba(255, 160, 190, 0.25) !important;
+
+    animation:
+        birthdayBalloonFloat
+        var(--duration)
+        linear
+        forwards !important;
+}
+
+.birthday-floating-balloon::before {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    bottom: -5px !important;
+
+    width: 6px !important;
+    height: 6px !important;
+
+    background: var(--balloon-color) !important;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg) !important;
+}
+
+.birthday-floating-balloon::after {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 100% !important;
+
+    width: 1px !important;
+    height: 65px !important;
+
+    background:
+        rgba(255, 230, 235, 0.42) !important;
+}
+
+
+/* =========================================================
+   HEARTS
+   ========================================================= */
+
+.birthday-floating-heart {
+    position: fixed !important;
+
+    left: var(--x) !important;
+    bottom: -40px !important;
+
+    display: block !important;
+
+    color: #ff86a8 !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: var(--size) !important;
+
+    line-height: 1 !important;
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+
+    z-index: 99998 !important;
+
+    text-shadow:
+        0 0 8px rgba(255, 100, 150, 0.75),
+        0 0 18px rgba(255, 100, 150, 0.35) !important;
+
+    animation:
+        birthdayHeartFloat
+        var(--duration)
+        ease-in
+        forwards !important;
+}
+
+
+/* =========================================================
+   BALLOON ANIMATION
+   ========================================================= */
+
+@keyframes birthdayBalloonFloat {
+
+    0% {
+        opacity: 0 !important;
+
+        transform:
+            translate3d(0, 0, 0)
+            rotate(-8deg)
+            scale(0.85);
+    }
+
+    8% {
+        opacity: 1 !important;
+    }
+
+    25% {
+        transform:
+            translate3d(
+                var(--drift-1),
+                -25vh,
+                0
+            )
+            rotate(7deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(
+                var(--drift-2),
+                -55vh,
+                0
+            )
+            rotate(-6deg)
+            scale(1.03);
+    }
+
+    75% {
+        transform:
+            translate3d(
+                var(--drift-3),
+                -82vh,
+                0
+            )
+            rotate(7deg)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0 !important;
+
+        transform:
+            translate3d(
+                var(--drift-4),
+                -125vh,
+                0
+            )
+            rotate(-5deg)
+            scale(0.92);
+    }
+}
+
+
+/* =========================================================
+   HEART ANIMATION
+   ========================================================= */
+
+@keyframes birthdayHeartFloat {
+
+    0% {
+        opacity: 0 !important;
+
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.5)
+            rotate(-12deg);
+    }
+
+    10% {
+        opacity: 0.95 !important;
+    }
+
+    35% {
+        transform:
+            translate3d(
+                var(--drift-1),
+                -30vh,
+                0
+            )
+            scale(1)
+            rotate(10deg);
+    }
+
+    65% {
+        transform:
+            translate3d(
+                var(--drift-2),
+                -65vh,
+                0
+            )
+            scale(1.15)
+            rotate(-8deg);
+    }
+
+    100% {
+        opacity: 0 !important;
+
+        transform:
+            translate3d(
+                var(--drift-3),
+                -120vh,
+                0
+            )
+            scale(0.7)
+            rotate(10deg);
     }
 }
